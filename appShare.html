@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Bcurrency</title>
+
+
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .weixin-tip {
+            display: none;
+            position: fixed;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            filter: alpha(opacity=80);
+            height: 100%;
+            width: 100%;
+            z-index: 100;
+        }
+
+        .weixin-tip p {
+            text-align: center;
+            margin-top: 10%;
+            padding: 0 5%;
+        }
+    </style>
+    <script src="js/jquery-3.1.0.js"></script>
+
+</head>
+<body>
+<!--<a href="bcurrency://?type=1&param1=61930659184641" id="tiaozhuan">我来跳转下看看</a>-->
+<div class="weixin-tip">
+    <p>
+        <img src="img/live_weixin.png" alt="微信打开"/>
+    </p>
+</div>
+<script type="text/javascript">
+    /**
+     * 获取url 地址栏请求参数数据
+     */
+    function GetRequest() {
+        var url = location.search;
+        // 获取url中"?"符后的字串
+        var theRequest = new Object();
+        if (url.indexOf("?") != -1) {
+            var str = url.substr(1);
+            strs = str.split("&");
+            for (var i = 0; i < strs.length; i++) {
+                theRequest[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);
+            }
+        }
+        return theRequest;
+    }
+
+    $(window).on("load", function () {
+        var winHeight = $(window).height();
+
+        function is_weixin() {
+            var ua = navigator.userAgent.toLowerCase();
+            if (ua.match(/MicroMessenger/i) == "micromessenger") {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        var isWeixin = is_weixin();
+        if (isWeixin) {
+            $(".weixin-tip").css("height", winHeight);
+            $(".weixin-tip").show();
+        } else {
+            var request = new Object();
+            request = GetRequest();
+            var type = request["type"];
+            param1 = request["param1"];
+            window.location.href = "bcurrency://?type=" + type + "&param1=" + param1
+            setTimeout(function () {
+                window.location.href = "downApp.html";//如果超时就跳转到app下载页
+            }, 5000);
+
+        }
+    })
+    /*var ua = navigator.userAgent.toLowerCase();
+    function testApp(url) {
+        var timeout, t = 2000, hasApp = true;
+        setTimeout(function() {
+            if (hasApp) {
+                alert('安装了app');
+            } else {
+                alert('未安装app');
+            }
+            document.body.removeChild(ifr);
+        }, 3500)
+        var t1 = Date.now();
+        var ifr = document.createElement("iframe");
+        ifr.setAttribute('src', url);
+        ifr.setAttribute('style', 'display:none');
+        document.body.appendChild(ifr);
+        timeout = setTimeout(function() {
+            var t2 = Date.now();
+            if (!t1 || t2 - t1 < t + 100) {
+
+                hasApp = false;
+            }
+        }, t);
+    }*/
+
+</script>
+</body>
+</html>

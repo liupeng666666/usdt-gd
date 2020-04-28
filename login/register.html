@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <!--[if lt IE 9]>
+<script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.js"></script>
+<script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.js"></script>
+<![endif]-->
+    <script>
+        var mobileAgent = new Array("iphone", "ipod", "ipad", "android", "mobile", "blackberry", "webos", "incognito", "webmate", "bada", "nokia", "lg", "ucweb", "skyfire");
+        var browser = navigator.userAgent.toLowerCase();
+        var isMobile = false;
+        var url = location.search;
+        for (var i = 0; i < mobileAgent.length; i++) {
+            if (browser.indexOf(mobileAgent[i]) != -1) {
+                isMobile = true;
+                location.href = 'registerapp.html' + url; //跳转指定链接
+                break;
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/jquery.fullPage.css">
+    <script src="../js/jquery-3.1.0.js"></script>
+    <script type="text/javascript" src="../js/jquery.i18n.properties.js"></script>
+    <script src="../js/WebIM/strophe-1.2.8.min.js"></script>
+    <script src="../js/WebIM/webim.config.js"></script>
+    <script src="../js/WebIM/websdk-1.4.13.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.fullPage.min.js"></script>
+    <script src="../utils/date.js"></script>
+    <script src="../utils/utils.js"></script>
+    <script src="../pcjs/register.js"></script>
+</head>
+
+<body>
+
+<div class="dialogBox" id="register_hint" style="display: none;">
+    <div class="mask"></div>
+    <div class="paymentBox">
+        <h3>提示</h3>
+        <p id="hint_content">确认支付10USDT查看TA的订单推荐？</p>
+        <div>
+            <a onclick="hideHint()">取消</a>
+            <a onclick="hideHint()">确认</a>
+        </div>
+    </div>
+</div>
+
+<p class="slipDown" onclick="$.fn.fullpage.moveSectionDown();">
+    <img src="../img/slipDown.png">
+</p>
+<div id="fullpage">
+    <div class="register section">
+        <div class="loginMain">
+            <header>
+                <div class="row">
+                    <div class="container">
+                        <a href="../index.html"><img src="../img/logo.png"></a>
+                        <div class="rightHeaser">
+                            <a data-locale="register.guanyuwomen"
+                               href="../bottomPage.html?level=p3_1&less=p3_1_1">关于我们</a>
+                            <a data-locale="register.biyuanjiaoyisheju"
+                               href="../bottomPage.html?level=p2_1&less=p2_1_1">币元交易社区</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div>
+                <div class="registerTitle">
+                    <h1 data-locale="register.xingjihuiyuanjihua">星级会员计划</h1>
+                    <h4 data-locale="register.biaozhunjianglijin">10USDT/美元/标准每位奖励金</h4>
+                </div>
+                <div class="loginBox">
+                    <div class="tabMian">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active">
+                                <a href="#accountL" aria-controls="accountL" role="tab" data-toggle="tab"
+                                   data-locale="register.shoujihaozuce">手机号注册</a>
+                            </li>
+                            <li role="presentation">
+                                <a href="#codeL" aria-controls="codeL" role="tab" data-toggle="tab"
+                                   data-locale="register.youxiangzuce">邮箱注册</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="accountL">
+                                <div class="accountLBox">
+                                    <ul>
+                                        <li>
+                                            <p data-locale="register.nicheng">昵称</p>
+                                            <input id="nickname_phone" placeholder="请输入昵称" type="text">
+                                        </li>
+                                        <li>
+                                            <p data-locale="register.shoujihao">手机号</p>
+                                            <input id="phone_phone" placeholder="请输入手机号" type="tel">
+                                        </li>
+                                        <li>
+                                            <p data-locale="register.mima">密码</p>
+                                            <input id="password_phone" placeholder="请输入密码" type="password">
+                                        </li>
+                                        <li>
+                                            <p data-locale="register.anquanjiaoyima">安全交易码</p>
+                                            <input id="trade_password_phone" placeholder="请输入安全交易码" type="password">
+                                        </li>
+                                        <li>
+                                            <p data-locale="register.anquanjiaoyima">推荐人</p>
+                                            <input id="trade_referee_phone" placeholder="推荐人手机号或邮箱" type="text">
+                                        </li>
+                                        <li>
+                                            <p data-locale="register.yanzhengma">验证码
+                                                <a id="register_phone_code" href="javascript:sendSMCode()" class="yzm"
+                                                   data-locale="register.huoquyanzhengma">获取验证码</a>
+                                            </p>
+                                            <input id="yzm_phone" type="text" placeholder="请输入验证码">
+                                        </li>
+                                    </ul>
+                                    <p class="loginBtn">
+                                        <a href="javascript:Register(1);" data-locale="register.zhuce">注册</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="codeL">
+                                <div class="accountLBox">
+                                    <ul>
+                                        <li>
+                                            <p data-locale="register.nicheng">昵称</p>
+                                            <input id="nickname_email" placeholder="请输入昵称" type="text">
+                                        </li>
+                                        <li>
+                                            <p data-locale="register.youxiang">邮箱</p>
+                                            <input id="email_email" placeholder="请输入邮箱" type="tel">
+                                        </li>
+                                        <li>
+                                            <p data-locale="register.mima">密码</p>
+                                            <input id="password_email" placeholder="请输入密码" type="password">
+                                        </li>
+                                        <li>
+                                            <p data-locale="register.anquanjiaoyima">安全交易码</p>
+                                            <input id="trade_password_email" placeholder="请输入安全交易码" type="password">
+                                        </li>
+                                        <li>
+                                            <p data-locale="register.anquanjiaoyima">推荐人</p>
+                                            <input id="trade_referee_email" placeholder="推荐人手机号或邮箱" type="text">
+                                        </li>
+                                        <li>
+                                            <p data-locale="register.yanzhengma">验证码
+                                                <a id="register_email_code" href="javascript:sendEmailCode()"
+                                                   class="yzm" data-locale="register.huoquyanzhengma">获取验证码</a>
+                                            </p>
+                                            <input id="yzm_email" type="text" placeholder="请输入验证码">
+                                        </li>
+                                    </ul>
+                                    <p class="loginBtn">
+                                        <a href="javascript:Register(0);" data-locale="register.zhuce">注册</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <label class="agrrenInfro">
+                            <input class="aui-checkbox" type="checkbox" name="checkbox" checked>
+                            我已经阅读并同意BcurrencyLimited
+                            <a href="./userProtocol.html">《用户服务协议》</a>
+                        </label>
+                    </div>
+                </div>
+                <div class="registrInfor">
+                    <img src="../img/registerinfor.png">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="register section">
+        <div class="registerTitle">
+            <h1>星级会员计划</h1>
+            <h4>10USDT/美元/标准每位奖励金</h4>
+        </div>
+        <span class="verticalHr"></span>
+        <span class="verticalHr verticalHrs"></span>
+        <span class="transverseHr"></span>
+        <span class="transverseHr transverseHrs"></span>
+
+        <div class="jionReasonBox">
+            <div class="jionReasonTite">
+                <h3>为什么要加入Bcurrency</h3>
+                <p>世界领先的数字资产交易平台</p>
+            </div>
+            <ul>
+                <li>
+                    <img src="../img/bonus.png">
+                    <p>丰厚的推荐奖励加成</p>
+                    <span>
+              成为交易员每日可获得成员流水佣金，并且多重佣金收入（密圈 交易跟随等）。
+            </span>
+                </li>
+                <li>
+                    <img src="../img/upgrade.png">
+                    <p>优秀的成长体系</p>
+                    <span>
+              以星级评测级别用户高级别用户享受特权不同星级不同特权等你挑战
+            </span>
+                </li>
+                <li>
+                    <img src="../img/team.png">
+                    <p>支持优秀交易员排行</p>
+                    <span>
+              热门交易员，优质交易员排行，个人中心数据化显示，支持订单信息记录，资金记录 ，收益记录。
+            </span>
+                </li>
+                <li>
+                    <img src="../img/bonus.png">
+                    <p>专业的用户服务团队</p>
+                    <span>
+              在线客服贴心服务 ，密聊社区管理化服务，支持工单查询，订单数据化人工客服处理通道，账号及密码故障咨询等。
+            </span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="register section">
+        <div class="registerTitle">
+            <h1>Bcurrency星级会员计划介绍</h1>
+            <h4>BCURRENCY星级会员计划是由Bcurrency推出，回馈平台用户的收益加成计划。通过邀请好友进行交易，获取额外推荐奖励。</h4>
+        </div>
+        <div class="memberTable">
+            <table class="table table-bordered">
+                <tr class="memberTableStart">
+                    <td>星级</td>
+                    <td>
+                        <img src="../img/start.png">
+                    </td>
+                    <td>
+                        <img src="../img/start.png">
+                        <img src="../img/start.png">
+                    </td>
+                    <td>
+                        <img src="../img/start.png">
+                        <img src="../img/start.png">
+                        <img src="../img/start.png">
+                    </td>
+                    <td>
+                        <img src="../img/start.png">
+                        <img src="../img/start.png">
+                        <img src="../img/start.png">
+                        <img src="../img/start.png">
+                    </td>
+                    <td>
+                        <img src="../img/start.png">
+                        <img src="../img/start.png">
+                        <img src="../img/start.png">
+                        <img src="../img/start.png">
+                        <img src="../img/start.png">
+                    </td>
+                </tr>
+                <tr>
+                    <td>晋级条件</td>
+                    <td>
+                        <p>注册成为Bcurrency用户</p>
+                    </td>
+                    <td>
+                        <p>实名账户认证</p>
+                    </td>
+                    <td>
+                        <p>成员中有3位二星好友</p>
+                    </td>
+                    <td>
+                        <p>成员中有4位三星好友
+                        </p>
+                    </td>
+                    <td>
+                        <p>成员中有5位四星好友
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>目标/奖励</td>
+                    <td>个人奖励10/美金</td>
+                    <td>个人奖励50/美金</td>
+                    <td>好友总交易量*0.1%美元/标准</td>
+                    <td>好友单笔交易流水*0.2%美元/标准</td>
+                    <td>好友总交易量*0.3%美元/标准</td>
+                </tr>
+                <tr>
+                    <td>交易员/特权</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="smailFint">①v4交易员②交易员排行③订单推荐④公共群发言⑤创建社群
+                    </td>
+                    <td class="smailFint">①v5交易员②交易员排行③订单推荐④公共群发言⑤创建社群
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="beCareful">
+            <h3>注：奖励特殊说明</h3>
+            <p>1、完成标准用户达到V2级别奖励60$的使用金。</p>
+            <p>2、完成好友中有3位V2级别用户成为V3星级用户。</p>
+            <p>3、完好友中有4位V3级别用户成为V4星级用户。</p>
+            <p>4、完好友中有5位V4级别用户成为V5星级用户。</p>
+            <p>5、V3级别用户以下成员每笔交易流水量0.1%奖励。</p>
+            <p>6、V4级别（交易员）用户以下成员每笔交易流水量0.2%奖励。</p>
+            <p>7、V5级别（交易员）用户以下成员每笔交易流水量0.3%奖励。</p>
+            <a>如有疑问？请咨询客服。</a>
+        </div>
+    </div>
+    <div class="register section">
+        <div class="registerTitle">
+            <h1>星级会员计划</h1>
+            <h4>10USDT/美元/标准每位奖励金</h4>
+        </div>
+        <div class="registerBox">
+            <h1>如何获得推荐奖励</h1>
+            <ul>
+                <li>
+                    <img src="../img/1.png">
+                    <p>第一步</p>
+                    <span>注册成为Bcurrency用户
+              </span>
+                </li>
+                <li class="registerSlip">
+                    <img src="../img/slipDown.png">
+                </li>
+                <li>
+                    <img src="../img/2.png">
+                    <p>第二步</p>
+                    <span>完善实名账户认证
+              </span>
+                </li>
+                <li class="registerSlip">
+                    <img src="../img/slipDown.png">
+                </li>
+                <li>
+                    <img src="../img/3.png">
+                    <p>第三步</p>
+                    <span>邀请好友注册并交易</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script>
+    $(function () {
+        $('#fullpage').fullpage({
+            navigation: true,
+            onLeave: function (index, nextIndex, direction) { //滚动之前的页面序号，滚动后的页面序号，滚动的方向。滚动前先返回数据
+                if (nextIndex == 4) {
+                    $('.slipDown').hide();
+                }
+            }
+        });
+
+    })
+</script>
+</body>
+
+</html>

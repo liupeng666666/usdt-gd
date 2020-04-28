@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>交易</title>
+    <!--[if lt IE 9]>
+<script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.js"></script>
+<script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.js"></script>
+<![endif]-->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/star-rating.css" media="all" rel="stylesheet" type="text/css">
+    <!--<link rel="stylesheet" href="../http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">-->
+    <link rel="stylesheet" href="../css/style.css"/>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/zidingyi.css">
+    <link rel="stylesheet" href="../css/iconfont.css">
+    <link rel="stylesheet" href="../css/jquery.shCircleLoader.css"/>
+    <script src="../js/jquery-3.1.0.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/star-rating.js"></script>
+    <script src="../js/jquery-migrate-1.2.1.js"></script>
+    <script src="../js/jquery.date_input.pack.js"></script>
+    <script src="../js/jquery.shCircleLoader-min.js"></script>
+    <script src="../js/i18n/i18n.js"></script>
+    <script src="../js/jquery.i18n.properties.js"></script>
+    <script src="../js/jquery.timers.js"></script>
+    <script src="../js/tradePage.js"></script>
+    <script src="../utils/utils.js"></script>
+
+</head>
+
+<body>
+<div class="dialogBox" style="display: none;" id="trade_show_hide">
+    <div class="mask"></div>
+    <div class="tradeBquBox">
+        <h4 data-locale="trade.woyaotuijian">我要推荐到跟单系统</h4>
+        <p>
+            <span data-locale="trade.shoufei">收费：</span>
+            <input placeholder="填写收费" type="number" id="charge">
+        </p>
+        <div>
+            <a class="cancelBtn" onclick="canselDialog()" data-locale="trade.quxiao">取消</a>
+            <a class="submitBtn" onclick="update_charge()" data-locale="trade.queding">确认</a>
+        </div>
+    </div>
+</div>
+<div class="readeBox">
+    <div class="header">
+        <div class="heaerFirst">
+            <div class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                   aria-expanded="false">
+                    <img src="../img/logo.png" class="logo">
+                    <img src="../img/top.png" class="lineimg">
+                </a>
+                <ul class="dropdown-menu hotTitle">
+                    <li>
+                        <a href="../index.html" data-locale="daohanglan.index">首页</a>
+                    </li>
+
+                    <li>
+                        <a href="../coinDetails.html" data-locale="daohanglan.bihangqing">OBV交易</a>
+                    </li>
+                    <li>
+                        <a href="../FaBiJiaoYi.html" data-locale="daohanglan.fabijiaoyi">法币交易</a>
+                    </li>
+                    <li>
+                        <a href="../hotTradeCharts.html" data-locale="daohanglan.remenjiaoyi">热门交易</a>
+                    </li>
+                    <li>
+                        <a href="../followProfit.html" data-locale="daohanglan.gensuizhe">跟随者</a>
+                    </li>
+                    <li>
+                        <a href="../tradeEndDynamic.html" data-locale="daohanglan.jiaoyidongtai">交易动态</a>
+                    </li>
+                    <li>
+                        <a href="../chatRoom.html" data-locale="daohanglan.liaotianshi">聊天室</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="../newsPage.html?jumptype=0" data-locale="daohanglan.xinwenzixun">新闻快讯</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="typeRadio">
+            <label class="demo--label">
+                <input class="demo--radio" type="radio" name="radio" checked="checked" id="radio_AQU" value="0"
+                       onchange="pankou(this.value)">
+                <span class="demo--radioInput"></span>AQU
+            </label>
+            <label class="demo--label">
+                <input class="demo--radio" type="radio" name="radio" value="1" id="radio_BQU"
+                       onchange="pankou(this.value)">
+                <span class="demo--radioInput"></span>BQU
+            </label>
+        </div>
+        <div class="selectBox">
+            <!--<div>
+                <select name="" id="top_minute" onchange="pubic_fangfa(this.value)">
+                </select>
+            </div>-->
+            <div class="dropdown selectBox">
+                <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                   aria-expanded="false" id="pankou_top">
+                    <span id="top_minute_top"></span>
+                    <input type="hidden" id="top_minute"/>
+                </a>
+                <ul class="dropdown-menu hotTitle" id="top_minute_ul">
+
+                </ul>
+            </div>
+        </div>
+        <div class="tcontent">
+					<span>
+          <p data-locale='trade.zhangdiefu'>涨跌幅</p>
+          <i class="greenColor" id="top_dzl">+0.72%</i>
+        </span>
+            <span>
+          <p data-locale="trade.dingdanchengjiaoliang">订单成交量</p>
+          <i class="orangeColor" id="top_cjl">*</i>
+        </span>
+            <span>
+          <p data-locale="trade.kaipanjia">开盘价</p>
+          <i id="top_kpj">$1.9710</i>
+        </span>
+            <span>
+          <p data-locale="trade.shoupanjia">收盘价</p>
+          <i id="top_spj">$1.9710</i>
+        </span>
+            <span>
+          <p data-locale="trade.zuigaojia">最高价</p>
+          <i id="top_zgj">$9710</i>
+        </span>
+            <span>
+          <p data-locale="trade.zuidijia">最低价</p>
+          <i id="top_zdj">$9710</i>
+        </span>
+        </div>
+        <div class="internationalization">
+            <div class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                   aria-expanded="false">
+							<span id="trade_guojihua">中文
+              <span class="caret"></span>
+							</span>
+
+                </a>
+                <ul class="dropdown-menu language">
+                    <li>
+                        <a href="javascript:chooselanguage(1)">中文</a>
+                    </li>
+                    <li>
+                        <a href="javascript:chooselanguage(2)">English</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="dropdown peroInf">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+               aria-expanded="false" id="denglu">
+                <img src="../img/head.png">
+                <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu yh_zdy">
+                <li>
+                    <a href="../inforPage.html?type=account" data-locale="index.wpdezhanghu"><i
+                            class="iconfont icon-careful"></i>我的账户</a>
+                </li>
+                <li>
+                    <a href="../inforPage.html?type=personalInfro" data-locale="index.gerenxinxishezhi"><i
+                            class="iconfont icon-user"></i>个人信息设置</a>
+                </li>
+                <li>
+                    <a href="../inforPage.html?type=securitySettings" data-locale="index.shimingrenzheng"><i
+                            class="iconfont icon-shimingrenzheng"></i>实名认证</a>
+                </li>
+                <li>
+                    <a href="../personalDetails.html" data-locale="index.gerenxiangqing"><i
+                            class="iconfont icon-careful"></i>个人详情</a>
+                </li>
+                <li>
+                    <a href="../inviting.html" data-locale="index.yaoqinghaoyou"><i class="iconfont icon-careful"></i>邀请好友</a>
+                </li>
+                <li role="separator" class="divider"></li>
+                <li>
+                    <a href="javascript:loginOut()" data-locale="index.tuichuzhanghu"><i
+                            class="iconfont icon-qiehuanzuhu"></i>退出账户</a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+    <div class="leftbox">
+        <div>
+            <ul class="title">
+                <li data-locale="trade.bizhongmingcheng">币种名称</li>
+                <li data-locale="trade.jiage">价格</li>
+                <li data-locale="trade.rizhangfu">日涨幅</li>
+                <li data-locale="trade.zixuan">自选</li>
+            </ul>
+            <ul class="leftcontent" id="left_currency">
+
+            </ul>
+        </div>
+        <div style="display: none;" id="BQU_order">
+            <ul class="title">
+                <li data-locale="trade.dingdanhao">订单号</li>
+                <li data-locale="trade.bizhongmingcheng">币种</li>
+                <li data-locale="trade.mairujia">买入价</li>
+                <li data-locale="trade.zhangdiefu">涨幅度</li>
+            </ul>
+            <ul class="leftcontent bquleftcontent" id="BQU_order_ul">
+
+            </ul>
+        </div>
+    </div>
+    <div class="rightBox">
+        <div class="rightTop">
+            <div id="candlestick_hide" style="display: none;">
+            </div>
+            <div id="candlestick"></div>
+        </div>
+        <div class="rightBottom">
+            <div class="rightLeft">
+                <h4 data-locale="trade.xianjiajiaoyi">现价交易</h4>
+                <ul>
+                    <li>
+                        <div class="progressMain">
+                            <span class="leftFont" data-locale="trade.goumai">购买：</span>
+                            <div class="progressbox">
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60"
+                                         aria-valuemin="0" aria-valuemax="100" style="width: 20%;" id="minute_endtime">
+                                    </div>
+                                </div>
+                                <!-- 此处用jq控制.sliperBox的left跟上面一样即可 -->
+                                <span class="sliperBox" id="minute_endtime_z"></span>
+                            </div>
+                            <span class="time">
+                  				<i class="redColor" id="minute_endtime_s">15</i>秒</span>
+                        </div>
+                        <p>
+                        <div class="leftFont" data-locale="trade.yue">余额：</div>
+                        <span class="redColor" name="trade_yue">0.00</span>
+                        </p>
+                        <div class="inputBox">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="input-group-addon" data-locale="trade.xianjia">现价</div>
+                                    <input type="text" class="form-control" name="input_close" placeholder="买入价"
+                                           disabled="disabled">
+                                </div>
+                                <div class="input-group" name="input_M">
+                                    <div class="input-group-addon" data-locale="trade.mshi">M时</div>
+                                    <input type="text" class="form-control" name="input_minute" placeholder="K线时"
+                                           disabled="disabled">
+                                </div>
+                                <div class="input-group">
+                                    <div class="input-group-addon" data-locale="trade.liangzhi">量值</div>
+                                    <input type="text" class="form-control" id="input_lz_yz" placeholder="买入量"
+                                           name="input_lz">
+                                </div>
+                                <div class="input-group" name="input_tzb">
+                                    <div class="input-group-addon" data-locale="trade.touzhubi" name="tzb_A">投注比</div>
+                                    <div class="input-group-addon" data-locale="trade.touzhubi" style="display: none;"
+                                         name="tzb_B">止盈止损
+                                    </div>
+                                    <select id="range_yz" class="form-control select-yanse"
+                                            onchange="update_rise_fall(this.id,0)"></select>
+                                </div>
+                                <div class="input-group" style="display: none;" name="input_b">
+                                    <div class="input-group-addon" data-locale="trade.yingkuibi">盈亏比</div>
+                                    <select id="input_yk_yz" class="form-control select-yanse"
+                                            name="select_ykb"></select>
+                                </div>
+                            </div>
+                            <p class="poundage" data-locale="trade.shouxufei">(手续费0.5%)</p>
+                        </div>
+                        <button class="buyEth" onclick="order_add(0)" data-locale="trade.maizhang" id="maizhang">买涨ETH
+                        </button>
+                    </li>
+                    <li>
+                        <div class="progressMain">
+                            <span class="leftFont" data-locale="trade.kaipan">开盘：</span>
+                            <div class="progressbox">
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60"
+                                         aria-valuemin="0" aria-valuemax="100" style="width: 40%;" id="minute_time">
+                                    </div>
+                                </div>
+                                <!-- 此处用jq控制.sliperBox的left跟上面一样即可 -->
+                                <span class="sliperBox" id="minute_time_z"></span>
+                            </div>
+                            <span class="time">
+                  <i class="redColor" id="minute_time_s">15</i>秒</span>
+                        </div>
+                        <p>
+                        <div class="leftFont" data-locale="trade.yue">余额：</div>
+                        <span class="redColor" name="trade_yue">0.00</span>
+                        </p>
+                        <div class="inputBox">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="input-group-addon" data-locale="trade.xianjia">现价</div>
+                                    <input type="text" class="form-control" name="input_close" placeholder="买入价"
+                                           disabled="disabled">
+                                </div>
+                                <div class="input-group" name="input_M">
+                                    <div class="input-group-addon" data-locale="trade.mshi">M时</div>
+                                    <input type="text" class="form-control" name="input_minute" placeholder="K线时"
+                                           disabled="disabled">
+                                </div>
+                                <div class="input-group">
+                                    <div class="input-group-addon" data-locale="trade.liangzhi">量值</div>
+                                    <input type="text" class="form-control" id="input_ks_yz" placeholder="买入量"
+                                           name="input_lz">
+                                </div>
+                                <div class="input-group" name="input_tzb">
+                                    <div class="input-group-addon" data-locale="trade.touzhubi" name="tzb_A">投注比</div>
+                                    <div class="input-group-addon" data-locale="trade.touzhubi" style="display: none;"
+                                         name="tzb_B">止盈止损
+                                    </div>
+                                    <select id="range_ks" class="form-control select-yanse"
+                                            onchange="update_rise_fall(this.id,1)"></select>
+                                </div>
+                                <div class="input-group" style="display: none;" name="input_b">
+                                    <div class="input-group-addon" data-locale="trade.yingkuibi">盈亏比</div>
+                                    <select id="input_yk_ks" class="form-control select-yanse"
+                                            name="select_ykb"></select>
+                                </div>
+                            </div>
+                            <p class="poundage" data-locale="trade.shouxufei">(手续费0.5%)</p>
+                        </div>
+                        <button class="buydownEth" onclick="order_add(1)" data-locale="trade.maidie" id="maidie">买跌ETH
+                        </button>
+                    </li>
+                </ul>
+            </div>
+            <div class="rightR">
+                <h4 data-locale="trade.goumailiushuijilu">购买流水记录表</h4>
+                <div>
+                    <ul class="title" id="order_ul">
+                        <li data-locale="trade.dangwei">档位</li>
+                        <li data-locale="trade.jiage">价格</li>
+                        <li data-locale="trade.zongliang">总量USDT</li>
+                        <li data-locale="trade.shijian" id="shijian">时间</li>
+                        <li data-locale="trade.yingsunzhi" id="yingsunzhi">赢损值</li>
+                    </ul>
+                    <ul class="rcontent" id="right_mz">
+                    </ul>
+                    <ul class="rcontent" id="right_md">
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="personOrder">
+    <div class="pheder">
+        <span class="title" data-locale="trade.gerendingdanxiangqing">个人订单详情</span>
+        <div class="date_pickerBox">
+            <i></i>
+            <div>
+                <input type="text" class="date_picker" value="2018-07-31" onchange="buttom_date(this.value)">
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button"
+               aria-haspopup="true" aria-expanded="false" id="buttom_currency_name"><span
+                    data-locale="trade.quanbu">全部</span>
+                <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu hotTitle" id="buttom_currency">
+            </ul>
+        </div>
+        <div class="typeRadio">
+            <label class="demo--label">
+                <input class="demo--radio" type="radio" name="rise_radio" checked value="" onchange="sub_order_user();">
+                <span class="demo--radioInput"></span><span data-locale="trade.quanbu">全部</span>
+            </label>
+            <label class="demo--label">
+                <input class="demo--radio" type="radio" name="rise_radio" value="0" onchange="sub_order_user();">
+                <span class="demo--radioInput"></span><span data-locale="trade.zhang">涨</span>
+            </label>
+            <label class="demo--label">
+                <input class="demo--radio" type="radio" name="rise_radio" value="1" onchange="sub_order_user();">
+                <span class="demo--radioInput"></span><span data-locale="trade.die">跌</span>
+            </label>
+        </div>
+    </div>
+    <ul class="personOrderTable" id="buttom_order">
+    </ul>
+</div>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content  tishi-div">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title">
+                    提示
+                </h4>
+            </div>
+            <div class="modal-body" id="myModalLabel">
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                </button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal -->
+</div>
+
+</body>
+<script src="js/public.js"></script>
+<script src="../js/echarts.min.js"></script>
+<script src="../js/tradePage.js"></script>
+<script src="js/tradeAQU.js"></script>
+
+</html>

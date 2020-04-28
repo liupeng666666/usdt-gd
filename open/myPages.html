@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"
+    />
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>个人详情</title>
+
+    <script>
+        var mobileAgent = new Array("iphone", "ipod", "ipad", "android", "mobile", "blackberry", "webos", "incognito", "webmate", "bada", "nokia", "lg", "ucweb", "skyfire");
+        var browser = navigator.userAgent.toLowerCase();
+        var isMobile = false;
+        var url = location.search;
+        for (var i = 0; i < mobileAgent.length; i++) {
+            if (browser.indexOf(mobileAgent[i]) != -1) {
+                isMobile = true;
+                //location.href = 'registerapp.html?'+url; //跳转指定链接
+                break;
+            }
+        }
+        if (isMobile == false) {
+            location.href = '../personalDetails.html' + url;
+        }
+    </script>
+    <link rel="stylesheet" type="text/css" href="../css/app/aui.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/app/iconfont.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/app/iconfont2.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/app/aui-slide.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/app/index.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/app/zidingyi.css"/>
+    <script src="../js/app/jquery-3.1.0.js"></script>
+    <script src="../js/app/api.js"></script>
+    <script src="../js/app/aui-tab.js"></script>
+    <script src="../js/app/aui-dialog.js"></script>
+    <script src="../js/app/aui-slide.js"></script>
+    <script src="../js/app/aui-popup.js"></script>
+    <style>
+        .aui-dialog {
+            background: #fff;
+        }
+
+        .aui-dialog-header {
+            color: #757575;
+        }
+    </style>
+</head>
+
+<body>
+<div class="hederBox" style="background: url(../img/GRXQ.jpg) no-repeat; background-size: 100% 100%;">
+    <header class="aui-bar aui-bar-nav gary-title">
+        <a class="aui-pull-left aui-btn" href="javascript:closeWin()">
+            <span class="aui-iconfont aui-icon-left"></span>
+        </a>
+        <a class="aui-pull-right aui-btn" aui-popup-for="top-left">
+
+        </a>
+    </header>
+    <div class="hederInfor" aui-popup-for="headerBox">
+        <img id="img" onerror="javascript:this.src='img/head.png';">
+        <div><span id="nickname"></span>
+            <span>
+          <i class="iconfont icon-v"></i><span id="dengji"></span></span>
+        </div>
+        <p><span data-locale="personPage.fensi">粉丝</span><span id="fans_num"></span></p>
+        <p><span data-locale="personPage.chengyuan">成员</span><span id="cnum"></span></p>
+    </div>
+</div>
+<div class="newsTitle mypagesTitle">
+    <div class="aui-tab" id="tab" style="background-color: #1b1e23">
+        <div class="aui-tab-item aui-active" data-locale="currency.gerenzonglan">个人总览
+        </div>
+        <div class="aui-tab-item" data-locale="currency.dingdanxiangqing">订单详情
+        </div>
+        <div id="myPages_chichangtuijian" class="aui-tab-item" data-locale="currency.tuijianchicang">持仓推荐
+        </div>
+        <div class="aui-tab-item" data-locale="currency.wodeguanzhu">我的关注
+        </div>
+    </div>
+</div>
+<div class="myPageMian">
+    <div class="myPageList personalOverview">
+        <div class="personInforTop">
+            <div class="personHeadRTop" style="background-color: #1b1e23">
+                <div>
+                    <p class="swichBox">
+                        <span data-locale="currency.yijihuojiaoyiyuan">已激活交易员</span>
+                        <input type="checkbox" class="widget_switch_checkbox" id="widget_switch_checkbox">
+                        <label for="widget_switch_checkbox" class="widget_switch_label">
+                            <span class="widget_switch_circle"></span>
+                        </label>
+                    </p>
+                    <span class="swichSpan" data-locale="currency.dengjikai">V4级别才能开通此功能</span>
+                </div>
+                <div>
+                    <p data-locale="personPage.zongshouyi">总收益</p>
+                    <span id="total_revenue"></span>
+                </div>
+                <div>
+                    <p data-locale="tradeindex.jingzhi">净值</p>
+                    <span id="surplus"></span>
+                </div>
+                <div>
+                    <p data-locale="tradeindex.gensuizheyongjin">跟随者佣金</p>
+                    <span id="order_earnings"></span>
+                </div>
+                <div>
+                    <p data-locale="tradeindex.jiaoyiyongjin">交易佣金</p>
+                    <span id="brokerage_earnings"></span>
+                </div>
+            </div>
+        </div>
+        <div class="infroTxt" style="background-color: #1b1e23">
+            <div>
+                <span data-locale="currency.gerenjianjie">个人简介：</span>
+                <p id="signature"></p>
+            </div>
+            <div>
+                <span data-locale="currency.jiaoyicelv">交易策略：</span>
+                <p id="trading_strategy">
+                </p>
+            </div>
+            <div>
+                <span data-locale="currency.suozaidi">所在地：</span>
+                <p id="region">广东省广州市</p>
+            </div>
+            <div>
+                <span data-locale="currency.zhuceshijian">注册时间：</span>
+                <p class="gatyFont" id="createtime">2018-07-02</p>
+            </div>
+            <i class="iconfont icon-xiala2-01" onclick="shrinkBtn(this)"></i>
+        </div>
+        <div class="profitBox" style="background-color: #1b1e23">
+            <div>
+                <p data-locale="tradeindex.rishouyi">日收益</p>
+                <span id="day"></span>
+            </div>
+            <div>
+                <p data-locale="tradeindex.zhoushouyi">周收益</p>
+                <span id="week"></span>
+            </div>
+            <div>
+                <p data-locale="tradeindex.yueshouyi">月收益</p>
+                <span id="month"></span>
+            </div>
+            <div>
+                <p data-locale="tradeindex.zongpaihang">总排行</p>
+                <span class="whitFont" id="top"></span>
+            </div>
+        </div>
+        <div style='width: 100%;height: 11rem; background-color: #1b1e23; padding-top: .5rem;'>
+            <p style='margin-left:80%;color:#ffffff'><select class="zdy_select2"
+                                                             onchange="getNetValueBalanceById(this.value)">
+                <option value="week">一周</option>
+                <option value="month">一月</option>
+                <option value="year">一年</option>
+            </select></p>
+            <div class="allProfit" id="allProfit" style="background-color: #1b1e23"></div>
+        </div>
+        <div class="mypageSlide">
+            <div class="slideBOx">
+                <div style="width: 100%;background-color: #1b1e23;color:#ffffff;padding-top: .5rem;padding-bottom: .5rem;padding-left: .4rem;">
+                    交易概率
+                </div>
+                <div id="aui-slide2">
+                    <div class="aui-slide-wrap">
+                        <div class="aui-slide-node aui-slide-node-middle aui-slide-node-center">
+                            <div class="moneyBox" style="background-color: #1b1e23">
+                                <p>
+                                    <span data-locale="tradeindex.jingzhi">净值</span>
+                                    <span class="rightSpan" id="tp_networth"></span>
+                                </p>
+                                <p>
+                                    <span data-locale="trade.surplus">余额</span>
+                                    <span class="rightSpan" id="tp_surplus"></span>
+                                </p>
+                                <p>
+                                    <span data-locale="tradeindex.shouyijine">收益金额</span>
+                                    <span class="rightSpan" id="tp_incomeamount"></span>
+                                </p>
+                                <p>
+                                    <span data-locale="tradeindex.rujin">入金</span>
+                                    <span class="rightSpan" id="tp_recharge">123</span>
+                                </p>
+                                <p>
+                                    <span data-locale="tradeindex.chujin">出金</span>
+                                    <span class="rightSpan" id="tp_withdraw">$</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="aui-slide-node aui-slide-node-middle aui-slide-node-center">
+                            <div class="moneyBox" style="background-color: #1b1e23">
+                                <p>
+                                    <span data-locale="currency.zhuceshijian">开户时间</span>
+                                    <span class="rightSpan" id="tp_createtime"></span>
+                                </p>
+                                <p>
+                                    <span data-locale="tradeindex.liushuiyongjin">流水佣金</span>
+                                    <span class="rightSpan" id="tp_liushuiyongjin"></span>
+                                </p>
+                                <p>
+                                    <span data-locale="tradeindex.jiaoyigendanshouyi">交易跟单收益</span>
+                                    <span class="rightSpan" id="tp_followincome"></span>
+                                </p>
+                                <p>
+                                    <span data-locale="tradeindex.jiaoyibishu">交易笔数</span>
+                                    <span class="rightSpan" id="tp_trannumber"></span>
+                                </p>
+                                <p>
+                                    <span data-locale="tradeindex.rijiaoyibishu">日交易笔数</span>
+                                    <span class="rightSpan" id="tp_Daytrannumber"></span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="aui-slide-node aui-slide-node-middle aui-slide-node-center">
+                            <div class="moneyBox" style="background-color: #1b1e23">
+                                <p>
+                                    <span data-locale="tradeindex.AQUjiaoyiliang">AQU交易量</span>
+                                    <span class="rightSpan" id="tp_Atrannumber"></span>
+                                </p>
+                                <p>
+                                    <span data-locale="tradeindex.BQUjiaoyiliang">BQU交易量</span>
+                                    <span class="rightSpan" id="tp_Btrannumber"></span>
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="aui-slide-page-wrap">
+                        <!--分页容器-->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="typeSetBoxMain">
+            <div style="width: 100%;background-color: #1b1e23;color:#ffffff;padding-top: .5rem;padding-bottom: .5rem;padding-left: .4rem;">
+                币种配置
+            </div>
+            <div id="typeSetBox" style="width: 100%;background-color: #1b1e23"></div>
+
+        </div>
+    </div>
+    <div class="myPageList orderDetailBox" style="display: none;">
+        <div class="newsTitle orderDetailBoxTitle">
+            <div class="aui-tab" id="orderDetailBoxTitle">
+                <div class="aui-tab-item aui-active" data-locale="tradeindex.AQUlishidingdan">AQU交易订单历史
+                </div>
+                <div class="aui-tab-item" data-locale="tradeindex.BQUlishidingdan">BQU交易订单历史
+                </div>
+            </div>
+        </div>
+        <div class="aquTrade">
+            <div class="capitalRecord">
+                <ul id="AQUTable">
+
+                </ul>
+            </div>
+        </div>
+        <div class="bquTrade" style="display: none">
+            <div class="capitalRecord">
+                <ul id="BQUTable">
+
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="myPageList recommendation" style="display: none;">
+        <ul id="ChiCangTuiJian">
+
+        </ul>
+    </div>
+    <div class="myPageList myAttention" style="display: none;">
+        <ul id="GuanZhu">
+
+        </ul>
+    </div>
+</div>
+<script src="../js/echarts.min.js"></script>
+<script>
+    //  $(function () {
+    //    getTradeType();
+    //    document.querySelector("input.widget_switch_checkbox").addEventListener("click", function () {
+    //      if (document.querySelector("input.widget_switch_checkbox").checked) {
+    //        console.log("选中状态");
+    //      }
+    //    });
+    //
+    //});
+
+    function shrinkBtn(myI) {
+        var hideDIv = $(myI).siblings('div')
+        if (hideDIv.is(':visible')) {
+            hideDIv.hide();
+            $(myI).parent().removeClass('activeLi')
+        } else {
+            hideDIv.show()
+            $(myI).parent().addClass('activeLi')
+        }
+    }
+
+    var tabheader = new auiTab({
+        element: document.getElementById("tab")
+    }, function (ret) {
+        if (ret) {
+            if (ret.index == 1) {
+                $('.myPageList').hide()
+                $('.personalOverview').show()
+
+            } else if (ret.index == 2) {
+                $('.myPageList').hide()
+                $('.orderDetailBox').show()
+                $('.aquTrade').show()
+            } else if (ret.index == 3) {
+                $('.myPageList').hide()
+                $('.recommendation').show()
+            } else {
+                $('.myPageList').hide()
+                $('.myAttention').show()
+            }
+            // document.getElementById("demo").textContent = ret.index;
+        }
+    });
+    var tabheader2 = new auiTab({
+        element: document.getElementById("orderDetailBoxTitle")
+    }, function (ret) {
+        if (ret) {
+            if (ret.index == 1) {
+                $('.bquTrade').hide()
+                $('.aquTrade').show()
+            } else {
+                $('.aquTrade').hide()
+                $('.bquTrade').show()
+            }
+            // document.getElementById("demo").textContent = ret.index;
+        }
+    });
+
+</script>
+</body>
+<script src="../whpjs/myPages.js"></script>
+</html>

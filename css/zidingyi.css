@@ -1,0 +1,48 @@
+.daiyanse {
+    vertical-align: middle;
+    font-size: 15px;
+    color: #FF8000;
+}
+
+.budaiyanse {
+    vertical-align: middle;
+    font-size: 15px;
+    color: #D2E9FF;
+}
+
+#candlestick_hide {
+    position: fixed;
+    z-index: 1000;
+    left: 50%;
+    top: 20%;
+}
+
+.select-yanse {
+    background-color: #3e3e3e;
+    color: #FFFFFF;
+    border: 1px solid #858282;
+}
+
+.tishi-div {
+    background-color: #3E3E3E;
+    color: #FFFFFF;
+}
+
+.yh_zdy {
+    background-color: #000;
+}
+
+.yh_zdy li a {
+    text-align: left;
+    line-height: 43px;
+}
+
+.yh_zdy i {
+    font-size: 19px;
+    margin-top: 1px;
+    margin-right: 10px;
+}
+
+.bhq li {
+    width: 20%;
+}

@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>OBV交易</title>
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.js"></script>
+      <![endif]-->
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/bottomPage.css">
+    <script src="./js/jquery-3.1.0.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/jquery.fullPage.min.js"></script>
+    <script src="js/inforPage.js"></script>
+
+</head>
+
+<body>
+<div class="bottomPageBox">
+    <div class="row no-gutter">
+        <div>
+            <div class="p1">
+                <a href="index.html">
+                    <img src="./img/logobig.png" class="logoImg">
+                </a>
+                <ul class="leftBox">
+                    <li class="activeP1" onClick="showP2(this,'p1_1')" id="p1_1">
+                        <p>OBV交易</p>
+                        ABOUT US
+                    </li>
+                    <li onClick="showP2(this,'p2_1')" id="p2_1">
+                        <p>金融科技</p>
+                        FINTECH
+                    </li>
+                    <li onClick="showP2(this,'p3_1')" id="p3_1">
+                        <p>关于我们</p>
+                        ABOUT US
+                    </li>
+                </ul>
+            </div>
+            <div class="p2">
+                <div class="p1_1 leftsidebar_box">
+                    <dl class="system_log Inforactive" onClick="showP3(this,'p1_1_1')" id='p1_1_1'>
+                        <span>OBV</span>（能量潮）
+                    </dl>
+                    <dl class="custom" onClick="showP3(this,'p1_1_2')" id='p1_1_2'>
+                        <span>OBV</span>指标介绍
+                    </dl>
+                    <dl class="channel" onClick="showP3(this,'p1_1_3')" id='p1_1_3'>
+                        <span>OBV</span>交易分析应用技巧
+                    </dl>
+                    <dl class="system_log" onClick="showP3(this,'p1_1_4')" id='p1_1_4'>
+                        <span>OBV</span>交易指标注意事项
+                    </dl>
+                    <dl class="custom" onClick="showP3(this,'p1_1_5')" id='p1_1_5'>
+                        <span>OBV</span>交易（入门/高阶）
+                    </dl>
+                </div>
+                <div class="p2_1 leftsidebar_box">
+                    <dl class="system_log Inforactive" onClick="showP3(this,'p2_1_1')" id='p2_1_1'>
+                        交易员体系
+                    </dl>
+                    <dl class="custom" onClick="showP3(this,'p2_1_2')" id='p2_1_2'>
+                        数据分析系统
+                    </dl>
+                    <dl class="channel" onClick="showP3(this,'p2_1_3')" id='p2_1_3'>
+                        兼容性在线交易
+                    </dl>
+                    <dl class="system_log" onClick="showP3(this,'p2_1_4')" id='p2_1_4'>
+                        数据中心化社区
+                    </dl>
+                </div>
+                <div class="p3_1 leftsidebar_box">
+                    <dl class="system_log Inforactive" onClick="showP3(this,'p3_1_1')" id="p3_1_1">
+                        公司介绍
+                    </dl>
+                    <dl class="custom" onClick="showP3(this,'p3_1_2')" id="p3_1_2">
+                        平台描述
+                    </dl>
+                    <dl class="channel" onClick="showP3(this,'p3_1_3')" id="p3_1_3">
+                        优势发展
+                    </dl>
+                </div>
+            </div>
+            <div class="p3">
+                <div class="contentBox">
+                    <div class="commonClass p1_1_1">
+                        <div class="backClor commonClasspading">
+                            <h1>什么是OBV能量潮</h1>
+                            <div class="fontPage">
+                                OBV(On Balance Volume)为美国投资分析师Lee
+                                Granville的主要分析工具，能量是因，价格是果，关于成交量方面的分析，此为相当重要的分析指标之一。该指标通过统计成交量变动的趋势来推测币价趋势。OBV以“N”字型为波动单位，并且由许许多多“N”型波构成了OBV的曲线图，我们对一浪高于一浪的“N”型波，称其为“上涨”(UP
+                                TIDE)，至于上升潮中的下跌回落则称为“下跌”(DOWN
+                                FIELD)。 计算公式：OBV的计算公式很简单，首先我们假设已经知道了上一个交易日的OBV，就可以根据当前的成效量以及当前的收盘价与上一个交易日的收盘价的比较计算出的OBV。用数学公式表示如下： OBV=上一OBV价格+sgn×当前的成交量与收盘价 其中sgn是符号的意思，sgn可能是+1，也可能是-1，这由下式决定。　　Sgn=+1
+                                今收盘价≥昨收盘价  Sgn=―1 今收盘价。成交量指的是成交的手数，不是成交金额。
+                            </div>
+                        </div>
+                        <div class="commonClasspading">
+                            <div class="fontPage">
+                                OBV能量潮指标是葛兰维于本世纪60年代提出的，并被广泛使用。技术分析的四大要素：价、量、时、线。OBV指标就是从“量”这个要素作为突破口，来发现热门数字货币、分析币价运动趋势的一种技术指标。它是将币市的人气——成交量与币价的关系数字化、直观化，以币市的成交量变化来衡量币市的推动力，从而研判币价的走势。关于成交量方面的研究，OBV能量潮指标是一种相当重要的分析指标之一。
+                                该指标的理论基础是市场价格的有效变动必须有成交量配合，量是价的先行指标。利用OBV可以验证当前股价走势的可靠性，并可以得到趋势可能反转的信号。比起单独使用成交量来，OBV看得更清楚。
+                            </div>
+                        </div>
+                        <div class="backClor commonClasspading">
+                            <div class="fontPage">
+                                <img src="./img/1-1-1-1.png">
+                            </div>
+                        </div>
+                        <div class="commonClasspading">
+                            <div class="fontPage">
+                                <p> 1、投资者对币价的评论越不一致，成交量越大；反之，成交量就小。因此，可用成交量来判断市场的人气和双方的力量。</p>
+                                <p>
+                                    2、重力原理。上升的物体迟早会下跌，而物体上升所需的能量比下跌时多。涉及到币市则可解释为：一方面币价迟早会下跌；另一方面，币价上升时所需的能量大，因此币价的上升特别是上升初期必须有较大的成交量相配合；币价下跌时则不必耗费很大的能量，因此成交量不一定放大，甚至有萎缩趋势。</p>
+                                <p>
+                                    3、惯性原则——动则恒动、静则恒静。只有那些被投资者或主流币在很大一段时间内成交量和币价的波动都比较大，而无人交易或交易量很少的数字货币，则会在一段时间内，成交量和币价波幅都比较小。 </p>
+                            </div>
+                        </div>
+                        <div class="backClor commonClasspading">
+                            <div class="fontPage">
+                                <p>买入原则：</p>
+                                <p>1. 必须观察OBV之N字形波动。</p>
+                                <p>2. 当OBV超越前一次N字形高点，即记一个向上的箭号。</p>
+                                <p>3. 当OBV跌破前一次N字形低点，即记一个向下的箭号。</p>
+                                <p>4. 累计5个向上或向下的箭号，即为短期反转讯号。</p>
+                                <p>5. 累计9个向下或向上的箭号，即为中期反转讯号。</p>
+                                <p>6. N字形波动加大时，须注意行情随时有反转可能。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="commonClass p1_1_2" style="display: none;">
+                        <div class="backClor commonClasspading">
+                            <h1>关于OBV能量潮指标介绍</h1>
+                            <div class="fontPage">
+                                On Balance Volume 能量潮指标英文缩写为OBV：中英文名称翻译为：平衡交易量，由美国的投资分析家 joe
+                                Granville所创，该指标通过统计交易量变动的趋势来推测股价的趋势、OBV以N字型为波动单位、并且由许许多多“N”型波构成了OBV的曲线图、对一浪高于一浪的“N”型波，称其为“上涨”（UP
+                                TIDE），至于上升潮中的下跌回落则称为“下跌”（DOWN FIELD）
+                            </div>
+                        </div>
+                        <div class="commonClasspading">
+                            <h1>能量潮指标原理</h1>
+                            <div class="fontPage">
+                                <p>OBV指标之所以成立的重要依据是</p>
+                                <p>1、投资者对币价的评论越不一致、成交量越大；反之，成交量越小。因此，可用成交量来判断市场的走势和上涨下跌的力量。</p>
+                                <p>
+                                    2、重力原理。上升的物体迟早会下跌，而物体上升所需的能量比下跌时多。可解释为：一方面币价迟早会下跌；另一方面，币价上升时所需的能量大，因此币价的上升特别是上升初期必须有较大的成交量相配合；币价下跌时则不必耗费很大的能量，因此成交量不一定放大，甚至有萎缩趋势。</p>
+                                <p>
+                                    3、惯性原则——动则恒动、静则恒静。只有那些被投资者或主力相中的热门币种会在很大一段时间内成交量和币价的波动都比较大，而无人问津的币种，则会在一段时间内，成交量和币价波幅都比较小。</p>
+                            </div>
+                        </div>
+                        <div class="backClor commonClasspading">
+                            <h1>OBV指标的构成</h1>
+                            <div class="fontPage">
+                                <p>OBV指标由OBV线和OBV值构成</p>
+                                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OBV线</p>
+                                <p>
+                                    OBV线方法是将“量的平均”概念加以延伸，是将成交量值予以数量化，制成趋势线，配合币价趋势线，从价格的变动及成交量的增减关系，推测市场走势。他认为成交量是币市的元气，币价只不过是它的表象特征而已。因此，成交量通常比币价先行。这种“先见量、后见价”的理论早已为币市所证明。</p>
+                            </div>
+                        </div>
+                        <div class="commonClasspading">
+                            <h1>OBV线的应用原则</h1>
+                            <div class="fontPage">
+                                <img src="./img/1-1-2-1.png">
+                                <br>
+                                <p>1）如图所示：OBV线呈N字形波动，当OBV线超越前一次N字形的高点时，则记下一个向上的箭头；当OBV线跌破前一次N的低点时，就记下一个向下的箭头。</p>
+                                <p>2）当OBV线连续形成N字形上涨状态，则上涨的股价将要出现反转。</p>
+                                <p>3）当OBV线在连续小N字形上涨时，又出现大N字形上涨状态，则行情随时可能出现反转。</p>
+                                <p>4）OBV线的走向与股价曲线产生"背离"时，说明当时的走势是虚假的，不管当时币价是上涨行情还是下跌行情，都随时有反转的可能，需要格外留心。</p>
+                                <p>5）OBV线如果持续横向移动后突然上冲，预示大行情随时可能发生。如图OBV横盘突然上冲，在成交量的配合下，币价一路上涨。</p>
+                            </div>
+                        </div>
+                        <div class="backClor commonClasspading">
+                            <h1>OBV值</h1>
+                            <div class="fontPage">
+                                <img src="./img/1-1-2-2.png">
+                                <br>
+                                <p> 1）如图所示：OBV线呈N字形波动，当OBV线超越前一次N字形的高点时，则记下一个向上的箭头；当OBV线跌破前一次N的低点时，就记下一个向下的箭头。</p>
+                                <p> 2）当OBV线连续形成N字形上涨状态，则上涨的股价将要出现反转。</p>
+                                <p> 3）当OBV线在连续小N字形上涨时，又出现大N字形上涨状态，则行情随时可能出现反转。</p>
+                                <p> 4）OBV线的走向与股价曲线产生"背离"时，说明当时的走势是虚假的，不管当时币价是上涨行情还是下跌行情，都随时有反转的可能，需要格外留心。</p>
+                                <p> 5）OBV线如果持续横向移动后突然上冲，预示大行情随时可能发生。如图OBV横盘突然上冲，在成交量的配合下，币价一路上涨。</p>
+                            </div>
+                        </div>
+                        <div class="commonClasspading">
+                            <h1>能量潮指标原理的计算公式</h1>
+                            <div class="fontPage">
+                                <img src="./img/1-1-2-3.png">
+                                <br>
+                                首先我们假设已经知道了上一个交易日的OBV，就可以根据当前的成效量以及当前的收盘价与上一个交易日的收盘价的比较计算出的OBV。用数学公式表示如下： OBV=上一OBV价格+sgn×当前的成交量与收盘价 其中sgn是符号的意思，sgn可能是+1，也可能是-1，这由下式决定。　　Sgn=+1
+                                今收盘价≥昨收盘价  Sgn=―1 今收盘价。成交量指的是成交的手数，不是成交金额。
+                            </div>
+                        </div>
+                    </div>
+                    <div class="commonClass p1_1_3" style="display: none;">
+                        <div class="backClor commonClasspading">
+                            <h1>OBV交易分析应用</h1>
+                            <div class="fontPage">
+                                <p>（1）OBV线系依据成交量的变化统计绘制而成，因此OBV线属于技术性分析，与属于经济性的基本分析无关。</p>
+                                <p>（2）OBV线为币市短期波动的重要判断方法，但运用OBV线应配合币价趋势予以研判分析。</p>
+                                <p>（3）OBV线能帮助确定币市后续的发展方向。</p>
+                                <p>（4）OBV的走势，可以局部显示出市场内部主要资金的移动方向，显示当期不寻常的成交量是徘徊于低价位还是在高价位，可使技术分析者领先一步深入了解市场原因。</p>
+                                <p>（5）OBV线适用范围比较偏向于短期短线或长线分析后买入投资，同时OBV也不能有效反映当期市场的转变情况。</p>
+                            </div>
+                        </div>
+                        <div class="commonClasspading">
+                            <h1>OBV交易应用技巧</h1>
+                            <div class="fontPage">
+                                <p>
+                                    １．借助成交量移动平均线，即OBV处于上升状态且上一期穿下一期均量线（中短线投资者可使用５M和15M的组合线）时，视为买涨信号，OBV处于无趋势状态且短期均量线下穿中长期均量线时，视为买跌信号。若仍感到难以把握，不妨直接将OBV平滑运算即纳入均线系统；</p>
+                                <p>
+                                    2.运用趋势技术，即对OBV值也画出趋势线，对“率先突破”的类别币种给予重点关注，因为这类币种的运动幅度通常十分可观，这可能是需要把握的最主要的使用技巧。无论是上涨还是下跌，在适当的采取行动无疑是最好的买入时机，OBV刚刚出现突破时并非意味着要马上买入。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="commonClass p1_1_4" style="display: none;">
+                        <div class="backClor commonClasspading">
+                            <h1>OBV交易的注意事项</h1>
+                            <div class="fontPage">
+                                <p>OBV线依据成交量统计绘制，属于技术性分析。</p>
+                                <p>OBV线为币市短期波动的判断方法，应配合币价趋势予以研究分析</p>
+                                <p>>涨跌平会导致指标失真，由于币价连续上涨时，预期后市会大涨，导致出现</p>
+                                <p>越涨无量的现象。反则预期也会出现急剧大跌称之为OBV浮动较大现象作用。</p>
+                            </div>
+                        </div>
+                        <div class="commonClasspading">
+                            <h1>交易指标问题其修正方法</h1>
+                            <div class="fontPage">
+                                <p>
+                                    由于OBV不是直接对币价做出分析的指标，却又是按照收盘价的升或降来计算的，这样就不可避免地存在是否合理的问题，对某个货币或股票来说尤其如此。如币价在某日的大多数时间里处于下跌状态，如突然连续暴涨，或者与此恰恰相反，如前突然遭到打压，严重影响了指标试图真正反映的情况。解决这一问题，主要有两条途径：</p>
+                                <p>１．市价位于当日中心值之上或之下来决定成交量的加或减，成交量也是按照同一百分比加入或减出累计值；</p>
+                                <p>2．利用分时如5或15分钟的OBV变化值作为指标的修正值，以M时K线的变化值作为K线的补充。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="commonClass p1_1_5" style="display: none;">
+                        <div class="backClor commonClasspading">
+                            <h1>OBV入门</h1>
+                            <div class="fontPage">
+                                <p>1：OBV交易利用币价和币种成交量的指标来反映人气走势，人为地按照币价的涨跌将成交量为正负(涨跌），并进行累加运算。</p>
+                                <p>
+                                    2：单纯观察OBV的方向并无实际意义，应该与价格曲线进行对照。如果OBV正负值转换频率高，投资者应注意观察币市此时的盘整行情，择机而动。OBV体现了人气动向，可变量很大，人气很难维持很长时间，因此，短期应主要参考该指标，长期不宜受OBV指标影响。</p>
+                                <p>
+                                    3：OBV能量潮指标通过统计成交量变动的趋势来推测币价趋势。是将成交量值予以数量化并制成趋势线，配合币价趋势，从价格的变动及成交量的增减关系，推测出市场多空方面的气氛。在对数字货币市场未来的趋势的研判上，掌握OBV指标的应用原则是有必要的，这样可以对币价分析上的不足之处得到弥补。</p>
+                                <p>
+                                    4：由于运用OBV的走势可以看出主力量能K线变化从而推导可能的主力运作过程及意图变化，因此，可以领先一步掌握行情在突破后的发展方向。不过，应当注意的是，OBV能量潮指标在应用的过程中，一般只用来作为短期市场波动的重要判断方法。</p>
+                            </div>
+                        </div>
+                        <div class="commonClasspading">
+                            <h1>OBV高阶</h1>
+                            <div class="fontPage">
+                                OBV指标相对其余技术分析指标来说在币市中作用更大一些,它一直是个人看盘时必须看的一个基本标准,结合目标中长期价格相对指数的强弱程度去了自身资金投资的中长期运做时间和基本意图性,
+                                但一定需要注意其存在相当强的局限性,就和市场一样,从整体的观点看它当然是运行的非常完美而无法攻陷,但阶段性破绽的出现将为我们的套利带来可能.单独的摸大象我们只能一种似是而非的观点,站得高一些可能会看得更全面。
+                            </div>
+                        </div>
+                    </div>
+                    <div class="commonClass p2_1_1 orengeP2">
+                        <div class="backClor commonClasspading">
+                            <h1>交易员评分体系</h1>
+                            <div class="fontPage" style="font-size: 18px;">
+                                通过盈利能力、稳定性、社区贡献、风控能力多项指标，科学的推算方法计算交易员能力分值， 构建权威的交易员排行榜。
+                                <img src="./img/2-1-1-1.png">
+                            </div>
+                        </div>
+                        <div class="commonClasspading">
+                            <div class="rleftBox">
+                                <h3>深资交易员推荐</h3>
+                                <div class="rleftBoxFont">
+                                    深度推荐交易专家、投资机构和高手交易员等区块链信息资源，解决用户的多元化投资需求，让区块链资管服务合规化、透明化，实现资管服务/交易团队与投资者利益增加
+                                </div>
+                            </div>
+                            <div class="rRigthBox">
+                                <img src="./img/2-1-1-2.png">
+                            </div>
+                        </div>
+                        <div class="backClor commonClasspading">
+                            <ul>
+                                <li>
+                                    <img src="./img/2-1-1-3.png">
+                                    <div class="fontPage">
+                                        链接全球交易员
+                                        <br> 打通区块链行业脉络
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="./img/2-1-1-4.png">
+                                    <div class="fontPage">
+                                        提供更多跟随选择跟单
+                                        <br> 提高跟随收益降低风险
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="./img/2-1-1-5.png">
+                                    <div class="fontPage">
+                                        公平公正公开
+                                        <br> 让区块专业优秀的人不被埋没
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="commonClass p2_1_2 orengeP2">
+                        <div class="backClor commonClasspading">
+                            <div class="rleftBox" style="margin-top: 8rem;">
+                                <h1 style="text-align: left;">数据分析系统</h1>
+                                <div class="rleftBoxFont">
+                                    多维度统计，科学的分析，全方位展现交易者的交易综合能 力，助于跟随参考
+                                </div>
+                            </div>
+                            <div class="rRigthBox">
+                                <img src="./img/2-1-2-1.png">
+                            </div>
+                        </div>
+                        <div class="commonClasspading">
+                            <h2>交易分析</h2>
+                            <div class="brBox">
+                                <div class="rleftBox rleftBox2">
+                                    <h3>交易能力</h3>
+                                    <div class="rleftBoxFont">
+                                        <p>收益率浮动趋势</p>
+                                        <p>净值/余额浮动趋势</p>
+                                        <p>平仓/总收益浮动趋势</p>
+                                        <p>月收益/交易量分析</p>
+                                        <p>多项交易指标统计</p>
+                                    </div>
+                                </div>
+                                <div class="rRigthBox rRigthBox2" style="width: 75%;">
+                                    <img src="./img/2-1-2-2.png" style="height: 190px;">
+                                </div>
+                            </div>
+                            <div class="brBox">
+                                <div class="rleftBox rRigthBox2">
+                                    <img src="./img/2-1-2-3.png">
+                                </div>
+                                <div class="rRigthBox rleftBox2">
+                                    <h3>交易行为</h3>
+                                    <div class="rleftBoxFont">
+                                        <p>品种收益/交易量分析</p>
+                                        <p>多空收益/交易量分析</p>
+                                        <p>历史每小时收益分析</p>
+                                        <p>订单持仓时间/收益分析</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="backClor commonClasspading">
+                            <h2>交易分析</h2>
+                            <div class="brBox">
+                                <div class="rleftBox rRigthBox2">
+                                    <img src="./img/2-1-2-4.png">
+                                </div>
+                                <div class="rRigthBox rleftBox2" style="margin-top: 8rem;text-align: right;">
+
+                                    <div class="rleftBoxFont">
+                                        <h3>交易行为</h3>
+                                        <p>品种收益/交易量分析</p>
+                                        <p>多空收益/交易量分析</p>
+                                        <p>历史每小时收益分析</p>
+                                        <p>订单持仓时间/收益分析</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="commonClass p2_1_3 orengeP2">
+                        <div class="backClor commonClasspading">
+                            <div class="rleftBox" style="margin-top: 8rem;">
+                                <h1 style="text-align: left;">BcurrencyTrade</h1>
+                                <div class="rleftBoxFont">
+                                    具有强大的专业性的和兼容性的在线交易工具，并融合丰富 的交易数据和资讯功能
+                                </div>
+                            </div>
+                            <div class="rRigthBox">
+                                <img src="./img/2-1-3-1.png">
+                            </div>
+                        </div>
+                        <div class="commonClasspading">
+                            <div class="brBox">
+                                <div class="rleftBox rRigthBox2">
+                                    <h2 style="text-align: left;">便捷的在线交易</h2>
+                                    <p>时实报价、行情走势、指标分析、在线交易、订单管理</p>
+                                </div>
+                                <div class="rRigthBox rleftBox2">
+                                    <h2>快捷的登录系统</h2>
+                                    <p>下载手机APP客户端，网页快速登录</p>
+                                </div>
+                                <img src="./img/2-1-3-2.png" style="margin-top: 3rem;">
+                            </div>
+                        </div>
+                        <div class="backClor commonClasspading">
+                            <h2>更丰富的社交交易</h2>
+                            <p style="text-align: center;">时事快讯、行情动态、市场情绪、社交互动，让交易更丰富</p>
+                            <img src="./img/2-1-3-3.png" style="margin-top: 3rem;">
+                        </div>
+                    </div>
+                    <div class="commonClass p2_1_4 orengeP2">
+                        <div class="backClor commonClasspading">
+                            <h2>交易动态</h2>
+                            <p style="text-align: center;">买入盈利实时分享，获利金额、跟随获利，让盈利能力清晰可见</p>
+                            <img src="./img/2-1-4-1.png" style="margin-top: 3rem;">
+                        </div>
+                        <div class="commonClasspading">
+                            <div class="rleftBox" style="margin-top: 8rem;">
+                                <h1 style="text-align: left;">友聊密圈</h1>
+                                <div class="rleftBoxFont">
+                                    全方位社区交易服务，融行情币种信息、交易动态 ，主 页详情、聊天室、于一体；集合区块链交易行业各 环节人员，打造交易社区生态圈，让交易不再孤单。
+                                </div>
+                            </div>
+                            <div class="rRigthBox">
+                                <img src="./img/2-1-4-2.png">
+                            </div>
+                        </div>
+                        <div class="backClor commonClasspading">
+                            <h2>更丰富的社交交易</h2>
+                            <p style="text-align: center;">时事快讯、交易动态、市场行情、社交互动，让交易更丰富</p>
+                            <img src="./img/2-1-4-3.png" style="margin-top: 3rem;">
+                        </div>
+                        <div class="commonClasspading">
+                            <h2>行情主页详情</h2>
+                            <p style="text-align: center;">汇聚币种行情、订单动态、盈利排行、社交资讯、用户投资数据行情，让交易与社区高度融合</p>
+                            <img src="./img/2-1-4-4.png" style="margin-top: 3rem;">
+                        </div>
+                        <div class="backClor commonClasspading">
+                            <h2>新闻财经 密聊社群</h2>
+                            <p style="text-align: center;">关注文章解析行情，用户畅聊交易心得，随时随地乐享沟通社区意见领袖，传导专业的交易见解、投资技巧，让交易更简单</p>
+                            <img src="./img/2-1-4-5.png" style="margin-top: 3rem;">
+                        </div>
+                    </div>
+                    <div class="commonClass p3_1_1 orengeP3">
+                        <div class="commonClasspading">
+                            <div class="fontPage">
+                                <p>B-currency主要为区块链数字货币、等各类数字资产提供交易平台，于 2018 年在
+                                    中国香港成立，是香港领先的垂直于数字资产领域的交易所。B-currency"元，财富，"之意，表达B-currency大家共同实现财富自由的愿景。</p>
+                                <p>B-currency本着"让区块链趋势人人赚钱"的经营理念，建立了科学完善的交易策略，通过与金融机构的密切合作为数字资产交易商提供安全便捷的资金支付通道，
+                                    同时以先进的技术和装备搭建了稳定高效的电子交易系统，旨在尽壹切可能的努力为优秀数 字资产提供展示、流通的管道，为数字资产交易商提供安全便捷的交易场所提高投资效益，打造壹个公开、
+                                    公平、公正的数字资产交易平台。真正的让数字货币交易更加自由灵活！
+                                </p>
+                                <p>
+                                    Bcurrency集团在区块链行业不断科研创新是一家面向全球的专业数字货币交易平台，集资讯、交易以及金融服务为一体，提供区块链服务及数字资产交易，期望区块链在金融上的新变革在香港成立了金融创新数字资产交易平台Bcurrency（币元网），交易所汇集各个地区专业资深的交易员与投资经验，旨在改变区块链的传统投资方式解决数字货币暴涨暴跌的原因给投资者无经验者带来的巨大风险，为用户提供简单、安全、高效的顶尖级安全风控体系OBV数字资产交易平台。</p>
+                                <p>Bcurrency提供比特币BitCoin（比特币）、Bitcoin
+                                    Cash(比特现金)和Ethereum（以太坊)和等主要区块链数字资产的交易，以及来自全球最大市值流通的的主要货币。精选优质主流货币10种，全球领先的区块链投资者。完整的交易体验，对于希望分散投资和分散资本的交易员来说多元化参与研究等更多获利的投资机会。</p>
+                                <h4>强大的安全性</h4>
+                                <p>基于多级风险识别控制的银行级用户数据加密和动态认证，以确保最大的事务安全性</p>
+                                <h4>卓越的技术</h4>
+                                <p>一种机构级高性能匹配引擎，每秒处理多达100万个订单</p>
+                                <h4>深度流动性</h4>
+                                <p>这是一本高流动性的订单簿，涵盖了广泛的全球数字资产，并允许用户以最小的滑点进行无缝交易</p>
+                                <h4>致力于客户支持</h4>
+                                <p>
+                                    直观的用户界面与高效的/结算流程和知识渊博的客户服务团队相结合由经验丰富的金融old_markets专家设计的专业交易引擎由第三方专家审核的高度安全的平台专门的市场制定计划，为交易者提供深刻和一致的流动性</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="commonClass p3_1_2 orengeP3">
+                        <div class="commonClasspading">
+                            <div class="fontPage">
+                                <p>
+                                    B-currency让金融更加高效，自由、公正、公平的理念面对竞争对手充分尊重金融市场的交易规范与金融机构的密切合作为数字资产交易者提供安全便捷的资金交易通道，建立公平公正的交易机制。 </p>
+                                <p>
+                                    B-currency的香港与国外运营团队，海外运营、，高级前端开发、测试分析数据、IOS工程师等区块链专业人士，业界顶尖资安顾问进行架构评估规划，在团队方面占领绝对的优势。</p>
+                                <p>
+                                    区块链展现了以密码技术为核心构建信息系统安全的新潮流。区块链技术发展将与密码技术的应用发展形成长期良性的互动，但密码技术在区块链领域发展过程中还将伴随着长期的挑战。应该积极推进以区块链技术服务于现实需求的应用落地，大力发展有多重安全保障体系，对于区块链的安全，应该积极构建完善的安全认证测评体系。</p>
+                                <p>
+                                    区块链作为一种新兴的互联网技术随着新产业的发展，区块链技术的潜力也在不断发展受到了各行业广泛的人关注，不同的国家企业纷纷投入，区块链涉及数据较多、技术复杂、相关技术人员短缺，创建一个可验证的一致性系统不是一件容易的事情。一个小错误（Bug）可能会破坏整个数据库，或者导致一些数据库与其他数据库不同，大量资金研发成本较高所需较多的时间去深入研究进度缓慢。</p>
+                                <p>
+                                    从目前来看区块链技术还是存在很大的泡沫，必须不断地更新完善更深一步的去科研，未来区块链趋势发展币元网的OBV交易法无论是交易所更新模式方面还是运营应用，都会对未来区块链的发展起到重大作用。</p>
+                                <img src="./img/3-1-1-1.jpg" style="margin: 2rem 0;">
+                                <h4>授权审核</h4>
+                                <p>新用户注册开户信息，并在后续进行正确的信息添加绑定，以建立您的个人资料的完整性和安全。自动化第三方评审系统及计算机文件信息探测器。</p>
+                                <h4>交易跟踪器</h4>
+                                <p>查看您的资金流动和支出，捕获交易收据和交易的图像，并自动跟踪购买形成数据订单。在交易执行时无价格滑点，双向6位数交易报价及快速交易执行。</p>
+                                <h4>交易市场</h4>
+                                <p>根据用户系统数据并选择接收数据值，通过我们的交易市场跟踪您的订单并获取订单详情数据分析做明确化嬴损率和数值。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="commonClass p3_1_3 orengeP3">
+                        <div class="orengeP3back commonClasspading">
+                            <div class="fontPage">
+                                <ul>
+                                    <li>
+                                        <img src="./img/3-1-2-1.png">
+                                        <h4>投資设置</h4>
+                                        <div>
+                                            Bcurrency平台设计交易跟随功能链接跟随者、交易员，分享他们的策略提高投资收益与意识，交易员由区块链经验丰富资深人员加入，平台无权篡改隐瞒交易员提供的数据，每个交易员的的下单数都是真实帐户的交易数据不存在虚假数据。
+                                        </div>
+                                    </li>
+                                    <li style="margin: 0 5%;">
+                                        <img src="./img/3-1-2-2.png">
+                                        <h4>市场分析</h4>
+                                        <div>
+                                            区块链数字货币随着技术的研发和创新适用于商业和其它金融投资的流通支付，更多的专业区块链技术和趋势被全球用户所信赖。以区块链技术为中心化使全球用户在近几年投身于区块链数字货币这个金融行业领域发展，由于市场部分虚拟数字资产导致破发潮和其他商业领域所发行的数字资产处于混乱崩溃，由于货币的涨跌浮动较大，无法处于长久持有币种增值，大多用户处于只有币，无法变现或价值缩水归零状态。
+
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <img src="./img/3-1-2-3.png">
+                                        <h4>运营机制</h4>
+                                        <div>
+                                            甄选严控数字货币，并汇聚主要流通的主流货币来进行投资或长期持有，不知名的币种势必会有财团拉涨和庄控，更多的投资散户无意识的被追涨杀跌所造成价值缩水的状况，导致资产损失，Bcurrency将为用户提供更多优质有价值的币种，真正做到无内幕、去中心化、公平、公正、公开、保护用户数字资产安全，让更多投资数字资产的用户做短线投资盈利。长线持币增值。
+
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="commonClasspading">
+                            <h1>为什么选择相信Bcurrency</h1>
+                            <div class="halfBox">
+                                <p>数字资产交易现状，盈利投资者仅占 2%</p>
+                                <img src="./img/3-1-3-1.png">
+                                <h4>当前的数字货币交易模式单一性缺乏稳定发展</h4>
+                                <span>
+                   当前市场行情，数字货币以井喷式的出现，数字货币真假难辨，由于信息和发行团队的伪装和，导致投资者容易持有一些空气币和虚拟币作为有价值并且持有，当市场处于震荡期或熊市，投资者处于弱势地位，并且孤立的交易，无良好的沟通机制，大部分投资者无法辨别行情走势做正确的投资交易。缺乏更多的投资交易策略和正确的交易投资概念。
+                  </span>
+                            </div>
+                            <div class="halfBox" style="float: right;">
+                                <p>B-currency资产交易平台，帮助投资者将盈利率提升至 20%</p>
+                                <img src="./img/3-1-3-2.png" style=" width: 64%;margin-left: 18%;">
+                                <h4>Bcurrency资产交易模式解决当下区块链 交易的痛点和创新 </h4>
+                                <span>
+                    严选数字币种，规避不良数字资产，当选主流货币 涨跌交易策略，使行情涨跌幅动过大时用户规避风险 行业透明化交易 让用户安心交易，无障碍交流 全行业即时互动， 提升盈利率跟随优秀交易策略
+                  </span>
+                            </div>
+                        </div>
+                        <div class="orengeP3back commonClasspading">
+                            <h1>从2%到20%,Bcurrency如何做到</h1>
+                            <p style="text-align: center;">严选数字货币 从源头上规避不良数字资产Bcurrency用户账户资金操作，均在相关钱包及系统化数据平台内交易。同时
+                                ，B-currency坚持行业高标准，严格甄选注册用户及交易员， 保障用户资金安全。Bcurrency甄选货币标准：
+                            </p>
+                            <img src="./img/3-1-3-5.jpg">
+                        </div>
+                        <div class="commonClasspading">
+                            <h1>3大核心产品 让交易不再无助</h1>
+                            <ul class="bottomUl">
+                                <li>
+                                    <h4>星级计划用户</h4>
+                                    <p>让用户利益不断增长</p>
+                                    <img src="./img/3-1-3-3.png">
+                                    <p>星级用户级别给您带</p>
+                                    <p>来更大的优势和发展</p>
+                                </li>
+                                <li>
+                                    <h4>B-currency交易跟随</h4>
+                                    <p>跟随交易策略效率更高</p>
+                                    <img src="./img/3-1-3-4.png">
+                                    <p>交易员推荐策略后，</p>
+                                    <p>可随时查看跟随交易</p>
+                                    <p>员策略下单</p>
+                                </li>
+                                <li>
+                                    <h4>密聊圈社群</h4>
+                                    <p>随时随地乐享沟通</p>
+                                    <img src="./img/3-1-3-5.png">
+                                    <p>随时随地与交易高</p>
+                                    <p> 手互动</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="pcjs/bottonPage.js"></script>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>热门交易排行榜</title>
+    <!--[if lt IE 9]>
+<script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.js"></script>
+<script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.js"></script>
+<![endif]-->
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/jquery.fullPage.css">
+    <script src="../js/jquery-3.1.0.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.fullPage.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.i18n.properties.js"></script>
+    <script src="../utils/utils.js"></script>
+</head>
+
+<body>
+<header>
+    <div class="row">
+        <div class="container">
+            <nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand logo" href="#">
+                            <img src="../img/logo.png">
+                        </a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav navList">
+                            <li>
+                                <a href="../index.html" data-locale="daohanglan.index">首页</a>
+                            </li>
+                            <li>
+                                <a href="../coinDetails.html" data-locale="daohanglan.bihangqing">OBV交易</a>
+                            </li>
+                            <li>
+                                <a href="../FaBiJiaoYi.html" data-locale="daohanglan.fabijiaoyi">法币交易</a>
+                            </li>
+
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-locale="daohanglan.remenjiaoyi"
+                                   data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">热门交易
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu hotTitle">
+                                    <li>
+                                        <a href="hotTradeCharts.html" data-locale="daohanglan.remenjiaoyiyuan">热门交易员</a>
+                                    </li>
+                                    <li>
+                                        <a href="hotTradeCharts.html?type=1"
+                                           data-locale="daohanglan.remenjiaoyipaihang">热门交易排行</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="../followProfit.html" data-locale="daohanglan.gensuizhe">跟随者</a>
+                            </li>
+                            <li>
+                                <a href="../tradeEndDynamic.html" data-locale="daohanglan.jiaoyidongtai">交易动态</a>
+                            </li>
+                            <li>
+                                <a href="../chatRoom.html" data-locale="daohanglan.liaotianshi">聊天室</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-locale="daohanglan.xinwenkuaixun"
+                                   data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">新闻快讯
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu hotTitle">
+                                    <li>
+                                        <a href="../newsPage.html?jumptype=0"
+                                           data-locale="daohanglan.xinwenzixun">新闻资讯</a>
+                                    </li>
+                                    <li>
+                                        <a href="../newsPage.html?jumptype=1" data-locale="daohanglan.kuaixun">快讯报道</a>
+                                    </li>
+                                    <li>
+                                        <a href="../noticePage.html" data-locale="daohanglan.gonggaotongzhi">公告通知</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right" id="sub_user_info">
+                            <li>
+                                <a href="login.html" data-locale="daohanglan.denglu">登录</a>
+                            </li>
+                            <li>
+                                <a href="#">|</a>
+                            </li>
+                            <li>
+                                <a href="register.html" data-locale="daohanglan.zhuce">注册</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                   aria-haspopup="true" aria-expanded="false">
+                                    <spab class="circleBtn">中文
+                                        <span class="caret"></span>
+                                    </spab>
+
+                                </a>
+                                <ul class="dropdown-menu language">
+                                    <li>
+                                        <a href="javascript:chooselanguage(1)">中文</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:chooselanguage(2)">English</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+<div class="container userProtocolBox">
+    <img src="../img/userinfor.png">
+    <p class="loginBtn">
+        <a href="javascript:history.go(-1);">我已知晓</a>
+    </p>
+</div>
+</body>
+<script>
+    var language;
+    $(function () {
+        language = window.localStorage.getItem("language");
+        if (language != undefined && language != null & language == 2) {
+            if (language == 2) {
+                loadProperties();
+            }
+        }
+    })
+</script>
+
+</html>

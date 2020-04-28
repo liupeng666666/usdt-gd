@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>登陆</title>
+    <!--[if lt IE 9]>
+<script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.js"></script>
+<script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.js"></script>
+<![endif]-->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <script src="../js/jquery-3.1.0.js"></script>
+    <script type="text/javascript" src="../js/jquery.i18n.properties.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../utils/date.js"></script>
+    <script src="../utils/utils.js"></script>
+    <script src="../pcjs/login.js"></script>
+    <style>
+
+    </style>
+</head>
+
+<body class="login">
+<div>
+    <header>
+        <div class="row">
+            <div class="container">
+                <nav class="navbar navbar-inverse">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <a class="navbar-brand logo" href="#">
+                                <img src="../img/logo.png">
+                            </a>
+                        </div>
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav navList">
+                                <li class="active">
+                                    <a href="../index.html" data-locale="daohanglan.index">首页</a>
+                                </li>
+                                <li>
+                                    <a href="../coinDetails.html" data-locale="daohanglan.bihangqing">OBV交易</a>
+                                </li>
+                                <li>
+                                    <a href="../../usdt-fb/FaBiJiaoYi-Wygm.html" data-locale="daohanglan.fabijiaoyi">法币交易</a>
+                                </li>
+
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-locale="daohanglan.remenjiaoyi"
+                                       data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">热门交易
+                                        <span class="caret"></span>
+                                    </a>
+                                    <ul class="dropdown-menu hotTitle">
+                                        <li>
+                                            <a href="../hotTradeCharts.html" data-locale="daohanglan.remenjiaoyiyuan">热门交易员</a>
+                                        </li>
+                                        <li>
+                                            <a href="../hotTradeCharts.html?type=1"
+                                               data-locale="daohanglan.remenjiaoyipaihang">热门交易排行</a>
+                                        </li>
+                                        <li>
+                                            <a href="../followProfit.html" data-locale="daohanglan.gensuizhe">跟随者</a>
+                                        </li>
+                                        <li>
+                                            <a href="../tradeEndDynamic.html" data-locale="daohanglan.jiaoyidongtai">交易动态</a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <a href="../chatRoom.html" data-locale="daohanglan.liaotianshi">聊天室</a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-locale="daohanglan.xinwenkuaixun"
+                                       data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">新闻快讯
+                                        <span class="caret"></span>
+                                    </a>
+                                    <ul class="dropdown-menu hotTitle">
+                                        <li>
+                                            <a href="../newsPage.html?jumptype=0" data-locale="daohanglan.xinwenzixun">新闻资讯</a>
+                                        </li>
+                                        <li>
+                                            <a href="../newsPage.html?jumptype=1"
+                                               data-locale="daohanglan.kuaixun">快讯报道</a>
+                                        </li>
+                                        <li>
+                                            <a href="../noticePage.html"
+                                               data-locale="daohanglan.gonggaotongzhi">公告通知</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <ul class="nav navbar-nav navbar-right" id="sub_user_info">
+                                <li class="nav-assets">
+                                    <a href="../usdt-fb/user-assets.html" class="dropdown-toggle-hover"><i
+                                            class="fas fa-wallet"></i><i data-locale="daohanglan.zichan">资产</i></a>
+                                    <div class="assets-pop">
+                                        <h3 data-locale="daohanglan.xianhuojiaoyi">现货交易账号</h3>
+                                        <table class="table-light" cellspacing="0" width="100%">
+                                            <thead>
+                                            <tr>
+                                                <th style="width: 30%;" class="text-left"
+                                                    data-locale="daohanglan.bizhong">币种
+                                                </th>
+                                                <th style="width: 30%;" data-locale="daohanglan.keyong">可用</th>
+                                                <th data-locale="daohanglan.dongjie">冻结</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody id="xhAssetInfo">
+                                            </tbody>
+                                        </table>
+                                        <h3 data-locale="daohanglan.fabijiaoyi">法币交易账号</h3>
+                                        <table class="table-light" cellspacing="0" width="100%">
+                                            <thead>
+                                            <tr>
+                                                <th style="width: 30%;" class="text-left"
+                                                    data-locale="daohanglan.bizhong">币种
+                                                </th>
+                                                <th style="width: 30%;" data-locale="daohanglan.keyong">可用</th>
+                                                <th data-locale="daohanglan.dongjie">冻结</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody id="assetInfo">
+                                            </tbody>
+                                        </table>
+                                        <div class="assets-pop-footer">
+                                            <a href="../usdt-fb/user-assets.html" data-locale="daohanglan.zichanguanli">资产管理</a>
+                                        </div>
+
+                                    </div>
+                                </li>
+                                <li class="nav-order">
+                                    <a href="../usdt-fb/order-list-OBV.html"><i class="fas fa-clipboard-list"></i><i
+                                            data-locale="daohanglan.dingdan">订单</i></a>
+                                </li>
+                                <li class="top_yc">
+                                    <a href="login.html" data-locale="daohanglan.denglu">登录</a>
+                                </li>
+                                <li class="top_yc">
+                                    <a href="#">|</a>
+                                </li>
+                                <li class="top_yc">
+                                    <a href="register.html" data-locale="daohanglan.zhuce">注册</a>
+                                </li>
+                                <li class="dropdown top_yc">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                       aria-haspopup="true" aria-expanded="false">
+                                        <spab class="circleBtn">中文
+                                            <span class="caret"></span>
+                                        </spab>
+
+                                    </a>
+                                    <ul class="dropdown-menu language">
+                                        <li>
+                                            <a href="javascript:chooselanguage(1)">中文</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:chooselanguage(2)">English</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div class="loginMain">
+        <div class="loginBox">
+            <div class="tabMian">
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active">
+                        <a href="#accountL" aria-controls="accountL" data-locale="login.zhanghaodenglu" role="tab"
+                           data-toggle="tab">账号登录</a>
+                    </li>
+                    <li role="presentation">
+                        <a href="#codeL" aria-controls="codeL" data-locale="login.erweimadenglu" role="tab"
+                           data-toggle="tab">二维码登录</a>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="accountL">
+                        <div class="accountLBox">
+                            <ul>
+                                <li>
+                                    <p data-locale="login.qingshuruzhanghao">请输入账户</p>
+                                    <input id="username" placeholder="手机号/邮箱" type="text">
+                                </li>
+                                <li>
+                                    <p data-locale="login.qingshurumima">请输入密码</p>
+                                    <input id="password" placeholder="密码" type="password">
+                                </li>
+                                <li>
+                                    <p id="login_yzm">
+                                        <font data-locale="login.tianxieyanzhengma">填写验证码</font><img id="login_yzm_img"
+                                                                                                     class="yzm"
+                                                                                                     src="../../usdtpc/auth/SubYanZhengMa"><i
+                                            class="glyphicon glyphicon-refresh yzmIcon" onclick="reloadYzmImg()"></i>
+                                    </p>
+                                    <input id="yzm" type="text" placeholder="4位验证码">
+                                </li>
+                            </ul>
+                            <p class="accountbottom">
+                                <a data-locale="login.wangjimima" href="modifyPassword.html">忘记密码?</a>|
+                                <a href="register.html" data-locale="login.zhuce">注册</a>
+                            </p>
+                            <p class="loginBtn">
+                                <a href="javascript:login()" data-locale="login.denglu">登录</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="codeL">
+                        <div class="codeLBox">
+                            <h3 data-locale="login.yongappsaoyisao">用APP扫一扫安全登录</h3>
+                            <div class="imgBox">
+                                <img id="scanLogin_img" src="../../usdtpc/auth/getUserLoginQrCode">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>

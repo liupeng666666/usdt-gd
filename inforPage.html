@@ -1,0 +1,1596 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>我的账户</title>
+    <!--[if lt IE 9]>
+<script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.js"></script>
+<script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.js"></script>
+<![endif]-->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/iconfont.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/inforPage.css">
+    <link rel="stylesheet" href="css/fb/style.css">
+    <script src="js/jquery-3.1.0.js"></script>
+    <script type="text/javascript" src="js/jquery.i18n.properties.js"></script>
+    <script type="text/javascript" src="js/reconnecting-websocket.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/inforPage.js"></script>
+    <script src="utils/date.js"></script>
+    <script src="utils/utils.js"></script>
+    <script src="dist/clipboard.min.js"></script>
+    <script src="pcjs/inforPage.js"></script>
+    <script src="../usdt-fb/whpjs/public.js"></script>
+
+</head>
+
+<body>
+<div class="dialogBox" id="band_email" style="display: none;">
+    <div class="mask"></div>
+    <div class="paymentBox">
+        <h3>提示</h3>
+        <p id="hint_content">请您先绑定邮箱</p>
+        <div>
+            <a onclick="hideBandEmail()">取消</a>
+            <a onclick="showDialog('.modifyemail')">确认</a>
+        </div>
+    </div>
+</div>
+<div class="dialogBox" id="register_hint" style="display: none;">
+    <div class="mask"></div>
+    <div class="paymentBox">
+        <h3>提示</h3>
+        <p id="hint_content">确认支付10USDT查看TA的订单推荐？</p>
+        <div>
+            <a onclick="hideHint()">取消</a>
+            <a onclick="hideHint()">确认</a>
+        </div>
+    </div>
+</div>
+<div class="dialogBox" id="update_hint" style="display: none;">
+    <div class="mask"></div>
+    <div class="paymentBox">
+        <h3>提示</h3>
+        <p id="tishi_content">修改成功</p>
+        <div>
+            <a onclick="update_hint_hide()">取消</a>
+            <a onclick="update_hint_hide()">确定</a>
+        </div>
+    </div>
+</div>
+
+<div class="dialogBox" id="modify_dialogbox" style="display: none;">
+    <div class="mask"></div>
+    <div class="dialogMian modifyPassword" id="modifyPassword" style="display: none;">
+        <h3>
+            <span data-locale="infor.mimaxiugai">密码修改</span>
+            <i class="glyphicon glyphicon-remove" onclick="hideChangeDialog('#modifyPassword')"></i>
+        </h3>
+        <div class="dialogContent">
+            <div class="dialogList">
+                <p data-locale="infor.jiumima">旧密码</p>
+                <input id="oldpassword" type="password">
+                <p id="oldpassword_text" class="redColor"></p>
+            </div>
+            <div class="dialogList">
+                <p data-locale="infor.xinmima">新密码</p>
+                <input id="newpassword" type="password">
+                <p id="newpassword_text" class="redColor"></p>
+            </div>
+            <div class="dialogList">
+                <p data-locale="infor.chongfuxinmima">重复新密码</p>
+                <input id="retpassword" type="password">
+                <p id="retpassword_text" class="redColor"></p>
+            </div>
+            <a href="javascript:changPassword();" class="saveBtn" data-locale="infor.baocun">保存</a>
+            <p class="saveSuccese">
+                <span id="password_sava" onclick="hideChangeDialog('#modifyPassword')">取消</span>
+            </p>
+        </div>
+    </div>
+    <div class="dialogMian modifyPassword" id="modifyTradePassword" style="display: none;">
+        <h3>
+            <span data-locale="infor.jiaoyimimaxiugai">交易密码修改</span>
+            <i class="glyphicon glyphicon-remove" onclick="hideChangeDialog('#modifyTradePassword')"></i>
+        </h3>
+        <div class="dialogContent">
+            <div class="dialogList">
+                <p data-locale="infor.jiumima">旧密码</p>
+                <input id="oldtradepassword" type="password">
+                <p id="oldtradepassword_text" class="redColor"></p>
+            </div>
+            <div class="dialogList">
+                <p data-locale="infor.xinmima">新密码</p>
+                <input id="newtradepassword" type="password">
+                <p id="newtradepassword_text" class="redColor"></p>
+            </div>
+            <div class="dialogList">
+                <p data-locale="infor.chongfuxinmima">重复新密码</p>
+                <input id="rettradepassword" type="password">
+                <p id="rettradepassword_text" class="redColor"></p>
+            </div>
+            <a href="javascript:changTradePassword();" class="saveBtn" data-locale="infor.baocun">保存</a>
+            <p class="saveSuccese">
+                <span id="tradepassword_save" onclick="hideChangeDialog('#modifyTradePassword')">取消</span>
+            </p>
+        </div>
+    </div>
+    <div class="dialogMian modifyPhone" style="display: none;">
+        <h3>
+            <span data-locale="infor.shoujihaoxiugai">手机号修改</span>
+            <i class="glyphicon glyphicon-remove" onclick="hideChangeDialog('.modifyPhone')"></i>
+        </h3>
+        <div class="dialogContent">
+            <!--  <div class="dialogList">
+  <p data-locale="infor.yuanshoujihao">原手机号</p>
+  <input id="oldphone" readonly="readonly" type="text">
+  <p id="oldphone_text"  class="redColor"></p>
+</div> -->
+            <div class="dialogList">
+                <p data-locale="infor.xinshoujihao">手机号</p>
+                <input id="newphone" type="text">
+                <p id="newphone_text" class="redColor"></p>
+            </div>
+            <div class="dialogList">
+                <p data-locale="infor.duanxinyanzhengma">短信验证码</p>
+                <div class="form-group">
+                    <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
+                    <div class="input-group">
+                        <input type="text" id="smcode" class="form-control">
+                        <div data-locale="infor.yanzhengma" onclick="sendSMCode()" id="register_phone_code"
+                             class="input-group-addon">验证码
+                        </div>
+                    </div>
+                </div>
+                <p id="smcode_text" class="redColor"></p>
+            </div>
+            <a href="javascript:changePhone()" class="saveBtn" data-locale="infor.baocun">保存</a>
+            <p class="saveSuccese">
+                <span id="phone_save" onclick="hideChangeDialog('#modifyTradePassword')">取消</span>
+            </p>
+        </div>
+    </div>
+    <div class="dialogMian modifyemail" style="display: none;">
+        <h3>
+            <span data-locale="infor.xiugaiyouxiang">修改邮箱</span>
+            <i class="glyphicon glyphicon-remove" onclick="hideChangeDialog('.modifyemail')"></i>
+        </h3>
+        <div class="dialogContent">
+            <!-- <div class="dialogList">
+  <p data-locale="infor.jiuyouxiangdizhi">原邮箱地址</p>
+  <input id="oldemail" readonly="readonly" type="text">
+  <p id="oldemail_text"  class="redColor"></p>
+</div> -->
+            <div class="dialogList">
+                <p data-locale="infor.xinyouxiangdizhi">邮箱地址</p>
+                <input id="newemail" type="text">
+                <p id="newemail_text" class="redColor"></p>
+            </div>
+            <div class="dialogList">
+                <p data-locale="infor.yanzhengma">验证码</p>
+                <div class="form-group">
+                    <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
+                    <div class="input-group">
+                        <input type="text" id="emailcode" class="form-control">
+                        <div class="input-group-addon" onclick="sendEmailCode()" id="register_email_code"
+                             data-locale="infor.yanzhengma">验证码
+                        </div>
+                    </div>
+                </div>
+                <p id="emailcode_text" class="redColor"></p>
+            </div>
+            <a href="javascript:changeEmail();" data-locale="infor.baocun" class="saveBtn">保存</a>
+            <p class="saveSuccese">
+                <span id="email_save" onclick="hideChangeDialog('#modifyTradePassword')">取消</span>
+            </p>
+        </div>
+    </div>
+    <div class="dialogMian modifyhederImg" style="display: none;">
+        <h3>
+            <span data-locale="infor.xiugaitouxiang">修改头像</span>
+            <i class="glyphicon glyphicon-remove" onclick="hideChangeDialog('.modifyhederImg')"></i>
+        </h3>
+        <div class="dialogContent">
+            <img id="info_img" onclick="chooseFile()" src="img/add.png">
+            <input type="file" onchange="cutImg()" accept="。png,.jpeg,.jpg" id="imgfile" style="display: none;">
+            <a href="javascript:changeUserImg();" data-locale="infor.baocun" class="saveBtn">保存</a>
+            <p class="saveSuccese">
+                <span id="img_save" onclick="hideChangeDialog('.modifyhederImg')">取消</span>
+            </p>
+        </div>
+    </div>
+</div>
+<div class="navBox">
+    <ul>
+        <li onclick="window.location.href='noticePage.html'"><img src="img/notice.png"></li>
+        <li onclick="choiseApp()" class="choiseAppH">
+            <img src="img/APPdown.png">
+        </li>
+        <li onclick="choiseOnline();websocketConnection();" class="onlinec">
+            <img src="img/Online.png">
+        </li>
+    </ul>
+</div>
+<div class="choiseApp">
+    <div>
+        <img src="img/anzhuo.png">
+        <p>安卓</p>
+    </div>
+    <div>
+        <img src="img/pingguo.png">
+        <p>苹果</p>
+    </div>
+</div>
+<div class="customService">
+    <div class="sheaer">
+        客服小二
+        <a onclick="hidecustomService()">
+            <span></span>
+        </a>
+    </div>
+    <div class="sContent" id="kefu_message">
+        <!--  <div class="messageBox guestmessage">
+        <p>系统22:12:12</p>
+        <div>我想咨询一下</div>
+    </div>
+    <div class="messageBox guestmessage">
+        <p>系统22:12:12</p>
+        <div>我想咨询一下</div>
+    </div>
+    <div class="messageBox">
+        <p>系统22:12:12</p>
+        <div>您好，很高兴为您服务</div>
+    </div> -->
+    </div>
+    <div class="sBottom">
+        <textarea id="kefu_sendmessage"></textarea>
+        <button type="button" onclick="sendKefuMessage()">发送</button>
+    </div>
+</div>
+<!-- <header>
+    <div class="row">
+        <div class="container">
+            <nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand logo" href="index.html">
+                            <img src="img/logo.png">
+                        </a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav navList">
+                            <li>
+                                <a href="index.html" data-locale="daohanglan.index">首页</a>
+                            </li>
+                            <li>
+                                <a href="coinDetails.html" data-locale="daohanglan.bihangqing">OBV交易</a>
+                            </li>
+                            <li>
+                                <a href="FaBiJiaoYi.html" data-locale="daohanglan.fabijiaoyi">法币交易</a>
+                            </li>
+
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-locale="daohanglan.remenjiaoyi" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">热门交易
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu hotTitle">
+                                    <li>
+                                        <a href="hotTradeCharts.html" data-locale="daohanglan.remenjiaoyiyuan">热门交易员</a>
+                                    </li>
+                                    <li>
+                                        <a href="hotTradeCharts.html?type=1" data-locale="daohanglan.remenjiaoyipaihang">热门交易排行</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="followProfit.html" data-locale="daohanglan.gensuizhe">跟随者</a>
+                            </li>
+                            <li>
+                                <a href="tradeEndDynamic.html" data-locale="daohanglan.jiaoyidongtai">交易动态</a>
+                            </li>
+                            <li>
+                                <a href="chatRoom.html" data-locale="daohanglan.liaotianshi">聊天室</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-locale="daohanglan.xinwenkuaixun" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">新闻快讯
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu hotTitle">
+                                    <li>
+                                        <a href="newsPage.html?jumptype=0" data-locale="daohanglan.xinwenzixun">新闻资讯</a>
+                                    </li>
+                                    <li>
+                                        <a href="newsPage.html?jumptype=1" data-locale="daohanglan.kuaixun">快讯报道</a>
+                                    </li>
+                                    <li>
+                                        <a href="noticePage.html" data-locale="daohanglan.gonggaotongzhi">公告通知</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right" id="sub_user_info">
+                            <li>
+                                <a href="login/login.html" data-locale="daohanglan.denglu">登录</a>
+                            </li>
+                            <li>
+                                <a href="#">|</a>
+                            </li>
+                            <li>
+                                <a href="login/register.html" data-locale="daohanglan.zhuce">注册</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                    <spab class="circleBtn">中文
+                                        <span class="caret"></span>
+                                    </spab>
+
+                                </a>
+                                <ul class="dropdown-menu language">
+                                    <li>
+                                        <a href="javascript:chooselanguage(1)">中文</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:chooselanguage(2)">English</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+</header> -->
+
+<header>
+    <div class="row">
+        <div class="container">
+            <nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand logo" href="#">
+                            <img src="img/logo.png">
+                        </a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav navList">
+                            <li>
+                                <a href="index.html" data-locale="daohanglan.index">首页</a>
+                            </li>
+                            <li>
+                                <a href="coinDetails.html" data-locale="daohanglan.bihangqing">OBV交易</a>
+                            </li>
+                            <li>
+                                <a href="../usdt-fb/FaBiJiaoYi-Wygm.html" data-locale="daohanglan.fabijiaoyi">法币交易</a>
+                            </li>
+
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-locale="daohanglan.remenjiaoyi"
+                                   data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">热门交易
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu hotTitle">
+                                    <li>
+                                        <a href="hotTradeCharts.html" data-locale="daohanglan.remenjiaoyiyuan">热门交易员</a>
+                                    </li>
+                                    <li>
+                                        <a href="hotTradeCharts.html?type=1"
+                                           data-locale="daohanglan.remenjiaoyipaihang">热门交易排行</a>
+                                    </li>
+                                    <li>
+                                        <a href="followProfit.html" data-locale="daohanglan.gensuizhe">跟随者</a>
+                                    </li>
+                                    <li>
+                                        <a href="tradeEndDynamic.html" data-locale="daohanglan.jiaoyidongtai">交易动态</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a href="chatRoom.html" data-locale="daohanglan.liaotianshi">聊天室</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-locale="daohanglan.xinwenkuaixun"
+                                   data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">新闻快讯
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu hotTitle">
+                                    <li>
+                                        <a href="newsPage.html?jumptype=0" data-locale="daohanglan.xinwenzixun">新闻资讯</a>
+                                    </li>
+                                    <li>
+                                        <a href="newsPage.html?jumptype=1" data-locale="daohanglan.kuaixun">快讯报道</a>
+                                    </li>
+                                    <li>
+                                        <a href="noticePage.html" data-locale="daohanglan.gonggaotongzhi">公告通知</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right" id="sub_user_info">
+                            <li class="nav-assets">
+                                <a href="../usdt-fb/user-assets.html" class="dropdown-toggle-hover"><i
+                                        class="fas fa-wallet"></i><i data-locale="daohanglan.zichan">资产</i></a>
+                                <div class="assets-pop">
+                                    <h3 data-locale="daohanglan.xianhuojiaoyi">现货交易账号</h3>
+                                    <table class="table-light" cellspacing="0" width="100%">
+                                        <thead>
+                                        <tr>
+                                            <th style="width: 30%;" class="text-left" data-locale="daohanglan.bizhong">
+                                                币种
+                                            </th>
+                                            <th style="width: 30%;" data-locale="daohanglan.keyong">可用</th>
+                                            <th data-locale="daohanglan.dongjie">冻结</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody id="xhAssetInfo">
+                                        </tbody>
+                                    </table>
+                                    <h3 data-locale="daohanglan.fabijiaoyi">法币交易账号</h3>
+                                    <table class="table-light" cellspacing="0" width="100%">
+                                        <thead>
+                                        <tr>
+                                            <th style="width: 30%;" class="text-left" data-locale="daohanglan.bizhong">
+                                                币种
+                                            </th>
+                                            <th style="width: 30%;" data-locale="daohanglan.keyong">可用</th>
+                                            <th data-locale="daohanglan.dongjie">冻结</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody id="assetInfo">
+                                        </tbody>
+                                    </table>
+                                    <div class="assets-pop-footer">
+                                        <a href="../usdt-fb/user-assets.html"
+                                           data-locale="daohanglan.zichanguanli">资产管理</a>
+                                    </div>
+
+                                </div>
+                            </li>
+                            <li class="nav-order">
+                                <a href="../usdt-fb/order-list-OBV.html"><i class="fas fa-clipboard-list"></i><i
+                                        data-locale="daohanglan.dingdan">订单</i></a>
+                            </li>
+                            <li class="top_yc">
+                                <a href="login/login.html" data-locale="daohanglan.denglu">登录</a>
+                            </li>
+                            <li class="top_yc">
+                                <a href="#">|</a>
+                            </li>
+                            <li class="top_yc">
+                                <a href="login/register.html" data-locale="daohanglan.zhuce">注册</a>
+                            </li>
+                            <li class="dropdown top_yc">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                   aria-haspopup="true" aria-expanded="false">
+                                    <spab class="circleBtn">中文
+                                        <span class="caret"></span>
+                                    </spab>
+
+                                </a>
+                                <ul class="dropdown-menu language">
+                                    <li>
+                                        <a href="javascript:chooselanguage(1)">中文</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:chooselanguage(2)">English</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<div class="inforBox">
+    <div class="row no-gutter">
+        <div class="container">
+            <div class="col-md-2">
+                <div class="leftsidebar_box">
+                    <dl class="system_log">
+                        <dt class="Inforactive" onClick="showPage('account')">
+                            <span></span>
+                            <img src="img/accountC.png"><font data-locale="infor.wodezhanghu">我的账户</font></dt>
+                        <dd>
+                            <a onclick="showPage('recharge')" data-locale="infor.chongbi">充币</a>
+                        </dd>
+                        <dd>
+                            <a onclick="showPage('getDeposit')" data-locale="infor.tibi">提币</a>
+                        </dd>
+                        <dd>
+                            <a onclick="showPage('capitalLog')" data-locale="infor.zijinjilu">资金记录</a>
+                        </dd>
+                        <dd>
+                            <a onclick="showPage('brokerageLog')" data-locale="infor.yongjinjilu">佣金记录</a>
+                        </dd>
+                    </dl>
+                    <dl class="channel">
+                        <dt onClick="showPage('zhanghuxiangqing')">
+                            <span></span>
+                            <img src="img/certification.png"><font data-locale="infor.shimingrenzhen">账户详情</font></dt>
+                    </dl>
+                    <dl class="custom">
+                        <dt>
+                            <span></span>
+                            <img src="img/ownset.png"><font data-locale="infor.gerenshezhi">个人设置</font></dt>
+                        <dd>
+                            <a onclick="showPage('frex')" data-locale="infor.gerenxinxi">个人信息</a>
+                        </dd>
+                        <dd>
+                            <a onclick="showPage('perfectUserInfo')" data-locale="infor.wanshanjibenxinxi">完善基本信息</a>
+                        </dd>
+                        <dd>
+                            <a onclick="showPage('securitySettings')" data-locale="infor.anquanshezhi">安全设置</a>
+                        </dd>
+                    </dl>
+                    <dl class="channel">
+                        <dt onClick="showPage('certification')">
+                            <span></span>
+                            <img src="img/certification.png"><font data-locale="infor.shimingrenzhen">实名认证</font></dt>
+                    </dl>
+                    <!--  <dl class="app">
+      <a href="personalDetails.html">
+        <dt>
+          <span></span>
+          <img src="img/ownset.png" ><font data-locale="infor.gerenxiangqing">个人详情</font></dt>
+      </a>
+    </dl> -->
+                </div>
+            </div>
+            <div class="col-md-10">
+                <div class="contentBox">
+                    <div class="commonClass account">
+                        <div>
+                            <div class="accountTop">
+                                <img src="img/accontIcon.png">
+                                <div class="topTototal">
+                                    <font data-locale="infor.zichanzongji">资产总计</font>
+                                    <i>|</i>
+                                </div>
+                                <p>
+                                    <font data-locale="infor.zongshouyi"> 总收益</font>：
+                                    <span class="orangeColor" id="info_title_zongshouyi">-</span>
+                                </p>
+                                <p>
+                                    <font data-locale="infor.zongruji"> 总入金</font>：
+                                    <span id="info_title_zongrujin">-</span>
+                                </p>
+                                <p>
+                                    <font data-locale="infor.yue">余额</font>：
+                                    <span id="info_title_yue">-</span>
+                                </p>
+                            </div>
+                            <div class="accountTable">
+                                <div class="rechargeLog">
+                                    <ul>
+                                        <li class="logList">
+                                            <span data-locale="infor.bizhong">币种</span>
+                                            <span data-locale="infor.zonge">总额</span>
+                                            <span data-locale="infor.dongjie">冻结</span>
+                                            <span data-locale="infor.yue">余额</span>
+                                            <span data-locale="infor.caozuo">操作</span>
+                                        </li>
+                                        <li class="logInfor">
+                                            <span class="fontweight">USDT</span>
+                                            <span id="infor_page_money_zonge">$0</span>
+                                            <span id="infor_page_money_dongjie" class="redColor">$0</span>
+                                            <span id="infor_page_money_yue" class="greenColor">$0</span>
+                                            <span>
+                          <a onclick="showPage('recharge')" class="recharge" data-locale="infor.chongbi">充币</a>
+                          <a onclick="showPage('getDeposit')" data-locale="infor.tibi" class="recharge">提币</a>
+                        </span>
+                                        </li>
+                                        <li class="logInfor">
+                                            <span class="fontweight">BRU</span>
+                                            <span id="report_money_zonge">0</span>
+                                            <span id="report_money_dongjie" class="redColor">0</span>
+                                            <span id="report_money_yue" class="greenColor">0</span>
+                                            <span>
+                          <a class="recharge" data-locale="infor.chongbi">充币</a>
+                          <a data-locale="infor.tibi" class="recharge">提币</a>
+                        </span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!--  <div class="pageBox">
+            <nav aria-label="Page navigation">
+              <ul class="pagination">
+                <li>
+                  <a href="#" aria-label="Previous">
+                    <span aria-hidden="true">上一页</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">1</a>
+                </li>
+                <li>
+                  <a href="#">2</a>
+                </li>
+                <li>
+                  <a href="#">3</a>
+                </li>
+                <li>
+                  <a href="#">4</a>
+                </li>
+                <li>
+                  <a href="#">5</a>
+                </li>
+                <li>
+                  <a href="#" aria-label="Next">
+                    <span aria-hidden="true">下一页</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="commonClass recharge" style="display: none;">
+                        <div class="rechargeMain getDepositBox">
+                            <h3 data-locale="infor.chongbi">充币</h3>
+                            <div class="depositList">
+                                <p>
+                                    <span data-locale="infor.xuanzhebizhong">选择币种</span>
+                                    <select id="currency2">
+                                        <option value="usdt">USDT</option>
+                                    </select>
+                                </p>
+                            </div>
+                            <p data-locale="infor.chongzhidizhi">充值地址</p>
+                            <div class="inputBox">
+                                <input readonly="readonly" id="cm_sys_wallet" value="" placeholder="">
+                                <button id="cm_sys_wallet_copy" onclick="copy();" data-clipboard-action="copy"
+                                        data-clipboard-target="#cm_sys_wallet" data-locale="infor.dianjifuzhidizhi">
+                                    点击复制地址
+                                </button>
+                            </div>
+                            <div class="codeBox">
+                                <img src="img/code.png" id="cbaddress">
+                                <div class="reminderBox">
+                                    <p data-locale="infor.wenxintishi">温馨提示</p>
+                                    <p data-locale="infor.wenxintishi1">-禁止使用合约地址，因此造成的损失将无法挽回</p>
+                                    <p data-locale="infor.wenxintishi2">-任何冲入***地址的非**资产将不可找回</p>
+                                    <p data-locale="infor.wenxintishi3">-实用**地址充值需要网络确认</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rechargeLog">
+                            <h4 data-locale="infor.chongzhijilu">充值记录</h4>
+                            <ul id="recharge_usdt">
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="commonClass getDeposit" style="display: none;">
+                        <div class="rechargeMain getDepositBox">
+                            <h3 data-locale="infor.tibi">提币</h3>
+                            <div class="depositList">
+                                <p>
+                                    <span data-locale="infor.xuanzhebizhong">选择币种</span>
+                                    <select id="currency">
+                                        <option value="usdt">USDT</option>
+                                    </select>
+                                </p>
+                            </div>
+                            <div class="depositList">
+                                <p>
+                                    <span data-locale="infor.tixiandizhi">提现地址</span>
+                                    <input type="text" value="" id="sub_wallet_id">
+                                </p>
+                                <p>
+                                    <span data-locale="infor.tixianshuliang">提现数量</span>
+                                    <input type="text" value="" onkeyup="value=value.replace(/[^\d]/g,'')"
+                                           placeholder="请输入数字" id="sub_wd_money">
+                                    <i data-locale="infor.tixianshuliang1" id="user_withdrawal_limit">最少100USDT,一次最多100000USDT</i>
+                                </p>
+                            </div>
+                            <div class="depositList">
+                                <p>
+                                    <span data-locale="infor.shouxuefei">手续费</span>
+                                    <input type="text" readonly="readonly" value="5" id="sub_wd_trade">
+                                </p>
+                                <p>
+                                    <span data-locale="infor.zijinmima">资金密码</span>
+                                    <input type="password" value="" id="sub_wd_tradepassword">
+                                </p>
+                            </div>
+                            <div class="depositList">
+                                <p class="yzm">
+                                    <span data-locale="infor.duanxinyanzhengma">短信验证码</span>
+                                    <input type="text" value="" id="sub_wd_smcode">
+                                    <a href="javascript:sendYZSMCode(1)" id="tixian_phone_code"
+                                       data-locale="infor.fasongyanzhengma">发送验证码</a>
+                                </p>
+                                <p>
+                                    <span data-locale="infor.gugeyanzhengma">谷歌验证码</span>
+                                    <input type="text" value="" id="sub_wd_googlecode">
+                                </p>
+                            </div>
+                            <p class="depositListBox">
+                                <a href="javascript:withdrawDeposit();" class="submitBtn"
+                                   data-locale="infor.tijiao">提交</a>
+                            </p>
+
+                            <span class="promptBox" data-locale="infor.tixiantishi">
+                  提示：在上面的输入框中，输入您要提现的USTD钱包地址和USDT提现数额，并填写您的资金密码，点击获取短信验证码或电话语音验证码之后，把收到的验证码填入，输入谷歌验证码。在确认填写无误后，点击“提交提现申请”按钮提交。您的申请将立即或者几个小时内被处理。
+                </span>
+                        </div>
+                        <div class="rechargeLog">
+                            <h4 data-locale="infor.tibijilu">提币记录</h4>
+                            <ul id="withdraw_deposit_li">
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="commonClass capitalLog" style="display: none;">
+                        <div class="tabMian">
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li role="presentation" class="active">
+                                    <a href="#orderlog" aria-controls="orderlog" role="tab" data-toggle="tab"
+                                       data-locale="infor.xiadanjilu">下单记录</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#settle" aria-controls="settle" role="tab" data-toggle="tab"
+                                       data-locale="infor.yingkuijiesuan">盈亏结算</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#pay" aria-controls="pay" role="tab" data-toggle="tab"
+                                       data-locale="infor.fufei">付费/收费</a>
+                                </li>
+                            </ul>
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane active" id="orderlog">
+                                    <ul class="orderlogBox" id="place_order_li">
+
+                                    </ul>
+                                    <div class="pageBox">
+                                        <nav aria-label="Page navigation">
+                                            <ul class="pagination" id="place_order_li_page">
+                                                <li id="pd_prev_page">
+                                                </li>
+                                                <li id="pd_page_1"></li>
+                                                <li id="pd_page_2"></li>
+                                                <li id="pd_page_3"></li>
+                                                <li id="pd_page_4"></li>
+                                                <li id="pd_page_5"></li>
+                                                <li id="pd_next_page">
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane" id="settle">
+                                    <ul class="orderlogBox" id="profit_loss_li">
+
+                                    </ul>
+                                    <div class="pageBox">
+                                        <nav aria-label="Page navigation">
+                                            <ul class="pagination" id="profit_loss_li_page">
+                                                <li id="pl_prev_page">
+                                                </li>
+                                                <li id="pl_page_1"></li>
+                                                <li id="pl_page_2"></li>
+                                                <li id="pl_page_3"></li>
+                                                <li id="pl_page_4"></li>
+                                                <li id="pl_page_5"></li>
+                                                <li id="pl_next_page">
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane" id="pay">
+                                    <ul class="orderlogBox payBox" id="pay_li">
+                                        <!-- <li>
+                <span>00355</span>
+                <span>订单</span>
+                <span>付费</span>
+                <span>余额</span>
+                <span>-5USDT</span>
+              </li>
+              <li>
+                <span>00355</span>
+                <span>订单</span>
+                <span>付费</span>
+                <span>余额</span>
+                <span>-5USDT</span>
+              </li>
+              <li>
+                <span>00355</span>
+                <span>订单</span>
+                <span>付费</span>
+                <span>余额</span>
+                <span>-5USDT</span>
+              </li>
+              <li>
+                <span>00355</span>
+                <span>订单</span>
+                <span>付费</span>
+                <span>余额</span>
+                <span>-5USDT</span>
+              </li> -->
+                                    </ul>
+                                    <div class="pageBox">
+                                        <nav aria-label="Page navigation">
+                                            <ul class="pagination" id="pay_li_page">
+                                                <li id="p_prev_page">
+                                                </li>
+                                                <li id="p_page_1"></li>
+                                                <li id="p_page_2"></li>
+                                                <li id="p_page_3"></li>
+                                                <li id="p_page_4"></li>
+                                                <li id="p_page_5"></li>
+                                                <li id="p_next_page">
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="commonClass personalInfro frex" style="display: none;">
+                        <div>
+                            <ul>
+                                <li>
+                                    <h4 data-locale="infor.gerenxinxi">个人信息</h4>
+                                    <div class="oinforBox">
+                                        <div class="inforList">
+                                            <span class="headerImg" data-locale="infor.touxiang">头像：</span>
+                                            <div class="inforcenter" onclick="showDialog('.modifyhederImg');"
+                                                 id="info_img_show">
+                                                <img src="img/head.png">
+                                            </div>
+                                        </div>
+                                        <div class="inforList">
+                                            <span data-locale="infor.zhanghao">账号：</span>
+                                            <div class="inforcenter">
+                                                <input type="text" readonly="readonly" id="info_username" value="">
+                                            </div>
+                                        </div>
+                                        <div class="inforList">
+                                            <span data-locale="infor.nicheng">昵称：</span>
+                                            <div class="inforcenter">
+                                                <input type="text" id="info_nickname" value="">
+                                            </div>
+                                            <!--  <a href="javascript:changeUserInfo(1)" data-locale="infor.xiugai">修改</a> -->
+                                        </div>
+                                        <div class="inforList" readonly="readonly" id="info_first_register">
+                                            <span data-locale="infor.shoujihao">手机号：</span>
+                                            <div class="inforcenter">
+                                                <input type="text" readonly="readonly" id="info_phone" value="">
+                                            </div>
+                                            <a id="info_phone_change_btn" href="javascript:showDialog('.modifyPhone')"
+                                               data-locale="infor.xiugai">绑定</a>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="commonClass personalInfro perfectUserInfo" style="display: none;">
+                        <div>
+                            <ul>
+                                <li>
+                                    <h4 data-locale="infor.wanshanjibenxinxi">完善基本信息</h4>
+                                    <div class="oinforBox">
+                                        <div class="inforList">
+                                            <span data-locale="infor.xingbie">性别：</span>
+                                            <div class="inforcenter">
+                                                <div>
+                                                    <label>
+                                                        <input type="radio" value="1" name="demo-radio"><font
+                                                            data-locale="infor.nan">男</font></label>
+                                                    <label>
+                                                        <input type="radio" value="2" name="demo-radio"><font
+                                                            data-locale="infor.nv">女</font></label>
+                                                    <label>
+                                                        <input type="radio" value="0" name="demo-radio"><font
+                                                            data-locale="infor.weizhi">未知</font></label>
+                                                </div>
+                                            </div>
+                                            <a href="javascript:changeUserInfo(2)" data-locale="infor.xiugai">修改</a>
+                                        </div>
+                                        <div class="inforList">
+                                            <span data-locale="infor.diqu">地区：</span>
+                                            <div class="inforcenter">
+                                                <input type="text" id="info_region" value="未填写"
+                                                       style="border: 1px solid #b3b1ae;">
+                                            </div>
+                                            <a href="javascript:changeUserInfo(3)" data-locale="infor.xiugai">修改</a>
+                                        </div>
+                                        <div class="inforList">
+                                            <span data-locale="infor.aihao">爱好：</span>
+                                            <div class="inforcenter">
+                                                <input type="text" id="info_hobby" value="未填写"
+                                                       style="border: 1px solid #b3b1ae;">
+                                            </div>
+                                            <a href="javascript:changeUserInfo(4)" data-locale="infor.xiugai">修改</a>
+                                        </div>
+                                        <div class="inforList">
+                                            <span data-locale="infor.shezulingyuduojiu">涉足领域（）多久：</span>
+                                            <div class="inforcenter">
+                                                <input type="text" id="info_dabble_time" value="未填写"
+                                                       style="border: 1px solid #b3b1ae;">
+                                            </div>
+                                            <a href="javascript:changeUserInfo(5)" data-locale="infor.xiugai">修改</a>
+                                        </div>
+                                        <div class="inforList">
+                                            <span data-locale="infor.shezulingyuduojiu">交易策略：</span>
+                                            <div class="inforcenter">
+                                                <input type="text" id="info_trading_strategy" value="未填写"
+                                                       style="border: 1px solid #b3b1ae;">
+                                            </div>
+                                            <a href="javascript:changeUserInfo(11)" data-locale="infor.xiugai">修改</a>
+                                        </div>
+                                        <div class="inforList">
+                                            <span data-locale="infor.shezulingyuduojiu">个人简介：</span>
+                                            <div class="inforcenter">
+                                                <input type="text" id="info_signature" value="未填写"
+                                                       style="border: 1px solid #b3b1ae;">
+                                            </div>
+                                            <a href="javascript:changeUserInfo(12)" data-locale="infor.xiugai">修改</a>
+                                        </div>
+                                        <div class="inforList">
+                                            <span data-locale="infor.zhuceshijian">注册时间：</span>
+                                            <div class="inforcenter">
+                                                <input type="text" id="info_createtime" class="grayColor"
+                                                       value="2018-09-20">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="commonClass personalInfro securitySettings" style="display: none;">
+                        <div>
+                            <ul>
+                                <li>
+                                    <h4 data-locale="infor.anquanshezhi">安全设置</h4>
+                                    <div class="oinforBox">
+                                        <div class="inforList" id="info_other_bind">
+                                            <span data-locale="infor.bangdingyouxiang">绑定邮箱：</span>
+                                            <div class="inforcenter">
+                                                <input id="info_email" readonly="readonly" type="text" value="未绑定">
+                                            </div>
+                                            <a id="info_email_change_btn" href="javascript:showDialog('.modifyemail');"
+                                               data-locale="infor.xiugai">绑定</a>
+                                        </div>
+                                        <div class="inforList">
+                                            <span data-locale="infor.denglumima">登录密码：</span>
+                                            <div class="inforcenter">
+                                                <input id="info_password" value="" type="password">
+                                            </div>
+                                            <a href="javascript:showDialog('#modifyPassword')"
+                                               data-locale="infor.xiugai">修改</a>
+                                        </div>
+                                        <div class="inforList">
+                                            <span data-locale="infor.jiaoyimima">交易密码：</span>
+                                            <div class="inforcenter">
+                                                <input id="info_trade_password" value="" type="password">
+                                            </div>
+                                            <a href="javascript:showDialog('#modifyTradePassword')"
+                                               data-locale="infor.xiugai">修改</a>
+                                        </div>
+                                        <div class="inforList">
+                                            <span data-locale="infor.gugeyanzheng">谷歌验证：</span>
+                                            <div class="inforcenter">
+                                                <input type="text" id="infor_is_google_auth" value="未开启验证">
+                                            </div>
+                                            <a id="infor_is_google_auth_a" href="javascript:openGoogleVi()"
+                                               data-locale="infor.qiyonggugeyanzheng">开启验证</a>
+                                        </div>
+                                        <!--  <div class="btnBox">
+                <button class="submitBtn">提交</button>
+              </div> -->
+
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="commonClass safeSetting" style="display: none;">
+                        <div>
+                            <ul>
+                                <li>
+                                    <h4 data-locale="infor.qiyonggugeyanzheng">启用谷歌验证</h4>
+                                    <div class="oinforBox settingbox">
+                                        <div class="oinforMain">
+                                            <h3 data-locale="infor.diyibu">第一步：下载并安装"Google Authenticator(谷歌身份验证器)"
+                                                App:</h3>
+                                            <div class="settingType">
+                                                <div>
+                                                    <img src="img/ios.png">
+                                                    <font data-locale="infor.xiazaiIOS">下载iOS版</font>
+                                                </div>
+                                                <span>
+                            <img src="img/app.png" onmouseover="bigger(this)" onmouseout="smaller(this)">
+                          </span>
+                                            </div>
+                                            <div class="settingType">
+                                                <div>
+                                                    <img src="img/android.png">
+                                                    <font data-locale="infor.xiazaiAndroid">下载Android版</font>
+                                                </div>
+                                                <span>
+                            <img src="img/apk.png" onmouseover="bigger(this)" onmouseout="smaller(this)">
+                          </span>
+                                            </div>
+                                        </div>
+                                        <div class="oinforMain">
+                                            <h3 data-locale="infor.dierbu">第二步：使用谷歌身份验证器扫描二维码或手动输入密钥</h3>
+                                            <div class="secretKey">
+                                                <div class="keyBox">
+                                                    <p data-locale="infor.miyao">密钥:</p>
+                                                    <div>
+                                                        <span id="google_text"></span>
+                                                        <!-- <a>复制</a> -->
+                                                    </div>
+                                                </div>
+                                                <img id="google_img" src="img/code.png">
+                                            </div>
+                                        </div>
+                                        <div class="oinforMain submitvalidate">
+                                            <h3 data-locale="infor.disanbu">第三步：填写谷歌验证码，完成谷歌验证绑定</h3>
+                                            <p data-locale="infor.disanbutishi">
+                                                谷歌身份验证器配置完成后，会显示一个6位数字，每隔30秒变化一次。这个数字即为您的谷歌验证码</p>
+                                            <div class="submitvalidateBox">
+                                                <p>
+                                                    <span data-locale="infor.gugeyanzhengma">谷歌验证码</span>
+                                                    <input type="text" id="google_code">
+                                                </p>
+                                                <p>
+                                                    <span data-locale="infor.jiaoyimima">资金密码</span>
+                                                    <input type="password" id="google_tradepassword">
+                                                </p>
+                                                <p class="verificationCode">
+                                                    <span data-locale="infor.yanzhengma">短信验证码</span>
+                                                    <input type="text" id="google_smcode">
+                                                    <a href="javascript:sendYZSMCode(2)" id="google_phone_code"
+                                                       data-locale="infor.fasongyanzhengma">获取短信验证码</a>
+                                                    <!--<a data-locale="infor.huoqudianhuayuyin">获取电话语音验证码</a>-->
+                                                </p>
+                                                <p class="btnBox">
+                                                    <button onclick="changeGoogle()" type="button" class="submitvBtn"
+                                                            data-locale="infor.qiyonggugeyanzheng">启用谷歌验证
+                                                    </button>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="commonClass certification" style="display: none;">
+                        <div>
+                            <ul>
+                                <li style="display: none;" id="info_real_authentication_tishi">
+                                    <h4><font data-locale="infor.jibenxinxi">提示：</font>
+                                        <span data-locale="infor.weilenindeanquan">您已提交审核，请耐心等待</span>
+                                    </h4>
+                                </li>
+                                <li id="info_real_authentication_jiben" style="display: none;">
+
+                                    <h4><font data-locale="infor.jibenxinxi">基本信息</font>
+                                        <span data-locale="infor.weilenindeanquan">为了您的资金安全，虚验证您的身份才可进行交易；认证信息一经验证不能修改，请务必如实填写</span>
+                                    </h4>
+                                    <h4 style="display: none;" id="info_real_authentication_cuowu"><font
+                                            data-locale="infor.jibenxinxi">审核失败：</font>
+                                        <span id="info_real_authentication_memo"></span>
+                                    </h4>
+                                    <div>
+                                        <div class="oinforBox">
+                                            <div class="inforList">
+                                                <span data-locale="infor.mingzi">名字：</span>
+                                                <div class="inforcenter">
+                                                    <input type="text" id="realname_info" value=""
+                                                           style="border: 1px solid #b3b1ae;" placeholder="请填写真实姓名">
+                                                </div>
+                                                <!-- <a data-locale="infor.xiugai">修改</a> -->
+                                            </div>
+                                            <div class="inforList">
+                                                <span data-locale="infor.shenfenzhenghao">身份证号：</span>
+                                                <div class="inforcenter">
+                                                    <input type="text" id="idcard_info" value=""
+                                                           style="border: 1px solid #b3b1ae;" placeholder="请填写身份证号码">
+                                                </div>
+                                                <!-- <a data-locale="infor.xiugai">修改</a> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li id="info_real_authentication_zhengjian" style="display: none;">
+                                    <h4 data-locale="infor.shangchuanzhengjian">上传证件</h4>
+                                    <div>
+                                        <div class="oinforBox">
+                                            <div class="inforList">
+                                                <span data-locale="infor.shouchishenfenzheng">手持身份证正面照：</span>
+                                                <div class="inforcenter">
+                                                    <p>
+                                                        <input type="file" accept="。png,.jpeg,.jpg"
+                                                               onchange="cutIdcardImg()" id="idcard_imgfile"
+                                                               style="display: none;">
+                                                        <button onclick="chooseIdcardImg()"
+                                                                data-locale="infor.shangchuan">上传
+                                                        </button>
+                                                    </p>
+                                                    <div class="uploadebox">
+                                                        <img id="idcard_img" src="img/zjz.jpg">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <p class="certBtn" id="info_renzhen_tijiao"
+                                               style="background-color: #343434;">
+                                                <button class="submitBtn" onclick="submitAudit()"
+                                                        data-locale="infor.tijiao">提交
+                                                </button>
+                                            </p>
+                                        </div>
+
+                                    </div>
+                                </li>
+                                <!-- 实名认证通过页面 -->
+                                <li id="info_pass_certification" style="display: none;">
+                                    <h4 data-locale="infor.shimingrenzheng">实名认证</h4>
+                                    <div>
+                                        <div class="oinforBox">
+                                            <div class="passBox">
+                                                <img src="img/pass.png">
+                                                <font data-locale="infor.nindeshenfenxinxi">您的身份信息已通过认证</font>
+                                            </div>
+                                            <!--<div class="inforList inforListPass">
+                  <span data-locale="infor.guoji">国籍：</span>
+                  <div class="inforcenter">
+                    <input id="info_nationality" value="" disabled>
+                  </div>
+                </div>-->
+                                            <div class="inforList inforListPass">
+                                                <span data-locale="infor.shenfenzhenghao">证件号：</span>
+                                                <div class="inforcenter">
+                                                    <input id="info_idcard" value="" disabled>
+                                                </div>
+                                            </div>
+                                            <div class="inforList inforListPass">
+                                                <span data-locale="infor.mingzi">姓名：</span>
+                                                <div class="inforcenter">
+                                                    <input id="info_realname" value="" disabled>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                    <div class="commonClass brokerageLog" style="display: none;">
+                        <div class="tabMian">
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li role="presentation" class="active">
+                                    <a href="#brokerageLog" aria-controls="brokerageLog" role="tab" data-toggle="tab"
+                                       data-locale="infor.yongjinjilu">流水佣金</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#brokeragesave" aria-controls="brokeragesave" role="tab" data-toggle="tab"
+                                       data-locale="infor.yongjinshouru"> 推荐订单佣金</a>
+                                </li>
+                            </ul>
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane active" id="brokerageLog">
+                                    <ul class="orderlogBox brokerageLogbOX" id="brokerage_li">
+                                        <!--  <li>
+                <span class="smallSpan">00355</span>
+                <span class="smallSpan">ID:776363</span>
+                <span class="smallSpan">买入</span>
+                <span>昵称:田产土豆</span>
+                <span>买入:
+                  <i>645.3USDT</i>
+                </span>
+                <span>佣金收入:
+                  <i>7098.3USDT</u>
+                  </i>
+                </span>
+              </li>
+              <li>
+                <span class="smallSpan">00355</span>
+                <span class="smallSpan">ID:776363</span>
+                <span class="smallSpan">买入</span>
+                <span>昵称:田产土豆</span>
+                <span>买入:
+                  <i>645.3USDT</i>
+                </span>
+                <span>佣金收入:
+                  <i>7098.3USDT</u>
+                  </i>
+                </span>
+              </li>
+              <li>
+                <span class="smallSpan">00355</span>
+                <span class="smallSpan">ID:776363</span>
+                <span class="smallSpan">买入</span>
+                <span>昵称:田产土豆</span>
+                <span>买入:
+                  <i>645.3USDT</i>
+                </span>
+                <span>佣金收入:
+                  <i>7098.3USDT</u>
+                  </i>
+                </span>
+              </li>
+              <li>
+                <span class="smallSpan">00355</span>
+                <span class="smallSpan">ID:776363</span>
+                <span class="smallSpan">买入</span>
+                <span>昵称:田产土豆</span>
+                <span>买入:
+                  <i>645.3USDT</i>
+                </span>
+                <span>佣金收入:
+                  <i>7098.3USDT</u>
+                  </i>
+                </span>
+              </li> -->
+                                    </ul>
+                                    <div class="pageBox">
+                                        <nav aria-label="Page navigation">
+                                            <ul class="pagination" id="brokerage_li_page">
+                                                <li id="b_prev_page">
+                                                    <a href="#" aria-label="Previous">
+                                                        <span aria-hidden="true">上一页</span>
+                                                    </a>
+                                                </li>
+                                                <li id="b_page_1"></li>
+                                                <li id="b_page_2"></li>
+                                                <li id="b_page_3"></li>
+                                                <li id="b_page_4"></li>
+                                                <li id="b_page_5"></li>
+                                                <li id="b_next_page">
+                                                    <a href="#" aria-label="Next">
+                                                        <span aria-hidden="true">下一页</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane" id="brokeragesave">
+                                    <ul class="orderlogBox brokeragesavebOX" id="brokerage_save_li">
+                                        <!-- <li>
+                <span>00355</span>
+                <span>订单</span>
+                <span>付费</span>
+                <span>交易员佣金</span>
+                <span>5USDT</span>
+              </li>
+              <li>
+                <span>00355</span>
+                <span>订单</span>
+                <span>付费</span>
+                <span>交易员佣金</span>
+                <span>5USDT</span>
+              </li>
+              <li>
+                <span>00355</span>
+                <span>订单</span>
+                <span>付费</span>
+                <span>交易员佣金</span>
+                <span>5USDT</span>
+              </li>
+              <li>
+                <span>00355</span>
+                <span>订单</span>
+                <span>付费</span>
+                <span>交易员佣金</span>
+                <span>5USDT</span>
+              </li> -->
+                                    </ul>
+                                    <div class="pageBox">
+                                        <nav aria-label="Page navigation">
+                                            <ul class="pagination" id="brokerage_save_li_page">
+                                                <li id="bs_prev_page">
+                                                    <a href="#" aria-label="Previous">
+                                                        <span aria-hidden="true">上一页</span>
+                                                    </a>
+                                                </li>
+                                                <li id="bs_page_1"></li>
+                                                <li id="bs_page_2"></li>
+                                                <li id="bs_page_3"></li>
+                                                <li id="bs_page_4"></li>
+                                                <li id="bs_page_5"></li>
+                                                <li id="bs_next_page">
+                                                    <a href="#" aria-label="Next">
+                                                        <span aria-hidden="true">下一页</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="commonClass zhanghuxiangqing">
+                        <div class="tabMian">
+                            <div class="accountTop" style="height: 100px; background-color: #343434;">
+                                <img src="img/info1.png" class="img">
+                                <div class="newTototal">
+                                    <div class="top"><span id="team_level">16</span><span>人</span></div>
+                                    <div class="bottom">成员人数</div>
+
+                                </div>
+                                <div class="newTototal">
+                                    <div class="top" id="team_level_money">1252.00￥</div>
+                                    <div class="bottom">成员流水佣金</div>
+
+                                </div>
+                                <div class="newTototal">
+                                    <div style="margin-top:28px;height: 40px; width: 1px;border-left:1px #CCCCCC solid;"></div>
+                                </div>
+                                <img src="img/info2.png" class="img2">
+                                <div class="newTototal">
+                                    <div class="top"><span id="team_team">16</span><span>人</span></div>
+                                    <div class="bottom">团队成员</div>
+
+                                </div>
+                                <div class="newTototal">
+                                    <div class="top" id="team_team_money">0$</div>
+                                    <div class="bottom">团队日流水</div>
+
+                                </div>
+                                <div class="newTototal">
+                                    <div style="margin-top:28px;height: 40px; width: 1px;border-left:0px #CCCCCC solid;"></div>
+                                </div>
+                                <img src="img/info3.png" style="margin-top: 20px;;margin-left: 20px;width: 50px;">
+
+                                <div class="newTototal">
+                                    <div class="top" id="team_td_money">0$</div>
+                                    <div class="bottom">团队流水佣金</div>
+
+                                </div>
+                                <div class="newTototal" style="float: right;margin-right: 20px;">
+                                    <a style="width:80px;background-color: #f98d1f;font-size: 16px;padding: 5px;line-height: 100px;color: #FFFFFF;border-radius: 5px;"
+                                       onclick="report_tanchuang()">资金划转</a>
+
+                                </div>
+                            </div>
+                            <div style="text-align: center;margin: 20px;">
+                                <a class="Report-href-active" onclick="report_qiehuan('report1',this)">成员记录</a>
+                                <a class="Report-href" onclick="report_qiehuan('report2',this)">日流水记录</a>
+                                <aclass
+                                ="Report-href" onclick="report_qiehuan('report3',this)">佣金划转记录</a>
+                            </div>
+                            <div class="accountTable report" id="report1">
+                                <div class="rechargeLog">
+                                    <ul style="font-size: 12px;" id="team_user_list">
+                                    </ul>
+                                </div>
+                                <div class="pageBox">
+                                    <nav aria-label="Page navigation">
+                                        <ul class="pagination" id="report_user_fy">
+
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                            <div class="accountTable report" id="report2" style="display: none;">
+                                <div class="rechargeLog">
+                                    <ul style="font-size: 12px;" id="team_extract_list">
+                                    </ul>
+                                </div>
+                                <div class="pageBox">
+                                    <nav aria-label="Page navigation">
+                                        <ul class="pagination" id="report_extract_fy">
+
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                            <div class="accountTable report" id="report3" style="display: none;">
+                                <div class="rechargeLog">
+                                    <ul style="font-size: 12px;" id="team_bur_list">
+                                    </ul>
+                                </div>
+                                <div class="pageBox">
+                                    <nav aria-label="Page navigation">
+                                        <ul class="pagination" id="report_bur_fy">
+
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer>
+    <div class="row no-gutter">
+        <div class="container">
+            <div class="footerInfor">
+                <div class="col-md-2" style="width: 20%;">
+                    <h3 data-locale="footer.obvjiaoyi">OBV交易</h3>
+                    <ul>
+                        <li>
+                            <a href="bottomPage.html?level=p1_1&less=p1_1_1"
+                               data-locale="footer.obvjiaoyi1">OBV（能量潮）</a>
+                        </li>
+                        <li>
+                            <a href="bottomPage.html?level=p1_1&less=p1_1_2" data-locale="footer.obvjiaoyi2">OBV指标介绍</a>
+                        </li>
+                        <li>
+                            <a href="bottomPage.html?level=p1_1&less=p1_1_3"
+                               data-locale="footer.obvjiaoyi3">OBV交易分析应用技巧</a>
+                        </li>
+                        <li>
+                            <a href="bottomPage.html?level=p1_1&less=p1_1_4"
+                               data-locale="footer.obvjiaoyi4">OBV交易指标注意事项</a>
+                        </li>
+                        <li>
+                            <a href="bottomPage.html?level=p1_1&less=p1_1_5" data-locale="footer.obvjiaoyi5">OBV交易（入门/高阶）</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-2" style="width: 16%;">
+                    <h3 data-locale="footer.jinrongkeji">金融科技</h3>
+                    <ul>
+                        <li>
+                            <a href="bottomPage.html?level=p2_1&less=p2_1_1" data-locale="footer.jinrongkeji1">交易员体系</a>
+                        </li>
+                        <li>
+                            <a href="bottomPage.html?level=p2_1&less=p2_1_2"
+                               data-locale="footer.jinrongkeji2">数据分析系统</a>
+                        </li>
+                        <li>
+                            <a href="bottomPage.html?level=p2_1&less=p2_1_3"
+                               data-locale="footer.jinrongkeji3">兼容性在线交易</a>
+                        </li>
+                        <li>
+                            <a href="bottomPage.html?level=p2_1&less=p2_1_4"
+                               data-locale="footer.jinrongkeji4">数据化中心社区</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-2" style="width: 10%;">
+                    <h3 data-locale="footer.guanyuwomen">关于我们</h3>
+                    <ul>
+                        <li>
+                            <a href="bottomPage.html?level=p3_1&less=p3_1_1" data-locale="footer.guanyuwomen1">公司简介</a>
+                        </li>
+                        <li>
+                            <a href="bottomPage.html?level=p3_1&less=p3_1_2" data-locale="footer.guanyuwomen2">平台描述</a>
+                        </li>
+                        <li>
+                            <a href="bottomPage.html?level=p3_1&less=p3_1_3" data-locale="footer.guanyuwomen3">优势发展</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-1" style="width: 10%;">
+                    <h3 data-locale="footer.bangzhuzhongxin">帮助中心</h3>
+                    <ul>
+                        <li>
+                            <a href="helpPage.html?level=userGuide" data-locale="footer.bangzhuzhongxin1">用户指南</a>
+                        </li>
+                        <li>
+                            <a href="helpPage.html?level=followStrategy" data-locale="footer.bangzhuzhongxin2">跟随策略</a>
+                        </li>
+                        <li>
+                            <a href="helpPage.html?level=commProblem" data-locale="footer.bangzhuzhongxin3">常见问题</a>
+                        </li>
+                        <li>
+                            <a href="helpPage.html?level=currencyDetails" data-locale="footer.bangzhuzhongxin4">币种详情</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-1" style="width: 10%;">
+                    <h3 data-locale="footer.wangzhantiaoyue">网站条约</h3>
+                    <ul>
+                        <li>
+                            <a href="webClause.html?level=privacyPolicy" data-locale="footer.wangzhantiaoyue1">隐私政策</a>
+                        </li>
+                        <li>
+                            <a href="webClause.html?level=termsService" data-locale="footer.wangzhantiaoyue2">服务条款</a>
+                        </li>
+                        <li>
+                            <a href="webClause.html?level=disclaimer" data-locale="footer.wangzhantiaoyue3">免责申明</a>
+                        </li>
+                        <li>
+                            <a href="webClause.html?level=codeCommunity" data-locale="footer.wangzhantiaoyue4">社区守则</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-3" style="width: 30%;">
+                    <h3 data-locale="footer.lianxiwomen">联系我们</h3>
+                    <div>
+                        <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=834955250&site=qq&menu=yes"><img
+                                border="0" src="img/QQ.png" alt="你好，您现在可以向我直接临时会话了，更多资讯请加好友！"
+                                title="你好，您现在可以向我直接临时会话了，更多资讯请加好友！"/></a>
+                        <img src="img/email.png" onclick="emailTanChu()">
+                        <a target="_blank" href="https://weibo.com/u/6387468943"><img src="img/weibo.png"></a>
+                        <a target="_blank" href="https://twitter.com/Bcurrency1">
+                            <a target="_blank" href="https://twitter.com/Bcurrency1"> <img src="img/twitter.png"></a>
+                        </a>
+                        <img src="img/facebook.png">
+                    </div>
+                </div>
+            </div>
+            <div class="friendship">
+                <h3>
+                    <h3 data-locale="footer.youqinglianjie"> 友情链接：</h3>
+                    <a href="https://www.feixiaohao.com" target="view_window"><img src="img/bottom-1.png"></a>
+                    <a href="https://www.bitkan.com" target="view_window"><img src="img/bottom-4.png"></a>
+                    <a href="https://www.chainfor.com" target="view_window"><img src="img/bottom-2.png"></a>
+                    <a href="https://ethfans.org" target="view_window"><img src="img/bottom-5.png"></a>
+                    <a href="https://www.aicoin.net.cn" target="view_window"><img src="img/bottom-3.png"></a>
+                    <a href="https://www.btc123.com" target="view_window"><img src="img/bottom-6.png"></a>
+                </h3>
+            </div>
+        </div>
+    </div>
+</footer>
+<script>
+    function bigger(th) {
+        $(th).css("width", "100px");
+        $(th).css("height", "100px");
+    }
+
+    function smaller(th) {
+        $(th).css("width", "100%");
+        $(th).css("height", "100%");
+    }
+</script>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel" style="color: #000000;">资金划转</h4>
+            </div>
+            <div class="modal-body" style="color: #000000;">
+                <div style="width: 100%;">
+                    <p style="width: 25%;line-height: 34px;text-align: right;padding-right: 10%;float: left;">总佣金</p>
+                    <p style="width: 60%;float: left;line-height: 34px;" id="reprot_money">0$</p>
+                    <p style="width: 15%;float: right;line-height: 34px;"></p>
+                </div>
+                <p><span
+                        style="width: 25%;float: left;line-height: 34px;text-align: right;padding-right: 10%;">划转方向</span>
+                    <select class="form-control" style="width: 25%;float: left;">
+                        <option>佣金钱包</option>
+                    </select>
+                    <span style="width: 10%;float: left;line-height: 34px;text-align: center;">转至</span>
+                    <select class="form-control" style="width: 25%;" id="report_select"
+                            onchange="reprot_xuanze(this.value)">
+                    </select>
+                </p>
+                <p style="margin-left: 25%;">
+                    <span style="font-size: 10px;color: #f98d1f;" id="report_tishi">按1比1转换成USDT</span>
+                </p>
+                <p><span
+                        style="width: 25%;float: left;line-height: 34px;text-align: right;padding-right: 10%;">划转金额</span><input
+                        type="number" class="form-control" style="width: 60%;" id="reprot_input"/></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn" style="background-color: #f98d1f;width: 80%;margin-right: 10%;"
+                        onclick="report_qd()">确定
+                </button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal -->
+</div>
+</body>
+
+</html>

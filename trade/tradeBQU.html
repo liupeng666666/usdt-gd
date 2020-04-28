@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Fortex</title>
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.js"></script>
+      <![endif]-->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/star-rating.css" media="all" rel="stylesheet" type="text/css">
+    <!--<link rel="stylesheet" href="../http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">-->
+    <link rel="stylesheet" href="../css/index.css">
+    <script src="../js/jquery-3.1.0.js"></script>
+
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/star-rating.js"></script>
+    <script src="http://www.jq22.com/jquery/1.8.3/jquery.min.js"></script>
+    <script src="../js/jquery.date_input.pack.js"></script>
+    <script src="../js/tradePage.js"></script>
+</head>
+
+<body>
+<div class="dialogBox" style="display: none;">
+    <div class="mask"></div>
+    <div class="tradeBquBox">
+        <h4>我要推荐到跟单系统</h4>
+        <p>
+            <span>收费：</span>
+            <input placeholder="填写收费">
+        </p>
+        <div>
+            <a class="cancelBtn" onclick="canselDialog()">取消</a>
+            <a class="submitBtn" onclick="canselDialog()">确认</a>
+        </div>
+    </div>
+</div>
+<div class="readeBox">
+    <div class="header">
+        <div class="heaerFirst">
+            <div class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                   aria-expanded="false">
+                    <img src="../img/logo.png" class="logo">
+                    <img src="../img/top.png" class="lineimg">
+                </a>
+                <ul class="dropdown-menu hotTitle">
+                    <li>
+                        <a>首页</a>
+                    </li>
+                    <li>
+                        <a>币行情</a>
+                    </li>
+                    <li>
+                        <a>热门交易</a>
+                    </li>
+                    <li>
+                        <a>跟随者</a>
+                    </li>
+                    <li>
+                        <a>交易动态</a>
+                    </li>
+                    <li>
+                        <a>聊天室</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="typeRadio">
+            <label class="demo--label">
+                <input class="demo--radio" type="radio" name="demo-radio" checked>
+                <span class="demo--radioInput"></span>AQU
+            </label>
+            <label class="demo--label">
+                <input class="demo--radio" type="radio" name="demo-radio">
+                <span class="demo--radioInput"></span>BQU
+            </label>
+        </div>
+        <div class="selectBox">
+            <div class="dropdown selectBox">
+                <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                   aria-expanded="false">ETH/Ethereum
+                    <!-- <span class="caret"></span> -->
+                </a>
+                <ul class="dropdown-menu hotTitle">
+                    <li>
+                        <a>ETH/Ethereum</a>
+                    </li>
+                    <li>
+                        <a>ETH/Ethereum</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- <div>
+                  <select name="">
+                    <option>ETH/Ethereum</option>
+                    <option>ETH/Ethereum</option>
+                    <option>ETH/Ethereum</option>
+                  </select>
+                </div> -->
+        </div>
+        <div class="tcontent">
+        <span>
+          <p>涨跌幅</p>
+          <i class="greenColor">+0.72%</i>
+        </span>
+            <span>
+          <p>订单成交量</p>
+          <i class="orangeColor">45646555.21ETH</i>
+        </span>
+            <span>
+          <p>开盘价</p>
+          <i>1.9710</i>
+        </span>
+            <span>
+          <p>收盘价</p>
+          <i>1.9710</i>
+        </span>
+            <span>
+          <p>最高价</p>
+          <i>9710</i>
+        </span>
+            <span>
+          <p>最低价</p>
+          <i>9710</i>
+        </span>
+        </div>
+        <div class="internationalization">
+            <div class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                   aria-expanded="false">
+            <span>中文
+              <span class="caret"></span>
+            </span>
+
+                </a>
+                <ul class="dropdown-menu language">
+                    <li>
+                        <a href="#">中文</a>
+                    </li>
+                    <li>
+                        <a href="#">English</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="peroInf">
+            <img src="../img/head.png"> 1249******9438
+        </div>
+
+    </div>
+    <div class="leftbox">
+        <div>
+            <ul class="title">
+                <li>币种名称</li>
+                <li>价格</li>
+                <li>日涨幅</li>
+                <li>自选</li>
+            </ul>
+            <ul class="leftcontent">
+                <li>
+                    <span>BTC</span>
+                    <span>$4213</span>
+                    <span class="greenColor">+0.36%</span>
+                    <span>
+              <img src="../img/start.png">
+            </span>
+                </li>
+                <li>
+                    <span>BTC</span>
+                    <span>$4213</span>
+                    <span class="redColor">-0.36%</span>
+                    <span>
+              <img src="../img/start.png">
+            </span>
+                </li>
+                <li>
+                    <span>BTC</span>
+                    <span>$4213</span>
+                    <span class="greenColor">+0.36%</span>
+                    <span>
+              <img src="../img/start.png">
+            </span>
+                </li>
+                <li>
+                    <span>BTC</span>
+                    <span>$4213</span>
+                    <span class="greenColor">+0.36%</span>
+                    <span>
+              <img src="../img/start.png">
+            </span>
+                </li>
+                <li>
+                    <span>BTC</span>
+                    <span>$4213</span>
+                    <span class="redColor">-0.36%</span>
+                    <span>
+              <img src="../img/start.png">
+            </span>
+                </li>
+                <li>
+                    <span>BTC</span>
+                    <span>$4213</span>
+                    <span class="greenColor">+0.36%</span>
+                    <span>
+              <img src="../img/start.png">
+            </span>
+                </li>
+                <li>
+                    <span>BTC</span>
+                    <span>$4213</span>
+                    <span class="greenColor">+0.36%</span>
+                    <span>
+              <img src="../img/start.png">
+            </span>
+                </li>
+                <li>
+                    <span>BTC</span>
+                    <span>$4213</span>
+                    <span class="redColor">-0.36%</span>
+                    <span>
+              <img src="../img/start.png">
+            </span>
+                </li>
+                <li>
+                    <span>BTC</span>
+                    <span>$4213</span>
+                    <span class="greenColor">+0.36%</span>
+                    <span>
+              <img src="../img/start.png">
+            </span>
+                </li>
+                <li>
+                    <span>BTC</span>
+                    <span>$4213</span>
+                    <span class="redColor">-0.36%</span>
+                    <span>
+              <img src="../img/start.png">
+            </span>
+                </li>
+                <li>
+                    <span>BTC</span>
+                    <span>$4213</span>
+                    <span class="greenColor">+0.36%</span>
+                    <span>
+              <img src="../img/start.png">
+            </span>
+                </li>
+                <li>
+                    <span>BTC</span>
+                    <span>$4213</span>
+                    <span class="redColor">-0.36%</span>
+                    <span>
+              <img src="../img/start.png">
+            </span>
+                </li>
+                <li>
+                    <span>BTC</span>
+                    <span>$4213</span>
+                    <span class="greenColor">+0.36%</span>
+                    <span>
+              <img src="../img/start.png">
+            </span>
+                </li>
+                <li>
+                    <span>BTC</span>
+                    <span>$4213</span>
+                    <span class="redColor">-0.36%</span>
+                    <span>
+              <img src="../img/start.png">
+            </span>
+                </li>
+                <li>
+                    <span>BTC</span>
+                    <span>$4213</span>
+                    <span class="greenColor">+0.36%</span>
+                    <span>
+              <img src="../img/start.png">
+            </span>
+                </li>
+                <li>
+                    <span>BTC</span>
+                    <span>$4213</span>
+                    <span class="greenColor">+0.36%</span>
+                    <span>
+              <img src="../img/start.png">
+            </span>
+                </li>
+                <li>
+                    <span>BTC</span>
+                    <span>$4213</span>
+                    <span class="redColor">-0.36%</span>
+                    <span>
+              <img src="../img/start.png">
+            </span>
+                </li>
+                <li>
+                    <span>BTC</span>
+                    <span>$4213</span>
+                    <span class="greenColor">+0.36%</span>
+                    <span>
+              <img src="../img/start.png">
+            </span>
+                </li>
+                <li>
+                    <span>BTC</span>
+                    <span>$4213</span>
+                    <span class="greenColor">+0.36%</span>
+                    <span>
+              <img src="../img/start.png">
+            </span>
+                </li>
+                <li>
+                    <span>BTC</span>
+                    <span>$4213</span>
+                    <span class="redColor">-0.36%</span>
+                    <span>
+              <img src="../img/start.png">
+            </span>
+                </li>
+                <li>
+                    <span>BTC</span>
+                    <span>$4213</span>
+                    <span class="greenColor">+0.36%</span>
+                    <span>
+              <img src="../img/start.png">
+            </span>
+                </li>
+                <li>
+                    <span>BTC</span>
+                    <span>$4213</span>
+                    <span class="redColor">-0.36%</span>
+                    <span>
+              <img src="../img/start.png">
+            </span>
+                </li>
+                <li>
+                    <span>BTC</span>
+                    <span>$4213</span>
+                    <span class="greenColor">+0.36%</span>
+                    <span>
+              <img src="../img/start.png">
+            </span>
+                </li>
+                <li>
+                    <span>BTC</span>
+                    <span>$4213</span>
+                    <span class="redColor">-0.36%</span>
+                    <span>
+              <img src="../img/start.png">
+            </span>
+                </li>
+                <li>
+                    <span>BTC</span>
+                    <span>$4213</span>
+                    <span class="greenColor">+0.36%</span>
+                    <span>
+              <img src="../img/start.png">
+            </span>
+                </li>
+                <li>
+                    <span>BTC</span>
+                    <span>$4213</span>
+                    <span class="redColor">-0.36%</span>
+                    <span>
+              <img src="../img/start.png">
+            </span>
+                </li>
+                <li>
+                    <span>BTC</span>
+                    <span>$4213</span>
+                    <span class="greenColor">+0.36%</span>
+                    <span>
+              <img src="../img/start.png">
+            </span>
+                </li>
+                <li>
+                    <span>BTC</span>
+                    <span>$4213</span>
+                    <span class="greenColor">+0.36%</span>
+                    <span>
+              <img src="../img/start.png">
+            </span>
+                </li>
+                <li>
+                    <span>BTC</span>
+                    <span>$4213</span>
+                    <span class="redColor">-0.36%</span>
+                    <span>
+              <img src="../img/start.png">
+            </span>
+                </li>
+                <li>
+                    <span>BTC</span>
+                    <span>$4213</span>
+                    <span class="greenColor">+0.36%</span>
+                    <span>
+              <img src="../img/start.png">
+            </span>
+                </li>
+                <li>
+                    <span>BTC</span>
+                    <span>$4213</span>
+                    <span class="greenColor">+0.36%</span>
+                    <span>
+              <img src="../img/start.png">
+            </span>
+                </li>
+                <li>
+                    <span>BTC</span>
+                    <span>$4213</span>
+                    <span class="redColor">-0.36%</span>
+                    <span>
+              <img src="../img/start.png">
+            </span>
+                </li>
+                <li>
+                    <span>BTC</span>
+                    <span>$4213</span>
+                    <span class="greenColor">+0.36%</span>
+                    <span>
+              <img src="../img/start.png">
+            </span>
+                </li>
+                <li>
+                    <span>BTC</span>
+                    <span>$4213</span>
+                    <span class="redColor">-0.36%</span>
+                    <span>
+              <img src="../img/start.png">
+            </span>
+                </li>
+                <li>
+                    <span>BTC</span>
+                    <span>$4213</span>
+                    <span class="greenColor">+0.36%</span>
+                    <span>
+              <img src="../img/start.png">
+            </span>
+                </li>
+                <li>
+                    <span>BTC</span>
+                    <span>$4213</span>
+                    <span class="redColor">-0.36%</span>
+                    <span>
+              <img src="../img/start.png">
+            </span>
+                </li>
+                <li>
+                    <span>BTC</span>
+                    <span>$4213</span>
+                    <span class="greenColor">+0.36%</span>
+                    <span>
+              <img src="../img/start.png">
+            </span>
+                </li>
+                <li>
+                    <span>BTC</span>
+                    <span>$4213</span>
+                    <span class="redColor">-0.36%</span>
+                    <span>
+              <img src="../img/start.png">
+            </span>
+                </li>
+                <li>
+                    <span>BTC</span>
+                    <span>$4213</span>
+                    <span class="greenColor">+0.36%</span>
+                    <span>
+              <img src="../img/start.png">
+            </span>
+                </li>
+                <li>
+                    <span>BTC</span>
+                    <span>$4213</span>
+                    <span class="greenColor">+0.36%</span>
+                    <span>
+              <img src="../img/start.png">
+            </span>
+                </li>
+                <li>
+                    <span>BTC</span>
+                    <span>$4213</span>
+                    <span class="redColor">-0.36%</span>
+                    <span>
+              <img src="../img/start.png">
+            </span>
+                </li>
+                <li>
+                    <span>BTC</span>
+                    <span>$4213</span>
+                    <span class="greenColor">+0.36%</span>
+                    <span>
+              <img src="../img/start.png">
+            </span>
+                </li>
+                <li>
+                    <span>BTC</span>
+                    <span>$4213</span>
+                    <span class="greenColor">+0.36%</span>
+                    <span>
+              <img src="../img/start.png">
+            </span>
+                </li>
+                <li>
+                    <span>BTC</span>
+                    <span>$4213</span>
+                    <span class="redColor">-0.36%</span>
+                    <span>
+              <img src="../img/start.png">
+            </span>
+                </li>
+                <li>
+                    <span>BTC</span>
+                    <span>$4213</span>
+                    <span class="greenColor">+0.36%</span>
+                    <span>
+              <img src="../img/start.png">
+            </span>
+                </li>
+                <li>
+                    <span>BTC</span>
+                    <span>$4213</span>
+                    <span class="redColor">-0.36%</span>
+                    <span>
+              <img src="../img/start.png">
+            </span>
+                </li>
+                <li>
+                    <span>BTC</span>
+                    <span>$4213</span>
+                    <span class="greenColor">+0.36%</span>
+                    <span>
+              <img src="../img/start.png">
+            </span>
+                </li>
+                <li>
+                    <span>BTC</span>
+                    <span>$4213</span>
+                    <span class="redColor">-0.36%</span>
+                    <span>
+              <img src="../img/start.png">
+            </span>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <ul class="title">
+                <li>订单号</li>
+                <li>币种</li>
+                <li>买入价</li>
+                <li>涨幅度</li>
+            </ul>
+            <ul class="leftcontent bquleftcontent">
+                <li>
+                    <span>BTC</span>
+                    <span>$4213</span>
+                    <span>3837485$</span>
+                    <span class="greenColor">+0.36%</span>
+                </li>
+                <li>
+                    <span>BTC</span>
+                    <span>$4213</span>
+                    <span>3837485$</span>
+                    <span class="redColor">-0.36%</span>
+                </li>
+                <li>
+                    <span>BTC</span>
+                    <span>$4213</span>
+                    <span>3837485$</span>
+                    <span class="greenColor">+0.36%</span>
+                </li>
+                <li>
+                    <span>BTC</span>
+                    <span>$4213</span>
+                    <span>3837485$</span>
+                    <span class="redColor">-0.36%</span>
+                </li>
+                <li>
+                    <span>BTC</span>
+                    <span>$4213</span>
+                    <span>3837485$</span>
+                    <span class="greenColor">+0.36%</span>
+                </li>
+                <li>
+                    <span>BTC</span>
+                    <span>$4213</span>
+                    <span>3837485$</span>
+                    <span class="redColor">-0.36%</span>
+                </li>
+                <li>
+                    <span>BTC</span>
+                    <span>$4213</span>
+                    <span>3837485$</span>
+                    <span class="greenColor">+0.36%</span>
+                </li>
+                <li>
+                    <span>BTC</span>
+                    <span>$4213</span>
+                    <span>3837485$</span>
+                    <span class="redColor">-0.36%</span>
+                </li>
+                <li>
+                    <span>BTC</span>
+                    <span>$4213</span>
+                    <span>3837485$</span>
+                    <span class="greenColor">+0.36%</span>
+                </li>
+                <li>
+                    <span>BTC</span>
+                    <span>$4213</span>
+                    <span>3837485$</span>
+                    <span class="redColor">-0.36%</span>
+                </li>
+                <li>
+                    <span>BTC</span>
+                    <span>$4213</span>
+                    <span>3837485$</span>
+                    <span class="greenColor">+0.36%</span>
+                </li>
+                <li>
+                    <span>BTC</span>
+                    <span>$4213</span>
+                    <span>3837485$</span>
+                    <span class="redColor">-0.36%</span>
+                </li>
+                <li>
+                    <span>BTC</span>
+                    <span>$4213</span>
+                    <span>3837485$</span>
+                    <span class="greenColor">+0.36%</span>
+                </li>
+                <li>
+                    <span>BTC</span>
+                    <span>$4213</span>
+                    <span>3837485$</span>
+                    <span class="redColor">-0.36%</span>
+                </li>
+                <li>
+                    <span>BTC</span>
+                    <span>$4213</span>
+                    <span>3837485$</span>
+                    <span class="greenColor">+0.36%</span>
+                </li>
+                <li>
+                    <span>BTC</span>
+                    <span>$4213</span>
+                    <span>3837485$</span>
+                    <span class="redColor">-0.36%</span>
+                </li>
+                <li>
+                    <span>BTC</span>
+                    <span>$4213</span>
+                    <span>3837485$</span>
+                    <span class="greenColor">+0.36%</span>
+                </li>
+                <li>
+                    <span>BTC</span>
+                    <span>$4213</span>
+                    <span>3837485$</span>
+                    <span class="redColor">-0.36%</span>
+                </li>
+                <li>
+                    <span>BTC</span>
+                    <span>$4213</span>
+                    <span>3837485$</span>
+                    <span class="greenColor">+0.36%</span>
+                </li>
+                <li>
+                    <span>BTC</span>
+                    <span>$4213</span>
+                    <span>3837485$</span>
+                    <span class="redColor">-0.36%</span>
+                </li>
+                <li>
+                    <span>BTC</span>
+                    <span>$4213</span>
+                    <span>3837485$</span>
+                    <span class="greenColor">+0.36%</span>
+                </li>
+                <li>
+                    <span>BTC</span>
+                    <span>$4213</span>
+                    <span>3837485$</span>
+                    <span class="redColor">-0.36%</span>
+                </li>
+                <li>
+                    <span>BTC</span>
+                    <span>$4213</span>
+                    <span>3837485$</span>
+                    <span class="greenColor">+0.36%</span>
+                </li>
+                <li>
+                    <span>BTC</span>
+                    <span>$4213</span>
+                    <span>3837485$</span>
+                    <span class="redColor">-0.36%</span>
+                </li>
+                <li>
+                    <span>BTC</span>
+                    <span>$4213</span>
+                    <span>3837485$</span>
+                    <span class="greenColor">+0.36%</span>
+                </li>
+                <li>
+                    <span>BTC</span>
+                    <span>$4213</span>
+                    <span>3837485$</span>
+                    <span class="redColor">-0.36%</span>
+                </li>
+                <li>
+                    <span>BTC</span>
+                    <span>$4213</span>
+                    <span>3837485$</span>
+                    <span class="greenColor">+0.36%</span>
+                </li>
+                <li>
+                    <span>BTC</span>
+                    <span>$4213</span>
+                    <span>3837485$</span>
+                    <span class="redColor">-0.36%</span>
+                </li>
+                <li>
+                    <span>BTC</span>
+                    <span>$4213</span>
+                    <span>3837485$</span>
+                    <span class="greenColor">+0.36%</span>
+                </li>
+                <li>
+                    <span>BTC</span>
+                    <span>$4213</span>
+                    <span>3837485$</span>
+                    <span class="redColor">-0.36%</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="rightBox">
+        <div class="aqutimeBox">
+            <button type="button" class="btn btn-default">5M</button>
+            <button type="button" class="btn btn-default">15M</button>
+            <button type="button" class="btn btn-default">30M</button>
+        </div>
+        <div class="rightTop">
+            <div id="candlestick"></div>
+        </div>
+        <div class="rightBottom">
+            <div class="rightLeft">
+                <h4>现价交易</h4>
+                <ul>
+                    <li>
+                        <p>
+                        <div class="leftFont">余额：</div>
+                        <span class="redColor">0.00</span>
+                        </p>
+                        <div class="inputBox">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="input-group-addon">现价</div>
+                                    <input type="text" class="form-control" id="exampleInputAmount" placeholder="买入价">
+                                </div>
+                                <div class="input-group">
+                                    <div class="input-group-addon">量值</div>
+                                    <input type="text" class="form-control" id="exampleInputAmount" placeholder="买入量">
+                                </div>
+                                <div class="input-group">
+                                    <div class="input-group-addon">盈损值</div>
+                                    <input type="text" class="form-control" id="exampleInputAmount" placeholder="选择盈值">
+                                </div>
+                                <div class="input-group">
+                                    <div class="input-group-addon">兑换额</div>
+                                    <input type="text" class="form-control" id="exampleInputAmount" placeholder="0">
+                                </div>
+                            </div>
+                            <p class="poundage">(手续费0.5)</p>
+                        </div>
+                        <button class="buyEth">买涨ETH</button>
+                    </li>
+                    <li>
+                        <p>
+                        <div class="leftFont">余额：</div>
+                        <span class="redColor">0.00</span>
+                        </p>
+                        <div class="inputBox">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <div class="input-group-addon">现价</div>
+                                    <input type="text" class="form-control" id="exampleInputAmount" placeholder="买入价">
+                                </div>
+                                <div class="input-group">
+                                    <div class="input-group-addon">量值</div>
+                                    <input type="text" class="form-control" id="exampleInputAmount" placeholder="买入量">
+                                </div>
+                                <div class="input-group">
+                                    <div class="input-group-addon">盈损值</div>
+                                    <input type="text" class="form-control" id="exampleInputAmount" placeholder="选择盈值">
+                                </div>
+                                <div class="input-group">
+                                    <div class="input-group-addon">兑换额</div>
+                                    <input type="text" class="form-control" id="exampleInputAmount" placeholder="0">
+                                </div>
+                            </div>
+                            <p class="poundage">(手续费0.5)</p>
+                        </div>
+                        <button class="buydownEth">买跌ETH</button>
+                    </li>
+                </ul>
+            </div>
+            <div class="rightR">
+                <h4>购买流水记录表</h4>
+                <div>
+                    <ul class="title bqurcontenttitle">
+                        <li>档位</li>
+                        <li>价格</li>
+                        <li>总量USDT</li>
+                        <li>止赢止损</li>
+                    </ul>
+                    <ul class="rcontent bqurcontent">
+                        <li>
+                            <span class="greenColor">买一</span>
+                            <span>501</span>
+                            <span>10USDT</span>
+                            <span class="greenColor">5%</span>
+                        </li>
+                        <li>
+                            <span class="greenColor">买一</span>
+                            <span>501</span>
+                            <span>10USDT</span>
+                            <span class="redColor">5%</span>
+                        </li>
+                        <li>
+                            <span class="greenColor">买一</span>
+                            <span>501</span>
+                            <span>10USDT</span>
+                            <span class="greenColor">5%</span>
+                        </li>
+                        <li>
+                            <span class="greenColor">买一</span>
+                            <span>501</span>
+                            <span>10USDT</span>
+                            <span class="greenColor">5%</span>
+                        </li>
+                        <li>
+                            <span class="greenColor">买一</span>
+                            <span>501</span>
+                            <span>10USDT</span>
+                            <span class="redColor">5%</span>
+                        </li>
+                        <li>
+                            <span class="greenColor">买一</span>
+                            <span>501</span>
+                            <span>10USDT</span>
+                            <span class="greenColor">5%</span>
+                        </li>
+                        <li>
+                            <span class="greenColor">买一</span>
+                            <span>501</span>
+                            <span>10USDT</span>
+                            <span class="greenColor">5%</span>
+                        </li>
+                        <li>
+                            <span class="redColor">买一</span>
+                            <span>501</span>
+                            <span>10USDT</span>
+                            <span class="redColor">5%</span>
+                        </li>
+                        <li>
+                            <span class="greenColor">买一</span>
+                            <span>501</span>
+                            <span>10USDT</span>
+                            <span class="greenColor">5%</span>
+                        </li>
+                        <li>
+                            <span class="greenColor">买一</span>
+                            <span>501</span>
+                            <span>10USDT</span>
+                            <span class="redColor">5%</span>
+                        </li>
+                        <li>
+                            <span class="greenColor">买一</span>
+                            <span>501</span>
+                            <span>10USDT</span>
+                            <span>M5</span>
+                            <span class="greenColor">5%</span>
+                        </li>
+                        <li>
+                            <span class="greenColor">买一</span>
+                            <span>501</span>
+                            <span>10USDT</span>
+                            <span class="greenColor">5%</span>
+                        </li>
+                        <li>
+                            <span class="greenColor">买一</span>
+                            <span>501</span>
+                            <span>10USDT</span>
+                            <span class="redColor">5%</span>
+                        </li>
+                    </ul>
+                    <ul class="rcontent bqurcontent">
+                        <li>
+                            <span class="redColor">卖一</span>
+                            <span>501</span>
+                            <span>10USDT</span>
+                            <span class="greenColor">5%</span>
+                        </li>
+                        <li>
+                            <span class="redColor">卖一</span>
+                            <span>501</span>
+                            <span>10USDT</span>
+                            <span class="redColor">5%</span>
+                        </li>
+                        <li>
+                            <span class="redColor">卖一</span>
+                            <span>501</span>
+                            <span>10USDT</span>
+                            <span class="greenColor">5%</span>
+                        </li>
+                        <li>
+                            <span class="redColor">卖一</span>
+                            <span>501</span>
+                            <span>10USDT</span>
+                            <span class="greenColor">5%</span>
+                        </li>
+                        <li>
+                            <span class="redColor">卖一</span>
+                            <span>501</span>
+                            <span>10USDT</span>
+                            <span class="redColor">5%</span>
+                        </li>
+                        <li>
+                            <span class="redColor">卖一</span>
+                            <span>501</span>
+                            <span>10USDT</span>
+                            <span class="greenColor">5%</span>
+                        </li>
+                        <li>
+                            <span class="redColor">卖一</span>
+                            <span>501</span>
+                            <span>10USDT</span>
+                            <span class="greenColor">5%</span>
+                        </li>
+                        <li>
+                            <span class="redColor">卖一</span>
+                            <span>501</span>
+                            <span>10USDT</span>
+                            <span class="redColor">5%</span>
+                        </li>
+                        <li>
+                            <span class="redColor">卖一</span>
+                            <span>501</span>
+                            <span>10USDT</span>
+                            <span class="greenColor">5%</span>
+                        </li>
+                        <li>
+                            <span class="redColor">卖一</span>
+                            <span>501</span>
+                            <span>10USDT</span>
+                            <span class="redColor">5%</span>
+                        </li>
+                        <li>
+                            <span class="redColor">卖一</span>
+                            <span>501</span>
+                            <span>10USDT</span>
+                            <span class="greenColor">5%</span>
+                        </li>
+                        <li>
+                            <span class="redColor">卖一</span>
+                            <span>501</span>
+                            <span>10USDT</span>
+                            <span class="greenColor">5%</span>
+                        </li>
+                        <li>
+                            <span class="redColor">卖一</span>
+                            <span>501</span>
+                            <span class="redColor">5%</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="personOrder">
+    <div class="pheder">
+        <span class="title">个人订单详情</span>
+        <div class="date_pickerBox">
+            <i></i>
+            <div>
+                <input type="text" class="date_picker" value="2017-07-31">
+            </div>
+        </div>
+        <div class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ETH
+                <span class="caretimg"></span>
+            </a>
+            <ul class="dropdown-menu hotTitle">
+                <li>
+                    <a>ETH</a>
+                </li>
+                <li>
+                    <a>UTH</a>
+                </li>
+            </ul>
+        </div>
+        <div class="typeRadio">
+            <label class="demo--label">
+                <input class="demo--radio" type="radio" name="demo-radio" checked>
+                <span class="demo--radioInput"></span>全部
+            </label>
+            <label class="demo--label">
+                <input class="demo--radio" type="radio" name="demo-radio">
+                <span class="demo--radioInput"></span>涨
+            </label>
+            <label class="demo--label">
+                <input class="demo--radio" type="radio" name="demo-radio">
+                <span class="demo--radioInput"></span>跌
+            </label>
+        </div>
+    </div>
+    <ul class="personOrderTable bqupersonOrderTable">
+        <li>
+            <span>订单号</span>
+            <span>品种</span>
+            <span>买入现价</span>
+            <span>买入/USDT量</span>
+            <span>买入/涨跌</span>
+            <span>止盈止损</span>
+            <span>盈损率</span>
+            <span>买入时间</span>
+            <span>买入持仓</span>
+            <span>持仓时间</span>
+            <span>盈利/亏损</span>
+            <span>金额</span>
+            <span>交易推荐</span>
+        </li>
+        <li>
+            <span>0072834</span>
+            <span>ETH</span>
+            <span>2874.90</span>
+            <span>300</span>
+            <span class="greenColor">买涨</span>
+            <span>10%</span>
+            <span>5%</span>
+            <span>24/06/2018</span>
+            <span>进行中</span>
+            <span>08:09:08</span>
+            <span>**</span>
+            <span>**</span>
+            <span class="recommendT">
+          <a onclick="recommendBtn()">推荐</a>
+        </span>
+        </li>
+        <li>
+            <span>0072834</span>
+            <span>ETH</span>
+            <span>2874.90</span>
+            <span>300</span>
+            <span class="greenColor">买涨</span>
+            <span>10%</span>
+            <span>5%</span>
+            <span>24/06/2018</span>
+            <span>进行中</span>
+            <span>08:09:08</span>
+            <span>**</span>
+            <span>**</span>
+            <span class="recommendT">
+          <a>推荐</a>
+        </span>
+        </li>
+        <li>
+            <span>0072834</span>
+            <span>ETH</span>
+            <span>2874.90</span>
+            <span>300</span>
+            <span class="greenColor">买涨</span>
+            <span>10%</span>
+            <span>5%</span>
+            <span>24/06/2018</span>
+            <span>进行中</span>
+            <span>08:09:08</span>
+            <span>**</span>
+            <span>**</span>
+            <span class="recommendT">
+          <a>推荐</a>
+        </span>
+        </li>
+        <li>
+            <span>0072834</span>
+            <span>ETH</span>
+            <span>2874.90</span>
+            <span>300</span>
+            <span class="redColor">买跌</span>
+            <span>10%</span>
+            <span>5%</span>
+            <span>24/06/2018</span>
+            <span>进行中</span>
+            <span>08:09:08</span>
+            <span>盈利</span>
+            <span class="greenColor">+212</span>
+            <span class="recommendT">
+          <a>推荐</a>
+        </span>
+        </li>
+        <li>
+            <span>0072834</span>
+            <span>ETH</span>
+            <span>2874.90</span>
+            <span>300</span>
+            <span class="redColor">买跌</span>
+            <span>10%</span>
+            <span>5%</span>
+            <span>24/06/2018</span>
+            <span>进行中</span>
+            <span>08:09:08</span>
+            <span>亏损</span>
+            <span class="redColor">-234</span>
+            <span class="recommendT">
+          <a>推荐</a>
+        </span>
+        </li>
+    </ul>
+</div>
+
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-gl/echarts-gl.min.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts-stat/ecStat.min.js"></script>
+<script type="text/javascript"
+        src="http://echarts.baidu.com/gallery/vendors/echarts/extension/dataTool.min.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/world.js"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=ZUONbpqGBsYGXNIYHicvbAbM"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/extension/bmap.min.js"></script>
+<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/simplex.js"></script>
+</body>
+
+</html>

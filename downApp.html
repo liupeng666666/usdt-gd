@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"
+    />
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>币元网</title>
+    <link rel="stylesheet" type="text/css" href="css/app/aui.css"/>
+    <link rel="stylesheet" type="text/css" href="css/app/aui-slide.css"/>
+    <link rel="stylesheet" type="text/css" href="css/app/iconfont.css"/>
+    <link rel="stylesheet" type="text/css" href="css/app/index.css"/>
+    <script src="js/jquery-3.1.0.js"></script>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .weixin-tip {
+            display: none;
+            position: fixed;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            filter: alpha(opacity=80);
+            height: 100%;
+            width: 100%;
+            z-index: 100;
+        }
+
+        .weixin-tip p {
+            text-align: center;
+            margin-top: 10%;
+            padding: 0 5%;
+        }
+    </style>
+</head>
+
+<body>
+<div class="downAppBox">
+    <img src="./img/downApp.png">
+    <div class="btnBox">
+        <a href="javascript:void(0)" id="iphone_down" onclick="iphone()">
+            <img src="./img/appios.png">iPhone版</a>
+        <a href="javascript:void(0)" id="android_down" onclick="android()">
+            <img src="./img/appAndroid.png">Andiord版</a>
+    </div>
+
+
+    <div>IOS用户APP Store安装指南"</div>
+    <div>1.App Store 下载需要Apple ID所属 国家/区域 为中国以外的地
+
+    </div>
+    <h2>IOS9用户安装指南</h2>
+    <span>1.由于IOS9的安全机制，首次安装Bcurrency APP 的用户需要进入系统“设置”
+    </span>
+    <span>2.选择“通用”——描述文件、设备管理</span>
+    <span>3.选择“一个英文的公司名称”，设置为信任</span>
+    <span>4.点击“信任”完成验证</span>
+    <span>Copyright ©2018-bcurrency.io All Right Reserved </span>
+</div>
+<div class="weixin-tip">
+    <p>
+        <img src="img/live_weixin.png" alt="微信打开"/>
+    </p>
+</div>
+</body>
+<script src="whpjs/downApp.js"></script>
+</html>

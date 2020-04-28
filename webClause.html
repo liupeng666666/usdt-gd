@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>网站条约</title>
+    <!--[if lt IE 9]>
+<script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.js"></script>
+<script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.js"></script>
+<![endif]-->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/fb/style.css">
+    <script src="js/jquery-3.1.0.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/i18n/i18n.js"></script>
+    <script type="text/javascript" src="js/jquery.i18n.properties.js"></script>
+    <script src="utils/date.js"></script>
+    <script src="utils/utils.js"></script>
+    <script src="../usdt-fb/whpjs/public.js"></script>
+</head>
+
+<body>
+<header>
+    <div class="row">
+        <div class="container">
+            <nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand logo" href="#">
+                            <img src="img/logo.png">
+                        </a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav navList">
+                            <li class="active">
+                                <a href="index.html" data-locale="daohanglan.index">首页</a>
+                            </li>
+                            <li>
+                                <a href="coinDetails.html" data-locale="daohanglan.bihangqing">OBV交易</a>
+                            </li>
+                            <li>
+                                <a href="../usdt-fb/FaBiJiaoYi-Wygm.html" data-locale="daohanglan.fabijiaoyi">法币交易</a>
+                            </li>
+
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-locale="daohanglan.remenjiaoyi"
+                                   data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">热门交易
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu hotTitle">
+                                    <li>
+                                        <a href="hotTradeCharts.html" data-locale="daohanglan.remenjiaoyiyuan">热门交易员</a>
+                                    </li>
+                                    <li>
+                                        <a href="hotTradeCharts.html?type=1"
+                                           data-locale="daohanglan.remenjiaoyipaihang">热门交易排行</a>
+                                    </li>
+                                    <li>
+                                        <a href="followProfit.html" data-locale="daohanglan.gensuizhe">跟随者</a>
+                                    </li>
+                                    <li>
+                                        <a href="tradeEndDynamic.html" data-locale="daohanglan.jiaoyidongtai">交易动态</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a href="chatRoom.html" data-locale="daohanglan.liaotianshi">聊天室</a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-locale="daohanglan.xinwenkuaixun"
+                                   data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">新闻快讯
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu hotTitle">
+                                    <li>
+                                        <a href="newsPage.html?jumptype=0" data-locale="daohanglan.xinwenzixun">新闻资讯</a>
+                                    </li>
+                                    <li>
+                                        <a href="newsPage.html?jumptype=1" data-locale="daohanglan.kuaixun">快讯报道</a>
+                                    </li>
+                                    <li>
+                                        <a href="noticePage.html" data-locale="daohanglan.gonggaotongzhi">公告通知</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right" id="sub_user_info">
+                            <li class="nav-assets">
+                                <a href="../usdt-fb/user-assets.html" class="dropdown-toggle-hover"><i
+                                        class="fas fa-wallet"></i><i data-locale="daohanglan.zichan">资产</i></a>
+                                <div class="assets-pop">
+                                    <h3 data-locale="daohanglan.xianhuojiaoyi">现货交易账号</h3>
+                                    <table class="table-light" cellspacing="0" width="100%">
+                                        <thead>
+                                        <tr>
+                                            <th style="width: 30%;" class="text-left" data-locale="daohanglan.bizhong">
+                                                币种
+                                            </th>
+                                            <th style="width: 30%;" data-locale="daohanglan.keyong">可用</th>
+                                            <th data-locale="daohanglan.dongjie">冻结</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody id="xhAssetInfo">
+                                        </tbody>
+                                    </table>
+                                    <h3 data-locale="daohanglan.fabijiaoyi">法币交易账号</h3>
+                                    <table class="table-light" cellspacing="0" width="100%">
+                                        <thead>
+                                        <tr>
+                                            <th style="width: 30%;" class="text-left" data-locale="daohanglan.bizhong">
+                                                币种
+                                            </th>
+                                            <th style="width: 30%;" data-locale="daohanglan.keyong">可用</th>
+                                            <th data-locale="daohanglan.dongjie">冻结</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody id="assetInfo">
+                                        </tbody>
+                                    </table>
+                                    <div class="assets-pop-footer">
+                                        <a href="../usdt-fb/user-assets.html"
+                                           data-locale="daohanglan.zichanguanli">资产管理</a>
+                                    </div>
+
+                                </div>
+                            </li>
+                            <li class="nav-order">
+                                <a href="../usdt-fb/order-list-OBV.html"><i class="fas fa-clipboard-list"></i><i
+                                        data-locale="daohanglan.dingdan">订单</i></a>
+                            </li>
+                            <li class="top_yc">
+                                <a href="login/login.html" data-locale="daohanglan.denglu">登录</a>
+                            </li>
+                            <li class="top_yc">
+                                <a href="#">|</a>
+                            </li>
+                            <li class="top_yc">
+                                <a href="login/register.html" data-locale="daohanglan.zhuce">注册</a>
+                            </li>
+                            <li class="dropdown top_yc">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                   aria-haspopup="true" aria-expanded="false">
+                                    <spab class="circleBtn">中文
+                                        <span class="caret"></span>
+                                    </spab>
+
+                                </a>
+                                <ul class="dropdown-menu language">
+                                    <li>
+                                        <a href="javascript:chooselanguage(1)">中文</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:chooselanguage(2)">English</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+<div>
+    <div class="row">
+        <div class="container">
+            <div class="webClauseBox">
+                <div class="tabMian">
+                    <hr class="webClauseLine">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active" id="z_privacyPolicy">
+                            <a href="#privacyPolicy" aria-controls="privacyPolicy" role="tab" data-toggle="tab">隐私政策</a>
+                        </li>
+                        <li role="presentation" id="z_termsService">
+                            <a href="#termsService" aria-controls="termsService" role="tab" data-toggle="tab">服务条款</a>
+                        </li>
+                        <li role="presentation" id="z_disclaimer">
+                            <a href="#disclaimer" aria-controls="disclaimer" role="tab" data-toggle="tab">免责声明</a>
+                        </li>
+                        <li role="presentation" id="z_codeCommunity">
+                            <a href="#codeCommunity" aria-controls="codeCommunity" role="tab" data-toggle="tab">社区守则</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="privacyPolicy">
+                            <div class="fontBox">
+                                <p>
+                                    隐私政策由Bcurrency Limited“（本公司）”与在网站www.b-currency.com上已注册登记并已明确接受此等条款和条件的共同签署。
+                                    Bcurrency
+                                    高度重视用户的信息保密、数据保护和数据安全。永久性保护您个人资料(如姓名、用户名、身份信息、邮箱地址以及电话号码)的安全性和秘密性对于我们至关重要。在以下的条款中，我们会向您说明我们收集、处理和使用个人信息的类型，范围目的。该隐私政策只针对我们网站及其子页面，不适用于任何第三方网站。如果您通过链接进入到第三方网站网页，请重新查看对应网站的隐私政策并了解其处理您数据资料的方式。
+                                </p>
+                                <h3>用户信息的收集和处理</h3>
+                                <p>
+                                    <span>1. 用户信息收集</span> 为了提供或者优化我们的服务，当您从我们的网站检索所需内容时，使用数据会被储存在Bcurrency
+                                    服务器，如您的IP地址(匿名形式储存)、网页浏览器、互联网供应商以及您检索该页面时所在国家。您可以在该隐私政策的八、九和十条找到更多相关说明。
+
+                                    <span>2. Bcurrency 用户个人信息的收集</span>
+                                    原则上，您无需告诉我们您的任何个人信息(例如您的姓名、身份信息、地址、电话号码或电子邮箱地址等)，除非您自愿向我们提供这些信息(例如通过邮件形式或者在填写报名表或联系表时提供)。当您在注册Bcurrency
+                                    账户，订阅简讯服务或者希望使用我们网站提供的附加服务时，我们会要求您提供相关个人信息。除非另有说明，在符合相关法律法规的前提下或者遵照该隐私政策所规定，我们会利用收集到的信息来提供、维护、保护和改进网站及服务以为您带来更好的用户体验。当您在注册Bcurrency
+                                    账户，订阅简讯服务或者希望使用我们网站提供的附加服务时，我们会收集如下信息
+
+                                    <span>用户名</span>
+                                    <span>密码</span>
+                                    <span>邮箱地址</span>
+                                    <span>电话号码</span>
+                                    <span>3. 正式交易者策略(信号)的信息收集</span>
+                                    <span>遵照Bcurrency 交易者审核程序，我们会向想要成为Bcurrency 交易者的用户收集完善以下信息数据：</span>
+                                    <span>性别</span>
+                                    <span>真实姓名</span>
+                                    <span>身份证明</span>
+                                    <span>手持证件照</span>
+                                    <span>手机号码</span>
+                                    <span>城市地区</span>
+                                </p>
+                                <h3>个人信息对于其他用户的可见性</h3>
+                                <p>
+                                    <span>原则上，您的个人信息对其他用户是不可见的。以下两个方面例外：</span>
+                                    <span>1. 交易员的信息可见性</span>
+                                    <span>Bcurrency 予以承认的交易员将会有命名策略，在各个策略页面的对应区域键入自由文本以及上传头像的选项。您在这些选项上不需要披露任何个人信息。如果策略提供者在这些选项上自愿上传或发布有关自己的个人信息，需意识到这样的信息会对所有的用户可见。</span>
+                                    <span>2. 使用聊天服务</span>
+                                    <span>当您使用Bcurrency 平台上提供的密圈聊天服务并在参与话题等信息，您的用户名以及您所聊天的内容会对其他用户可见。</span>
+                                </p>
+                                <h3>信息的安全</h3>
+                                <p>
+                                    <span>您的个人信息是以SSL网络数据加密技术传输的。我们采用技术和组织措施保护我们的网站和其他系统的安全，防止用户信息的丢失、破坏，未经授权的阅览、修改或披露。您的账户只在正确输入个人密码后才可访问。您应该始终严格保密您的访问信息，并且每次在您使用完我们的网站后，先退出登陆，随后再关闭浏览器窗口，尤其当您与他人共用一台计算机。</span>
+                                    <span>用户信息的使用和传输</span>
+                                    <span>1. 我们只会将您提供给我们的信息用于本网站的合法商业目的。我们不向任何第三方提供您的信息。</span>
+                                    <span>本隐私政策的可访问性</span>
+                                    <span>您可以从任一Bcurrency 网页底端的“隐私政策”链接获取或者打印本隐私政策。</span>
+                                    <span>适用法律和管辖权</span>
+                                    <span>1. Bcurrency Limited公司注册所在地法律、法规应规范本隐私政策以及本隐私政策各方之间引起的争议，除非存在法律指定适用其他管辖法律。</span>
+                                    <span>2. 在合约一方寻求实现本隐私政策下的权利，或寻求宣告本隐私政策下的任何权利或义务的任何民事诉讼或其他诉讼过程中，各合约方应承担其代理律师的费用和支出。合约方认可专属管辖和法院审判地。</span>
+                                    <span>3. 本隐私政策的解释语言应为中文。</span>
+                                    <span>4. 本公司可能通过多种语言将本隐私政策或任何其他文件、信息和消息提供给合作方。本隐私政策规定，合作方应当承认及确认本公司工作语言为中文。如果任何文件、信息和消息里非中文表述和中文表述之间出现矛盾或不一致的情况下，双方将以中文文件、信息和消息为标准。</span>
+                                </p>
+                                <div>—— Bcurrency Limited</div>
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="termsService">
+                            <div class="fontBox">
+                                <p>
+                                    欢迎您使用 Bcurrency网站的服务。请您务必审慎阅读并遵守《 Bcurrency服务条款》(以下称“本条款”)，充分了解《
+                                    Bcurrency服务条款》各项内容及相关法律适用条款。若您阅读并接受本条款，使用 Bcurrency提供的产品和服务，即视为您受本条款的约束。这是您与
+                                    Bcurrency之间就网站、数据、平台以及您选择或启用的第三方信号提供方(以下简称“经纪商”)的使用而签署的法定条款。若您不同意本条款，请勿使用本网站任何产品和服务。
+                                    本协议由 BcurrencyLimited (“本公司”)与在网站www. b-currency.com上的已注册登记并已明确接受此等条款和条件的个人或公司共同签署。
+                                </p>
+                                <h3>Bcurrency（币元）货币资产金融交易平台</h3>
+                                <p>
+                                    Bcurrency是一个创新的货币资产金融交易平台。是根据区块链货币的涨跌或涨跌幅度进行买入交易投资。Bcurrency集团是全球领先的数字资产金融服务商。Bcurrency创始团队看到了区块链行业的巨大发展潜力和数字货币交易领域的创新，怀推动全球新金融改革的愿景，创立Bcurrency（币元）资产金融交易平台。Bcurrency集团以“让金融更高效，让财富更自由”作为使命，秉承“用户至上”的服务理念，致力于为全球用户提供安全、专业、诚信、优质的服务。目前，Bcurrency集团已完成对新加坡、美国、香港等多个国家及地区的布局。Bcurrency智行引领改善区块链行业的传统投资的理念并研发创立了提升了货币资产交易的不足，解决了货币暴涨暴跌原因给投资者无经验者所带来的投资风险，透明化的系统行情信息和交易数据使个人交易投资理智分析使区块链货币不受行情影响更稳定。</p>
+                                <h3>投资风险协议</h3>
+                                <p>
+                                    <span>1.考虑到投资交易存在一定的风险，建议您在开户及交易前充分了解相关法律条规及咨询专业意见，根据个人的财务状况、投资经验、风险偏好等相关因素，慎重选择适合您的保证金交易产品。</span>
+                                    <span>2.Bcurrency网站上所有信息（含文字、图片、音频、视频）均出于为公众传播有益资讯信息之目的，并不意味着Bcurrency赞同其观点或构成投资建议，且Bcurrency不会向您提供任何可依赖的投资建议。</span>
+                                    <span>3.我们在此特别提醒您：</span>
+                                    <span>(1) 数字资产本身不由任何金融机构或公司或本网站发行；</span>
+                                    <span>(2) 数字资产市场是全新的、未经确认的，而且可能不会增长；数字资产交易有一定风险，并不适合绝大部分人士。您了解和理解此投资有可能导致部分损失或全部损失，所以您应该以能承受的损失程度来决定投资的金额。您了解和理解数字资产会产生衍生风险，所以如有任何疑问，建议先寻求理财顾问的协助。此外，除了上述提及过的风险以外，还会有未能预测的风险存在。您应慎重考虑并用清晰的判断能力去评估自己的财政状况及上述各项风险而作出任何数字资产的决定，并承担由此产生的全部损失，Bcurrency对此不承担任何责任。</span>
+                                    <span>(3) 数字资产主要由投资者大量使用，零售和商业市场使用相对较少，数字资产交易存在一定的风险，为禁止用户过于高频交易产生心理误差影响作息导致身体问题，Bcurrency交易平台（OBV交易）有交易时间规则为：早8：30-晚2：00开放时间段为可交易时间，其余交易无限时，没有涨跌限制，价格容易受全球政府政策的影响而大幅波动；投资市场存在的风险是不受Bcurrency控制或影响的，您所有的交易均由个人承担风险。</span>
+                                </p>
+                                <h3>线上交易风险提示</h3>
+                                <p>
+                                    <span>1.您理解并同意，使用互联网的交易服务存在一些风险，包括硬件、软件或互联网连接等不可控因素，如信号强度、互联网的接收或路径、设备硬件或软件配置、或互联网连接的可靠性等不可控。Bcurrency不对网络交易中出现的通讯故障、误传或延误造成的损失负任何责任。</span>
+                                    <span>2.货币涨跌或涨跌幅度等全球货币投资交易市场的波动性或非流动性可能阻碍委托以有利的价格执行，或根本无法执行。如因市场情况过错而导致交易无法执行，从而造成的任何损失、损害、成本或费用(包括但不限于，利润损失、使用损失、直接、间接、偶发或结果性损害)，Bcurrency不承担任何责任。</span>
+                                    <span>3.建议您使用iPhone、Android手持移动设备在Bcurrency平台进行交易或接收数据时保持谨慎的态度，手持移动设备依赖于无线连接，会受到3G、WiFi和GPRS网络的限制，因此可能无法向投资者提供其通过网络浏览器进入Bcurrency平台时所具有的相同功能。如因您使用手持移动设备而造成任何损失、损害、成本或费用损失(利润损失、使用损失、直接、间接、偶发或结果性损害等)，Bcurrency不承担任何责任。</span>
+                                <h3>外部链接服务</h3>
+                                <span>您理解并同意，通过Bcurrency网站链接到其他某些网站仅出于便利而提供。因这些网站所含的信息资料不可控制，Bcurrency不对这些网站或您在这些网站找到的资料作出任何承诺。Bcurrency通往这些网站的链接信息，并不构成任何类型的认可或建议。</span>
+                                <h3>适用法律和管辖权</h3>
+                                <span>1.Bcurrency Limited公司注册所在地法律、法规应规范本协议以及本协议各方之间引起的争议，除非存在法律指定适用其他管辖法律。</span>
+                                <span>2.在合约一方寻求实现本协议下的权利，或寻求宣告本协议下的任何权利或义务的任何民事诉讼或其他诉讼过程中，各合约方应承担其代理律师的费用和支出。合约方认可专属管辖和法院审判地。</span>
+                                <span>3.本协议的解释语言应为中文。</span>
+                                <span>4.本公司可能通过多种语言将本协议或任何其他文件、信息和消息提供给合作方。本协议规定，合作方应当承认及确认本公司工作语言为中文。如果任何文件、信息和消息的非中文表述和中文表述之间出现矛盾和不一致的情况下，双方将以中文文件、信息和消息为标准。</span>
+                                </p>
+                                <h3>其他</h3>
+                                <p>
+                                    <span>如果您对本条款有意见或建议，可与Bcurrency客服联系，Bcurrency将给予您帮助。</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="disclaimer">
+                            <div class="fontBox">
+                                <p>
+                                    Bcurrency官网及其下属网页(以下简称“平台”)上的任何信息，旨在为公众提供网站交易员的交易动态和资讯服务。本网站不提供任何形式的投资建议。本网站交易系统提供的交易策略和系统产生的交易信号，不代表任何形式的推荐或诱导信息。Bcurrency不怂恿用户买卖货币、差价合约、衍生产品及其他金融工具。以下称
+                                    “本声明”。
+                                </p>
+                                <p>
+                                    <span>本声明由Bcurrency Limited “本公司”与在网站www.B-currency.com上的已注册登记并已明确接受此等条款和条件的个人或公司共同签署。</span>
+                                    <span>本网站已采取谨慎的措施对信息进行核实，但并不保证所含信息全部准确。请您理解我们的信息可能会不全面，或有疏漏或滞后。本网站或独立信息提供者均不会对任何因信息错误、不完整、迟延、不精确或基于对本网站信息的依赖而采取的任何措施负责。所有预测或观点(如未来汇率变动的预测)以及基于这些预测而进行的交易活动，仅代表第三方的个人观点和行为，并不代表本网站的立场。您须理解，第三方的预测不代表任何形式的业绩承诺，请不要直接或者间接地效仿。您必须进行独立分析以做出投资判断，同时应了解，在基于本网站内容做出判断所进行的投资行为可能产生实际的盈利或亏损。您基于本网站提供的交易策略和信号，运用个人配置交易系统所做出的投资行为是您自己决定的结果，需自行承担所有风险。</span>
+                                    <span>本网站明确表明，货币、差价合约、衍生产品及其他金融工具交易带来的不仅是收益，同时还伴随相一定的风险。本网站的交易跟随系统仅适用于对高风险投资有一定了解的跟随者。您可以使用空闲的资金进行投资，而不应该影响到日常生活的开支。任何交易策略在过去取得的业绩均不能代表其将来的表现。一般未来涨跌或涨跌幅度变动是不可预测的，这也就表明任何个人策略、金融顾问、手动或者跟随交易都不能保证任何形式的预测可能产生利润，所以对待投资预测一定要经过自己的分析作出判断，切忌盲从。
+                      由于用户使用个人配置交易系统产生的所有金融产品交易指令，都被视为您已授权执行。您必须理解并同意基于Bcurrency提供的信息，而使用个人配置交易系统和交易跟随系统所产生的所有风险需您自行承担。本网站不对交易系统的指令负责。您应承担由于使用个人配置交易程序产生的一切后果。本网站不会对您的损失负责，也不会对因为您使用个人系统交易而产生的费用和开支负责。
+                    </span>
+                                    <span>无论是Bcurrency或是本网站任何合作伙伴都不能保证，您基于Bcurrency提供的信息及使用个人配置交易系统进行投资一定会盈利。除此之外，Bcurrency作为跟随交易系统的开发者，不会对任何由于第三方(如作为这项服务的提供者公司或者合作经纪商)延误、疏忽而导致的客户损失承担责任。除了以上，Bcurrency明确表明不会对交易员提供的策略和交易信号承担任何责任。</span>
+                                    <span>BcurrencyLimited公司注册所在地法律、法规应规范本声明以及本声明各方之间引起的争议，除非存在法律指定适用其他管辖法律。
+                    </span>
+                                    <span>在合约一方寻求实现本声明下的权利，或寻求宣告本声明下的任何权利或义务的任何民事诉讼或其他诉讼过程中，各合约方应承担其代理律师的费用和支出。合约方认可专属管辖和法院审判地。</span>
+                                </p>
+                                <p>
+											<span>本声明的解释语言应为中文。
+                    </span>
+                                    <span>本公司可能通过多种语言将本声明或任何其他文件、信息和消息提供给合作方。本声明规定，合作方应当承认及确认本公司工作语言为中文。如果任何文件、信息和消息的非中文表述和中文表述之间出现矛盾和不一致的情况下，双方将以中文文件、信息和消息为标准。</span>
+                                    <span>4.本公司可能通过多种语言将本协议或任何其他文件、信息和消息提供给合作方。本协议规定，合作方应当承认及确认本公司工作语言为中文。如果任何文件、信息和消息的非中文表述和中文表述之间出现矛盾和不一致的情况下，双方将以中文文件、信息和消息为标准。</span>
+                                </p>
+                                <div>——　Bcurrency Limited</div>
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="codeCommunity">
+                            <div class="fontBox">
+                                <p>
+											<span>Bcurrency是一个创新货币资产金融交易交易平台。Bcurrency社区建立以投资策略行情，社区分享投资策略和投资知识为导向。因此，Bcurrency制定了一套社区基本守则，请广大用户知悉。
+                    </span>
+                                    <span>社区信息只是为了给投资提供参考信息，让投资用户在此相互学习、分享、互动，并不构成任何投资建议和推荐。投资完全取决于您的个人独立思考和决策，Bcurrency并不会对投资盈利亏损承担任何责任。
+                    </span>
+                                    <span>1. 社区是给交易员和跟随者提供交流的平台，以便跟随者通过交流、了解选择信任的交易员跟随投资。交易员也可以在社区内，向跟随者分享自己的专业投资知识，以达到相互了解选择跟随投资对象的目的。
+                    </span>
+                                    <span>2. 社区为Bcurrency合作伙伴、金融机构及用户所提供的信息，Bcurrency不保证其可靠性和真实性。因此，信息发布者只对其发布内容的合法性承担责任，并不会对据此操作的投资所产生的盈利及亏损承担任何责任。
+                    </span>
+                                    <span>3. 任何在社区发布信息的行为均代表其个人行动，Bcurrency设定官方账号对产品技术服务发布信息的行为代表Bcurrency官方立场。
+                    </span>
+                                </p>
+                                <h3>社区言论内容规范</h3>
+                                <p>
+											<span>Bcurrency社区为分享投资经验、投资策略、研究及分析行情等相关的金融投资信息，希望社区用户积极发言及分享，并参与讨论相关范围内容。
+                    </span>
+                                </p>
+                                <h3>社区管理</h3>
+                                <p>
+											<span>为维护广大Bcurrency用户的合法权益，提供健康文明的社区环境，创造和谐良好的社交氛围，根据《全国人大常委会关于维护互联网安全的决定》、 《互联网信息服务管理办法》、《互联网用户账号名称管理规定》等现行法律法规，Bcurrency明确制定社区各类违规现象及相应处罚准则。
+                    </span>
+                                    <span>1.使用不文明不健康用语(侮辱、歧视、猥亵类等词句)进行人身攻击、地域攻击、民族歧视等，一经发现立即限制展示或删除，并视情节严重程度对发布该内容的用户予以警告、禁言或停用账号处理。
+                    </span>
+                                    <span>2. 发布触及现行法律法规，危害用户和Bcurrency安全及合法权益的信息，一旦发现立即停止展示或删除，并视情节严重程度对发布该信息的用户予以警告、禁言或停用账号处理。
+                    </span>
+                                    <span>3. 发布垃圾信息破坏网络环境，如反复发布与主题无关的评论、垃圾广告等，对其他用户造成干扰且被投诉的，并视情节严重程度予以警告、禁言或停用账号处理。</span>
+                                    <span>4. 乱发广告信息，如销售广告、咨询广告、股票网站等，一经发现立即删除，并视情节严重程度予以警告、禁言或停用账号处理。
+                    </span>
+                                    <span>5. 胡乱发布淫秽、色情、暴力、迷信和犯罪等信息，一经发现加以清除，并视情节严重程度对该信息发布用户予以禁言、或停用账号处理。
+                    </span>
+                                    <span>6. 侵犯他人合法权益(名誉权、肖像权、知识产权等)的行为，以及传播病毒代码、黑客程序等妨害第三方权益的文件和信息，并被投诉的，一经发现将对该用户予以禁言、停用账户处理。</span>
+                                    <span>7. 用户头像、昵称以及个人简介涉及敏感时政、反动等内容，限期修改；逾期未改，将视情节严重程度予以禁言或停用账户处理。
+                    </span>
+                                    <span>8.用户账号头像、昵称、简介及言论侵犯他人(包括自然人和法人)名誉权、肖像权、隐私权、知识产权、商业机密等合法权益，且被当事方举报投诉的，视情节严重程度予以限制展示、删除、警告、禁言或者停用账户处理。
+                    </span>
+                                    <span>9. 反复发表相同评论内容，一经发现立即删除，并视情节严重程度对发布该内容用户予以禁言、停用账户处理。
+                    </span>
+                                    <span>10. 发布QQ号、QQ群、微信公众号、微信群号、微信二维码，以及未经Bcurrency允许的第三方活动信息、推广信息、销售信息等营销信息，一经发现将对该用户予以禁言、停用账户处理。</span>
+                                    <span>本守则自修订之日起施行。对违反Bcurrency社区规则的账户予以规定的警告、禁言、停用账户处理。停用是Bcurrency社区的主要处罚机制， 停用处罚视情节严重程度可咨询客服。 如对Bcurrency社区处罚机制有任何疑问或异议，可向Bcurrency客服提供申诉。
+                    </span>
+                                </p>
+                                <h3>言论可信度</h3>
+                                <p>
+											<span>
+                        Bcurrency社区V-4-V5用户均有发言权，且仅代表其个人立场。投资需根据您个人独立思考作出判断和决策。在Bcurrency社区中，Bcurrency设定的官方账号对Bcurrency自身产品、技术相关问题作出的言论代表Bcurrency官方立场。
+                    </span>
+                                </p>
+                                <h3>版权说明</h3>
+                                <p>
+											<span>
+                        若出于非商业、非盈利、非广告性目的，任何试图将Bcurrency网站社区的内容转载、引用到其他地方，需注明内容原出处。如涉及侵权事宜，版权方可向Bcurrency进行投诉，并提供相关证明版权的资料，Bcurrency在核实后将会进行处理。
+                    </span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer>
+    <div class="row no-gutter">
+        <div class="container">
+            <div class="footerInfor">
+                <div class="col-md-2" style="width: 20%;">
+                    <h3 data-locale="footer.obvjiaoyi">OBV交易</h3>
+                    <ul>
+                        <li>
+                            <a href="bottomPage.html?level=p1_1&less=p1_1_1"
+                               data-locale="footer.obvjiaoyi1">OBV（能量潮）</a>
+                        </li>
+                        <li>
+                            <a href="bottomPage.html?level=p1_1&less=p1_1_2" data-locale="footer.obvjiaoyi2">OBV指标介绍</a>
+                        </li>
+                        <li>
+                            <a href="bottomPage.html?level=p1_1&less=p1_1_3"
+                               data-locale="footer.obvjiaoyi3">OBV交易分析应用技巧</a>
+                        </li>
+                        <li>
+                            <a href="bottomPage.html?level=p1_1&less=p1_1_4"
+                               data-locale="footer.obvjiaoyi4">OBV交易指标注意事项</a>
+                        </li>
+                        <li>
+                            <a href="bottomPage.html?level=p1_1&less=p1_1_5" data-locale="footer.obvjiaoyi5">OBV交易（入门/高阶）</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-2" style="width: 16%;">
+                    <h3 data-locale="footer.jinrongkeji">金融科技</h3>
+                    <ul>
+                        <li>
+                            <a href="bottomPage.html?level=p2_1&less=p2_1_1" data-locale="footer.jinrongkeji1">交易员体系</a>
+                        </li>
+                        <li>
+                            <a href="bottomPage.html?level=p2_1&less=p2_1_2"
+                               data-locale="footer.jinrongkeji2">数据分析系统</a>
+                        </li>
+                        <li>
+                            <a href="bottomPage.html?level=p2_1&less=p2_1_3"
+                               data-locale="footer.jinrongkeji3">兼容性在线交易</a>
+                        </li>
+                        <li>
+                            <a href="bottomPage.html?level=p2_1&less=p2_1_4"
+                               data-locale="footer.jinrongkeji4">数据化中心社区</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-2" style="width: 10%;">
+                    <h3 data-locale="footer.guanyuwomen">关于我们</h3>
+                    <ul>
+                        <li>
+                            <a href="bottomPage.html?level=p3_1&less=p3_1_1" data-locale="footer.guanyuwomen1">公司简介</a>
+                        </li>
+                        <li>
+                            <a href="bottomPage.html?level=p3_1&less=p3_1_2" data-locale="footer.guanyuwomen2">平台描述</a>
+                        </li>
+                        <li>
+                            <a href="bottomPage.html?level=p3_1&less=p3_1_3" data-locale="footer.guanyuwomen3">优势发展</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-1" style="width: 10%;">
+                    <h3 data-locale="footer.bangzhuzhongxin">帮助中心</h3>
+                    <ul>
+                        <li>
+                            <a href="helpPage.html?level=userGuide" data-locale="footer.bangzhuzhongxin1">用户指南</a>
+                        </li>
+                        <li>
+                            <a href="helpPage.html?level=followStrategy" data-locale="footer.bangzhuzhongxin2">跟随策略</a>
+                        </li>
+                        <li>
+                            <a href="helpPage.html?level=commProblem" data-locale="footer.bangzhuzhongxin3">常见问题</a>
+                        </li>
+                        <li>
+                            <a href="helpPage.html?level=currencyDetails" data-locale="footer.bangzhuzhongxin4">币种详情</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-1" style="width: 10%;">
+                    <h3 data-locale="footer.wangzhantiaoyue">网站条约</h3>
+                    <ul>
+                        <li>
+                            <a href="webClause.html?level=privacyPolicy" data-locale="footer.wangzhantiaoyue1">隐私政策</a>
+                        </li>
+                        <li>
+                            <a href="webClause.html?level=termsService" data-locale="footer.wangzhantiaoyue2">服务条款</a>
+                        </li>
+                        <li>
+                            <a href="webClause.html?level=disclaimer" data-locale="footer.wangzhantiaoyue3">免责申明</a>
+                        </li>
+                        <li>
+                            <a href="webClause.html?level=codeCommunity" data-locale="footer.wangzhantiaoyue4">社区守则</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-3" style="width: 30%;">
+                    <h3 data-locale="footer.lianxiwomen">联系我们</h3>
+                    <div>
+                        <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=834955250&site=qq&menu=yes"><img
+                                border="0" src="img/QQ.png" alt="你好，您现在可以向我直接临时会话了，更多资讯请加好友！"
+                                title="你好，您现在可以向我直接临时会话了，更多资讯请加好友！"/></a>
+                        <img src="img/email.png" onclick="emailTanChu()">
+                        <a target="_blank" href="https://weibo.com/u/6387468943"><img src="img/weibo.png"></a>
+                        <a target="_blank" href="https://twitter.com/Bcurrency1"> <a target="_blank"
+                                                                                     href="https://twitter.com/Bcurrency1">
+                            <img src="img/twitter.png"></a></a>
+                        <img src="img/facebook.png">
+                    </div>
+                </div>
+            </div>
+            <div class="friendship">
+                <h3>
+                    <h3 data-locale="footer.youqinglianjie"> 友情链接：</h3>
+                    <a href="https://www.feixiaohao.com" target="view_window"><img src="img/bottom-1.png"></a>
+                    <a href="https://www.bitkan.com" target="view_window"><img src="img/bottom-4.png"></a>
+                    <a href="https://www.chainfor.com" target="view_window"><img src="img/bottom-2.png"></a>
+                    <a href="https://ethfans.org" target="view_window"><img src="img/bottom-5.png"></a>
+                    <a href="https://www.aicoin.net.cn" target="view_window"><img src="img/bottom-3.png"></a>
+                    <a href="https://www.btc123.com" target="view_window"><img src="img/bottom-6.png"></a>
+                </h3>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+<script src="pcjs/webClause.js"></script>
+
+</html>

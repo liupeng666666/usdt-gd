@@ -1,0 +1,4372 @@
+body {
+    background-color: #000000;
+}
+
+* {
+    font-family: "微软雅黑";
+}
+
+i {
+    font-style: normal;
+}
+
+.selsubmitBtn {
+    width: 100%;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    border-radius: 2px;
+    border: 0;
+    color: #fff;
+}
+
+.grennBtn {
+    background-color: #009f76;
+}
+
+.reBtn {
+    background-color: #cb4848;
+}
+
+.balck-title {
+    background-color: transparent;
+    color: #ababab;
+}
+
+.gary-title {
+    background-color: rgb(46, 50, 55);
+    color: #fff;
+    z-index: 8;
+}
+
+.login .aui-bar-nav .aui-btn .aui-iconfont {
+    color: #eeaf2c;
+}
+
+.register .aui-bar-nav .aui-btn {
+    color: #eeaf2c;
+    letter-spacing: .1rem;
+}
+
+.orenge-color {
+    color: #eeaf2c;
+}
+
+.redColor {
+    color: #fd554f;
+}
+
+.greenColor {
+    color: #2ec36c;
+}
+
+.garycolor {
+    color: rgba(255, 255, 255, .5);
+}
+
+.witeColor {
+    color: #fff;
+}
+
+.loginBox p {
+    text-align: center;
+}
+
+.loginBox p img {
+    width: 70%;
+    margin: 3rem auto;
+    margin-bottom: .5rem;
+}
+
+.registerTite {
+    font-size: .9rem;
+    text-align: center;
+    color: rgba(255, 255, 255, .5);
+}
+
+.formBox {
+    width: 82%;
+    margin: 0 auto;
+}
+
+.formBox .listBox {
+    border: 1px solid #595959;
+    background-color: #2c3339;
+    padding: .1rem 0 .1rem 1rem;
+    overflow: hidden;
+    margin: 1.2rem 0;
+    position: initial;
+}
+
+.formBox .listBox img {
+    float: left;
+    width: 7%;
+    margin-top: .6rem;
+}
+
+.formBox .listBox input {
+    width: 87%;
+    float: left;
+    color: #97989d;
+    margin-left: 4%;
+    font-size: .7rem;
+}
+
+.formBox .codebox input {
+    width: 50%;
+}
+
+.formBox .codebox a {
+    width: 30%;
+    float: right;
+    color: #edb12c;
+    font-size: .6rem;
+    padding: .6rem 0;
+}
+
+.submitBtn {
+    width: 100%;
+    background-color: #edb12c;
+    border: 1px solid #f88a04;
+    border-radius: 0;
+    padding: .4rem 0;
+    height: auto;
+    color: #8f4d01;
+    margin-top: 2rem;
+}
+
+.loginBottom {
+    overflow: hidden;
+    margin-top: .7rem;
+}
+
+.loginBottom a {
+    color: #edb12c;
+    float: left;
+    font-size: .7rem;
+}
+
+.loginBottom a:last-child {
+    float: right;
+}
+
+.registerBox {
+    margin-top: 1.2rem;
+}
+
+.buySellIcon img {
+    width: .8rem;
+    margin-top: .2rem;
+    margin-left: .5rem;
+}
+
+.registerBox .aui-list {
+    background: transparent;
+    margin-top: -1.6rem;
+}
+
+.registerBox .aui-list label {
+    color: #fff;
+    font-size: .5rem;
+}
+
+.registerBox .aui-list label span {
+    color: #edb12c;
+}
+
+.registerBox .aui-list .aui-list-item {
+    background: transparent;
+    border: 0;
+    padding-left: 0;
+}
+
+.registerBox .aui-list.aui-select-list .aui-list-item:active {
+    background: transparent;
+}
+
+.registerBox .submitBtn {
+    margin-top: 1rem;
+}
+
+.registerBox .aui-checkbox {
+    background: transparent;
+    border: 1px solid #595959;
+    width: .6rem;
+    height: .6rem;
+    margin-top: .4rem;
+    margin-right: .4rem;
+}
+
+.registerBox .aui-checkbox:checked {
+    background: transparent;
+    border: 1px solid #595959;
+    width: .6rem;
+    height: .6rem;
+    margin-top: .4rem;
+    margin-right: .4rem;
+}
+
+.registerBox .aui-checkbox::before {
+    border: 1px solid #edb12c;
+    border-top: none;
+    border-right: none;
+}
+
+.registerBox .aui-checkbox::after {
+    border: 1px solid #edb12c;
+    border-top: none;
+    border-right: none;
+}
+
+.serverBoxs {
+    position: fixed;
+    background: #fff;
+    width: 80%;
+    left: 50%;
+    margin-left: -40%;
+    height: 80%;
+    bottom: 10%;
+    border-top: 2px solid #edb12c;
+    padding: .75rem;
+    z-index: 9;
+    display: none;
+    overflow-y: scroll;
+}
+
+.chatRommServer p {
+    font-size: .5rem;
+    line-height: 1rem;
+}
+
+.chatRommServer h4 {
+    margin-top: .5rem;
+}
+
+.serverBoxs i {
+    float: right;
+    font-size: 1rem;
+    margin-top: -.5rem;
+}
+
+.serverBoxs h3 {
+    text-align: center;
+    margin-bottom: 1rem;
+    margin-top: .5rem;
+    color: #333;
+    padding-left: 1.5rem;
+}
+
+.serverBoxs p {
+    color: #666;
+}
+
+.serverBoxs a {
+    display: block;
+    width: 100%;
+    height: 2rem;
+    border-radius: 60px;
+    line-height: 2rem;
+    text-align: center;
+    color: #edbc53;
+    top: 50%;
+    margin-top: 2rem;
+    font-size: .7rem;
+}
+
+.serverBoxs .actiava {
+    background-color: #edbc53;
+    color: #fff;
+}
+
+.sellBox {
+    width: 100%;
+    height: 70%;
+    overflow: hidden;
+}
+
+.sellLeft, .sellRight {
+    float: left;
+    width: 50%;
+    height: 100%;
+}
+
+.sellLeft .aui-tab {
+    background: transparent;
+    border-bottom: 1px solid rgba(255, 255, 255, .2);
+}
+
+.sellLeft .aui-tab-item {
+    color: rgba(255, 255, 255, .5);
+    font-size: .8rem;
+    width: 65%;
+    margin: 0 10%;
+    height: 2rem;
+    line-height: 2rem;
+}
+
+.sellLeft .aui-tab-item.aui-active {
+    color: #f8c154;
+    border-bottom: 2px solid #f8c154;
+}
+
+.listTitle {
+    height: 2.05rem;
+    line-height: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, .2);
+    width: 100%;
+    overflow: hidden;
+}
+
+.listTitle span {
+    width: 33.3%;
+    text-align: center;
+    display: block;
+    float: left;
+    font-size: .5rem;
+}
+
+.buysellBox {
+    padding: .75rem;
+    padding-right: 0px;
+}
+
+.buysellBox p {
+    overflow: hidden;
+    width: 100%;
+}
+
+.buysellBox .Mbox span {
+    display: block;
+    float: left;
+    width: 24%;
+    height: 1.6rem;
+    margin-right: 1%;
+    background-color: #2d313a;
+    line-height: 1.6rem;
+    text-align: center;
+    font-size: .6rem;
+    color: rgba(255, 255, 255, .5);
+}
+
+.buysellBox .Mbox span:first-child {
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+}
+
+.buysellBox .Mbox span:last-child {
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+
+.progressBox {
+    margin-top: 1rem;
+    position: relative;
+}
+
+.progressBox label {
+    color: rgba(255, 255, 255, .5);
+    font-size: .4rem;
+}
+
+.progressBox label:last-child {
+    margin-top: .3rem;
+    float: right;
+}
+
+.progressBox span {
+    position: absolute;
+    display: block;
+    width: .6rem;
+    height: .6rem;
+    top: -.2rem;
+    border: 1px solid #f8c154;
+    border-radius: 50%;
+    background-color: #20232a;
+    line-height: .2rem;
+    left: 60%;
+}
+
+.progressBox span::after {
+    background-color: #f8c154;
+    border-radius: 100%;
+    content: "";
+    display: inline-block;
+    height: .3rem;
+    margin-left: .1rem;
+    width: .3rem;
+}
+
+.buysellBox .aui-progress {
+    background-color: rgba(255, 255, 255, .5);
+    height: 0.13rem;
+}
+
+.buysellBox .aui-progress-bar {
+    background-color: #f8c154;
+}
+
+.priceForm {
+    margin-top: .6rem;
+}
+
+.priceForm li {
+    overflow: hidden;
+    margin: 1rem 0;
+}
+
+.priceForm .hasUsdt p {
+    font-size: .9rem;
+}
+
+.priceForm .hasUsdt span {
+    color: #f8c154;
+    font-size: .7rem;
+}
+
+.priceForm li p {
+    font-size: .4rem;
+    color: #fff;
+}
+
+.priceForm li span {
+    width: 22%;
+    float: left;
+    background-color: #4f545f;
+    color: #f8c154;
+    height: 1.5rem;
+    text-align: center;
+    line-height: 1.5rem;
+}
+
+.priceForm li span i {
+    font-weight: 600;
+}
+
+.priceForm li span:first-child {
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+}
+
+.priceForm li span:last-child {
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+
+.priceForm li input {
+    width: 56%;
+    float: left;
+    text-align: center;
+    background-color: #2d313a;
+    height: 1.5rem;
+    font-size: .7rem;
+    color: rgba(255, 255, 255, .5);
+}
+
+.sellRight ul li {
+    overflow: hidden;
+    width: 100%;
+    line-height: 1.2rem;
+}
+
+.sellRight ul li span {
+    display: block;
+    width: 33.3%;
+    float: left;
+    text-align: center;
+    color: #fff;
+    font-size: .5rem;
+}
+
+.sellRight ul li .redColor {
+    color: #fd554f;
+}
+
+.sellRight ul li .greenColor {
+    color: #2ec36c;
+}
+
+.topscroll {
+    max-height: 9rem;
+    overflow: scroll;
+    border-bottom: 1px solid rgba(255, 255, 255, .1);
+}
+
+.bottomscroll {
+    max-height: 10rem;
+    overflow: scroll;
+}
+
+.orderDetail {
+    position: fixed;
+    bottom: 2.5rem;
+    height: 1.5rem;
+    background-color: #3f454c;
+    width: 100%;
+    line-height: 1.5rem;
+    color: rgba(255, 255, 255, .5);
+    padding-left: .7rem;
+}
+
+.orderDetail p i {
+    display: block;
+    width: .7rem;
+    height: .7rem;
+    background: url(../img/shrink.png) no-repeat;
+    background-size: 100% 100%;
+    float: right;
+    margin-top: .3rem;
+    margin-right: .7rem;
+}
+
+.poundage {
+    text-align: right;
+    color: rgba(255, 255, 255, .5);
+    font-size: .3rem;
+    margin-bottom: .1rem;
+}
+
+.indexFooter .aui-bar-tab {
+    background-color: #2e3237;
+    color: rgba(255, 255, 255, .5);
+}
+
+.indexFooter .aui-bar-tab .aui-active {
+    color: #f8c154;
+}
+
+.indexFooter .aui-bar-tab .aui-bar-tab-label {
+    font-size: .4rem;
+    margin-top: -.25rem;
+}
+
+.indexFooter .aui-bar-tab i {
+    font-size: 1.13rem;
+}
+
+.titleSel select {
+    display: none
+}
+
+.titleSel select option {
+    text-align: center;
+}
+
+.titleSel .aui-iconfont {
+    color: #f8c154;
+    font-size: .7rem;
+}
+
+.indexTop {
+    background-color: #1a1c25;
+    margin: 2px 0 .5rem 0;
+    overflow: hidden;
+    padding: .4rem .7rem;
+    margin-top: 2.2rem;
+    position: relative;
+}
+
+.indexTopleft {
+    width: 35%;
+    float: left;
+}
+
+.indexTopleft p:first-child {
+    font-size: 1rem;
+    color: #cb4848;
+    margin-bottom: .2rem;
+}
+
+.indexTopleft .rise span {
+    color: #2ec36c;
+}
+
+.indexTopleft p:first-child span {
+    float: left;
+    margin-right: .5rem;
+}
+
+.indexTopleft p:first-child img {
+    float: left;
+    width: .8rem;
+    margin-top: .2rem;
+}
+
+.indexTopRight {
+    width: 65%;
+    float: right;
+}
+
+.indexTopRight ul {
+    overflow: hidden;
+    margin-top: .1rem;
+    padding-left: .4rem;
+}
+
+.indexTopRight ul li {
+    width: 50%;
+    float: left;
+    padding: .2rem 0;
+    font-size: .5rem;
+}
+
+.indexTopRight ul li span {
+    width: 43%;
+    color: rgba(255, 255, 255, .5);
+    display: block;
+    float: left;
+}
+
+.indxbottomBtn {
+    position: fixed;
+    bottom: 0px;
+    height: 2rem;
+    line-height: 2rem;
+    overflow: hidden;
+    width: 100%;
+}
+
+.indxbottomBtn a {
+    display: block;
+    float: left;
+    width: 50%;
+    text-align: center;
+    color: #fff;
+}
+
+#KLine {
+    width: 90%;
+    margin: 0 auto;
+    height: 22rem;
+}
+
+#KLine2 {
+    width: 100%;
+    margin: 0 auto;
+    height: 0rem;
+}
+
+.chatRoomBtn span {
+    padding: 0 .5rem;
+}
+
+.chatRoomBtn span .iconfont {
+    font-size: .9rem;
+}
+
+/* .contentVido img{
+  width: 100%;
+  height: 7rem;
+} */
+.contentVido {
+    margin: 0 auto;
+    width: 100%;
+}
+
+.contentVido .aui-slide-page-wrap {
+    width: 5rem;
+    position: absolute;
+    padding: 0;
+    left: auto;
+    right: .75rem;
+    bottom: 17px;
+    z-index: 9999;
+    text-align: center;
+}
+
+.contentVido .aui-slide-page-active {
+    background: #fff;
+    opacity: 1;
+}
+
+.contentVido .aui-slide-page-line {
+    width: .5rem;
+    margin-left: .2rem;
+    background: rgba(255, 255, 255, .5);
+
+}
+
+
+.indextimeBox {
+    height: 2rem;
+    overflow: hidden;
+    padding: 0 .75rem;
+    margin-top: 1rem;
+}
+
+.indextimeBox span {
+    width: 14%;
+    float: left;
+    color: #715e38;
+    text-align: center;
+}
+
+.indextimeBox .activeSpan {
+    color: #feaa05;
+}
+
+.listBox {
+    position: fixed;
+    height: calc(100% - 15rem);
+    width: 100%;
+    padding: 0.75rem;
+    overflow-y: scroll;
+}
+
+.listBox ul li {
+    overflow: hidden;
+    width: 100%;
+    padding: .9rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, .3);
+}
+
+.listBox ul li img {
+    width: 3rem;
+    float: left;
+    border-radius: 50%;
+    height: 3rem;
+}
+
+.listBox ul li .Listcenternbox {
+    float: left;
+    width: 65%;
+    padding-left: .6rem;
+    overflow: hidden;
+}
+
+.listBox ul li .Listcenternbox p {
+    color: #fff;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-top: .4rem;
+}
+
+.listBox ul li .Listcenternbox span {
+    color: rgba(255, 255, 255, .5);
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: .56rem;
+}
+
+.listBox ul li .LisrightBox {
+    float: right;
+    color: #fac054;
+    font-size: .5rem;
+}
+
+.listBox ul li .LisrightBox .aui-iconfont {
+    font-size: .6rem;
+    margin-right: .2rem;
+}
+
+.addBox {
+    position: fixed;
+    width: 100%;
+    top: 2rem;
+    padding: 0;
+    z-index: 9;
+    display: none;
+}
+
+.addBoxafter::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-width: 0 9px 10px;
+    border-style: solid;
+    border-color: transparent transparent #fff;
+    position: absolute;
+    top: -5px;
+    right: 5%;
+    margin-left: -10px;
+    z-index: 100;
+}
+
+.addBox div {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #e6e6e6;
+    color: #333;
+    line-height: 2.5rem;
+    font-size: .7rem;
+}
+
+.addBox div:last-child {
+    border: 0;
+}
+
+.addBox .shareGrunp {
+    width: 8rem;
+    float: right;
+    border-radius: 4px;
+    margin-right: .5rem;
+    background: #fff;
+}
+
+.addBox div i {
+    color: #9aa2ae;
+    margin-right: .6rem;
+    font-size: 1rem;
+}
+
+.chatBootem {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    background-color: #2e3237;
+    height: 3rem;
+    padding: 0 .5rem;
+    line-height: 3rem;
+    overflow: hidden;
+}
+
+.chatBootem i {
+    float: left;
+    color: #fff;
+    font-size: 1.5rem;
+    width: 12%;
+}
+
+.chatBootem input {
+    width: 70%;
+    margin: 0 3%;
+    background-color: rgba(154, 162, 174, .1);
+    border-radius: 50px;
+    float: left;
+    height: 2.4rem;
+    margin-top: .3rem;
+    padding-left: 1.6rem;
+    color: #fff;
+}
+
+.chatBootem input::-webkit-input-placeholder {
+    color: #fff;
+}
+
+.chatBootem a {
+    width: 12%;
+    height: 100%;
+    display: block;
+    color: #f8c154;
+    float: right;
+    text-align: center;
+}
+
+.chatroomBox {
+    position: fixed;
+    width: 100%;
+    height: calc(100% - 6rem);
+    overflow-y: scroll;
+    padding: 0.75rem;
+    padding-bottom: 10%;
+
+}
+
+.chatInfor {
+    width: 70%;
+    overflow: hidden;
+    margin-top: 3rem;
+}
+
+.chatroomBox .chatInfor:first-child {
+    margin-top: 1.5rem;
+}
+
+.chatInfor img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 2%;
+}
+
+.chatInforBox {
+    width: 70%;
+    float: right;
+    padding-left: .5rem;
+}
+
+.chatInforBox p {
+    color: #fff;
+    margin-bottom: .2rem;
+}
+
+.chatInforBox p span {
+    padding-left: .6rem;
+}
+
+.chatInforBox .chatFont {
+    position: relative;
+    width: 100%;
+    background-color: #fff;
+    padding: .5rem;
+    border-radius: 4px;
+    color: #333;
+}
+
+.chatInforBox .chatFont img {
+    border-radius: 0;
+    width: 80%;
+    float: none;
+    margin: 0 auto;
+}
+
+.chatInforBox .chatFont::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-width: 0 9px 10px;
+    border-style: solid;
+    border-color: transparent transparent #fff;
+    position: absolute;
+    top: 0px;
+    left: 1%;
+    margin-left: -10px;
+    z-index: 100;
+    transform: rotate(-180deg);
+}
+
+.leftChat {
+    float: left;
+}
+
+.leftChat img {
+    float: left;
+}
+
+.rightChat .chatInforBox {
+    padding-right: .5rem;
+}
+
+.rightChat .chatInforBox .chatFont::after {
+    left: 99%;
+}
+
+.rightChat {
+    float: right;
+}
+
+.rightChat img {
+    float: right;
+}
+
+.chatName {
+    padding-left: .5rem;
+}
+
+.joinedGroupsBox {
+    position: relative;
+    height: calc(100% - 3rem);
+    width: 100%;
+    padding-top: 0px;
+    overflow-y: scroll;
+    padding-bottom: 2rem;
+}
+
+.joinedGroupsBox ul li {
+    overflow: hidden;
+    width: 100%;
+    line-height: 3.4rem;
+    padding: 0 .75rem;
+    height: 3.4rem;
+    background-color: rgba(56, 59, 67, .2);
+    margin-top: .3rem;
+}
+
+.joinedGroupsBox ul li a {
+    float: right;
+    color: #edbc53;
+    font-size: .6rem;
+}
+
+.joinedGroupsBox ul li a:last-child {
+    padding-right: 1rem;
+}
+
+.joinedGroupsBox ul li img {
+    width: 4rem;
+    height: 4rem;
+    float: left;
+    border-radius: 50%;
+    margin-right: 2%;
+    padding: 4%;
+}
+
+.joinedGroupsBox ul li p {
+    width: 70%;
+    float: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: .8rem;
+    color: #fff;
+}
+
+.joinedGroupsBox ul li p i {
+    float: right;
+}
+
+#userlist {
+    color: #fff;
+    position: relative;
+    overflow: auto;
+    height: calc(100% - 13rem);
+    width: 100%;
+}
+
+#userlist .newfrienfNum {
+    float: right;
+    color: #fff;
+    background: red;
+    border-radius: 50%;
+    width: .5rem;
+    height: .5rem;
+    display: block;
+    font-size: .3rem;
+    text-align: center;
+    line-height: 1rem;
+    margin-right: 2rem;
+    margin-top: 1rem;
+}
+
+.addPersonBox #userlist {
+    height: calc(100% - 4.5rem);
+}
+
+.addPersonBox #userlist > section > dl > dd .confirm2 {
+    background-image: url('../img/confirm2.svg');
+}
+
+.addPersonBox #userlist > section > dl > dd .confirm {
+    background-image: url('../img/confirm.svg');
+}
+
+.addPersonBox #userlist > section > dl > dd i {
+    display: inline-block;
+    background-size: cover;
+    margin-right: 2rem;
+    float: right;
+    margin-top: .5rem;
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+#userlist > section > dl > dt {
+    background-color: rgba(255, 255, 255, .1);
+    padding: 0 .75rem;
+    font-size: .6rem;
+}
+
+#userlist > section > dl > dd {
+    padding: .75rem;
+    border-bottom: 1px solid rgba(255, 255, 255, .2);
+    overflow: hidden;
+    line-height: 2.3rem;
+}
+
+#userlist > section > dl > dd img {
+    width: 2.3rem;
+    height: 2.3rem;
+    border-radius: 50%;
+    float: left;
+    margin-right: .3rem;
+}
+
+#userlist #navBar {
+    position: fixed;
+    width: 20px;
+    height: 20rem;
+    right: 2%;
+    top: 33%;
+    background-color: #494c4f;
+    border-radius: 80px;
+    padding-top: .4rem;
+}
+
+#navBar > a {
+    text-align: center;
+    display: block;
+    text-decoration: none;
+    height: .7rem;
+    line-height: .7rem;
+    color: #fff;
+    font-size: .5rem;
+}
+
+/* #btn{padding:14px;font-size: 14px;color: #fff;border-radius: 6px;background-color: #337ab7;border: none;}
+		#list{font-size: 16px;position: relative;height: 100%}
+		#list>section{overflow-y: auto;height: 100%}
+		#list>section>dl>dt{background: #f7f7f9;color: #999;height:40px;line-height:40px;padding-left: 15px;}
+		#list>section>dl>dd{font-size: 16px;color: #333;line-height:40px;padding-left: 15px;position: relative;}
+		#list>section>dl>dd:after{content:'';position: absolute;left: 0;bottom: 1px;width: 100%;height: 1px;background-color:#c8c7cc;transform:scaleY(.5);-webkit-transform:scaleY(.5);}
+		#list>section>dl>dd:last-of-type:after{display: none;}
+		#navBar{position: absolute;width:26px;height: 100%;right: 0;top: 0;background-color: #fff;}
+		#navBar.active{background:rgba(211,211,211,.6);}
+		#navBar>a{text-align: center;display: block;text-decoration:none;height: 4.166%;line-height:100%;color: #333;font-size: 13px;}
+		#prompt{position: fixed;left: 50%;top:50%;margin:-30px 0 0 -30px;width: 60px;height: 60px;text-align: center;line-height: 60px;font-size: 30px;color: #fff;background: rgba(0,0,0,0.5);z-index: 10;display: none;border-radius:4px;}
+    #prompt.active{display:block;} */
+
+
+.addTop {
+    padding: 0 .75rem;
+}
+
+.addTop .serchBox {
+    overflow: hidden;
+    color: rgba(255, 255, 255, .5);
+    line-height: 2.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, .2);
+    font-size: .8rem;
+}
+
+.addTop .serchBox i {
+    font-size: 1rem;
+    margin-right: .5rem;
+}
+
+.joinedGroups {
+    overflow: hidden;
+    line-height: 3.2rem;
+    display: block;
+}
+
+.joinedGroups span {
+    width: 2rem;
+    height: 2rem;
+    display: block;
+    border-radius: 50%;
+    background-color: #edbc53;
+    line-height: 2rem;
+    text-align: center;
+    float: left;
+    margin-right: 1rem;
+    margin-top: .5rem;
+}
+
+.joinedGroups p {
+    float: left;
+    color: #fff;
+    font-size: .8rem;
+}
+
+.joinedGroups span i {
+    color: #fff;
+    font-size: 1rem;
+}
+
+.joinedGroups .newfrienfNum {
+    float: right;
+    color: #fff;
+    background: red;
+    border-radius: 50%;
+    width: 1rem;
+    height: 1rem;
+    display: block;
+    font-size: .3rem;
+    text-align: center;
+    line-height: 1rem;
+    margin-top: 1rem;
+}
+
+.joinedGroups .aui-iconfont {
+    float: right;
+    font-size: 1rem;
+    color: #fff;
+}
+
+.setBox ul {
+    width: 100%;
+    background-color: rgb(46, 50, 55);
+    color: #fff;
+    margin-top: .4rem;
+}
+
+.setBox ul li {
+    overflow: hidden;
+    border-bottom: 1px solid rgba(255, 255, 255, .2);
+    line-height: 3rem;
+    height: 3rem;
+    margin-left: .75rem;
+    padding-right: .75rem;
+}
+
+.inforTips {
+    padding: .75rem;
+    font-size: .56rem;
+    color: rgba(255, 255, 255, .5);
+    margin-bottom: 4rem;
+}
+
+.myAcountBoc {
+    margin-top: .4rem;
+    padding: .75rem;
+    color: #fff;
+    background: url(../img/coin2.png) no-repeat;
+    background-size: auto 60%;
+    background-position: 95% center;
+    background-color: rgb(46, 50, 55);
+}
+
+.myAcountBoc p {
+    color: rgba(255, 255, 255, .5);
+    margin: .7rem 0;
+    font-size: .6rem;
+}
+
+.myAcountBoc p i {
+    font-size: .7rem;
+    color: #fff;
+    padding-left: .5rem;
+}
+
+.myAcountBoc .greenFont {
+    font-size: 2rem;
+    color: #2ec36c;
+    font-family: fantasy;
+}
+
+.myAcountBoc .aui-iconfont {
+    float: right;
+}
+
+.setBox ul li input {
+    background: transparent;
+    color: #999;
+    font-size: .75rem;
+    width: 70%;
+    float: left;
+}
+
+.setBox ul li a {
+    color: #edbc53;
+    font-size: .75rem;
+    float: right;
+}
+
+.setBox {
+    margin-top: .6rem;
+}
+
+.setBox ul li:last-child {
+    border: 0;
+}
+
+.setBox ul li i:first-child {
+    font-size: 1.3rem;
+    width: 2rem;
+    display: block;
+    float: left;
+}
+
+.setBox ul li i:last-child {
+    float: right;
+}
+
+.rightcolor ul li i:last-child {
+    color: #999;
+}
+
+.signOut {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 1rem 0;
+    background-color: rgb(46, 50, 55);
+    color: #edbc53;
+    text-align: center;
+}
+
+.personInfor {
+    background-color: rgb(46, 50, 55);
+}
+
+.personInfor .personInforset {
+    overflow: hidden;
+    /* padding-top: 1rem; */
+    padding-bottom: 1.2rem;
+}
+
+.personInfor .personInforset img {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    float: left;
+    margin: 0 .8rem;
+    margin-top: 1rem;
+}
+
+.personInfor .personInforset .centerInfr {
+    float: left;
+}
+
+.personInfor .personInforset .centerInfr p {
+    color: #fff;
+    font-size: .9rem;
+    margin-top: .8rem;
+}
+
+.personInfor .personInforset .centerInfr span {
+    color: #999;
+    font-size: .6rem;
+}
+
+.personInfor .personInforset .centerInfr div span {
+    padding: 0 .2rem;
+}
+
+.personInfor .personInforset .centerInfr div {
+    margin: .3rem 0;
+}
+
+.personInfor .personInforset .centerInfr p span {
+    color: #edbc53;
+    font-size: .4rem;
+}
+
+.personInfor .personInforset .rightinfr {
+    position: fixed;
+    top: 11%;
+    right: 0;
+    background-color: #edbc53;
+    color: #8e4d01;
+    border-top-left-radius: 80px;
+    border-bottom-left-radius: 80px;
+    font-size: .6rem;
+    padding: .2rem;
+    padding-left: .5rem;
+}
+
+.personNum ul {
+    overflow: hidden;
+    margin-top: 1.5rem;
+    padding-bottom: 1rem;
+}
+
+.personNum ul li {
+    width: 33.3%;
+    float: left;
+    text-align: center;
+    border-right: 1px solid rgba(255, 255, 255, .2);
+}
+
+.personNum ul li:last-child {
+    border: 0;
+}
+
+.personNum ul li p {
+    color: #edbc53;
+    font-size: .8rem;
+}
+
+.personNum ul li span {
+    color: #999;
+}
+
+.basicBox {
+    position: fixed;
+    width: 100%;
+    overflow-y: scroll;
+    height: calc(100% - 2.5rem);;
+}
+
+.basicBox span {
+    color: #999;
+    font-size: .75rem;
+}
+
+.basicBox li img {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    float: left;
+    border: 1px solid #fff;
+    margin-top: .5rem;
+    margin-right: .5rem;
+}
+
+.basicBox li div {
+    float: right;
+}
+
+.basicBox li div span {
+    margin-right: .5rem;
+    max-width: 9rem;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    float: left;
+}
+
+.changtname {
+    width: 80%;
+    margin: 0 auto;
+    border: 1px solid #edbc53;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.changtname input {
+    float: left;
+    width: 8rem;
+    border: 0;
+    background: transparent;
+    color: #999;
+}
+
+.changtname span {
+    width: 1rem;
+    float: right;
+    border: 1px solid #999;
+    border-radius: 50%;
+    height: 1rem;
+    display: block;
+    color: #999;
+    margin-top: .4rem;
+    margin-right: .3rem;
+    font-size: .3rem;
+    text-align: center;
+    line-height: 1rem;
+}
+
+.timeBox {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    z-index: 9;
+    display: none;
+}
+
+.timeBox li {
+    width: 100%;
+    text-align: center;
+    color: rgba(255, 255, 255, .5);
+    background-color: rgb(46, 50, 55);
+    padding: .8rem 0;
+    margin-bottom: .1rem;
+}
+
+.submitBox {
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+    color: #edbc53;
+    background-color: rgb(46, 50, 55);
+    padding: .8rem;
+    text-align: center;
+}
+
+.sharegroupbtn1 {
+    width: 45%;
+    position: fixed;
+    bottom: 0px;
+    color: #edbc53;
+    background-color: rgb(46, 50, 55);
+    padding: .8rem;
+    margin-left: .5rem;
+    text-align: center;
+}
+
+.sharegroupbtn2 {
+    left: 50%;
+    width: 45%;
+    position: fixed;
+    bottom: 0px;
+    color: #edbc53;
+    background-color: rgb(46, 50, 55);
+    padding: .8rem;
+    margin-left: .5rem;
+    text-align: center;
+}
+
+.mobileSelect {
+    position: relative;
+    z-index: 0;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: opacity 0.4s, z-index 0.4s;
+    transition: opacity 0.4s, z-index 0.4s;
+}
+
+.mobileSelect * {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.mobileSelect .grayLayer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: #eee;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 888;
+    display: block;
+}
+
+.mobileSelect .content {
+    width: 100%;
+    display: block;
+    position: fixed;
+    z-index: 889;
+    color: black;
+    -webkit-transition: all 0.4s;
+    transition: all 0.4s;
+    bottom: -350px;
+    left: 0;
+    background: white;
+}
+
+.mobileSelect .content .fixWidth {
+    width: 90%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.mobileSelect .content .fixWidth:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.mobileSelect .content .btnBar {
+    border-bottom: 1px solid #DCDCDC;
+    font-size: 15px;
+    height: 45px;
+    position: relative;
+    text-align: center;
+    line-height: 45px;
+}
+
+.mobileSelect .content .btnBar .cancel,
+.mobileSelect .content .btnBar .ensure {
+    height: 45px;
+    width: 55px;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+}
+
+.mobileSelect .content .btnBar .cancel {
+    left: 0;
+    color: #666;
+}
+
+.mobileSelect .content .btnBar .ensure {
+    right: 0;
+    color: #1e83d3;
+}
+
+.mobileSelect .content .btnBar .title {
+    font-size: 15px;
+    padding: 0 15%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.mobileSelect .content .panel:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.mobileSelect .content .panel .wheels {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.mobileSelect .content .panel .wheel {
+    position: relative;
+    z-index: 0;
+    float: left;
+    width: 50%;
+    height: 200px;
+    overflow: hidden;
+    -webkit-transition: width 0.3s ease;
+    transition: width 0.3s ease;
+}
+
+.mobileSelect .content .panel .wheel .selectContainer {
+    display: block;
+    text-align: center;
+    -webkit-transition: -webkit-transform 0.18s ease-out;
+    transition: -webkit-transform 0.18s ease-out;
+    transition: transform 0.18s ease-out;
+    transition: transform 0.18s ease-out, -webkit-transform 0.18s ease-out;
+}
+
+.mobileSelect .content .panel .wheel .selectContainer li {
+    font-size: 15px;
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    cursor: pointer;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.mobileSelect .content .panel .selectLine {
+    height: 40px;
+    width: 100%;
+    position: absolute;
+    top: 80px;
+    pointer-events: none;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-top: 1px solid #DCDCDC;
+    border-bottom: 1px solid #DCDCDC;
+}
+
+.mobileSelect .content .panel .shadowMask {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 200px;
+    background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), color-stop(rgba(255, 255, 255, 0)), to(#ffffff));
+    background: -webkit-linear-gradient(top, #ffffff, rgba(255, 255, 255, 0), #ffffff);
+    background: linear-gradient(to bottom, #ffffff, rgba(255, 255, 255, 0), #ffffff);
+    opacity: 0.9;
+    pointer-events: none;
+}
+
+.mobileSelect-show {
+    opacity: 1;
+    z-index: 10000;
+    visibility: visible;
+}
+
+.mobileSelect-show .content {
+    bottom: 0;
+}
+
+.addressBox {
+    padding: .8rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, .2);
+    color: #999;
+    overflow: hidden;
+    margin-left: .75rem;
+}
+
+.addressBox p {
+    float: left;
+    font-size: .8rem;
+    color: #999;
+}
+
+.addressBox span {
+    float: right;
+    margin: 0 .4rem;
+}
+
+.identityP {
+    padding: .5rem .75rem;
+    font-size: .5rem;
+    padding-bottom: 0;
+    margin-top: 2rem;
+}
+
+.uploaerBox {
+    padding: .75rem;
+    margin-top: .5rem;
+    text-align: center;
+}
+
+.uploaerBox p {
+    font-size: .8rem;
+    color: rgba(255, 255, 255, .7);
+    text-align: left;
+}
+
+.uploaerBox .headerBox {
+    width: 70%;
+    margin: 1.5rem auto;
+    border: 1px solid #fff;
+    border-radius: 20px;
+    padding: 1rem 1.5rem;
+    height: 8rem;
+}
+
+.uploaerBox .headerBox img {
+    width: 100%;
+    height: 100%;
+}
+
+.uploaderBtn {
+    padding: .3rem 1.5rem;
+    color: #fff;
+    background-color: #f98804;
+    border-radius: 8px;
+}
+
+.invitationBox {
+    text-align: center;
+}
+
+.invitationBox img {
+    width: 45%;
+    margin: 2rem auto;
+}
+
+.invitationBox div {
+    border: 1px solid #3c404a;
+    background-color: #2d313a;
+    width: 84%;
+    margin: 1rem auto;
+    height: 2.5rem;
+    overflow: hidden;
+}
+
+.invitationBox div input {
+    float: left;
+    height: 74%;
+    width: 80%;
+    margin-top: 2%;
+    border-right: 1px solid #52555e;
+    background-color: transparent;
+    padding-left: 1rem;
+    color: #999;
+}
+
+.invitationBox div i {
+    font-size: 1.3rem;
+    margin-top: .3rem;
+    display: block;
+    color: #edbc53;
+}
+
+.invitationMain {
+    position: fixed;
+    width: 100%;
+    height: calc(100% - 4.5rem);
+    overflow: scroll;
+    padding-bottom: 3rem;
+}
+
+.logoBox {
+    width: 65%;
+    text-align: center;
+    color: #edbc53;
+    overflow: hidden;
+    margin: 0 auto;
+    padding-top: 2rem;
+}
+
+.logoBox img {
+    width: 7rem;
+    float: left;
+    margin-top: -0.3rem;
+}
+
+.logoBox div {
+    width: 100%;
+    float: left;
+}
+
+.logoBox p {
+    color: rgba(255, 255, 255, .7);
+    font-size: .6rem;
+}
+
+.logoBox span {
+    font-size: 1rem;
+    display: block;
+    margin: 1rem 0;
+    color: #fff;
+}
+
+.shareInvitation {
+    position: fixed;
+    bottom: 0;
+    z-index: 9;
+    width: 100%;
+    background-color: #2d313a;
+    display: none;
+}
+
+.shareInvitation p {
+    width: 100%;
+    padding: .9rem;
+    text-align: center;
+    color: #999;
+    border-bottom: 1px solid #52555e;
+}
+
+.shareInvitation p span {
+    float: left;
+    color: #7b7575;
+}
+
+.shareInvitation div {
+    width: 90%;
+    margin: 1.3rem auto;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+}
+
+.shareInvitation div a {
+    display: block;
+    width: 25%;
+    float: left;
+    text-align: center;
+}
+
+.shareInvitation div a img {
+    margin: 0 auto;
+    width: 60%;
+}
+
+.slideBOx {
+    margin: 1rem 0;
+    overflow: hidden;
+    padding-bottom: .5rem;
+    margin-bottom: .5rem;
+    margin-top: 2rem;
+}
+
+.slidepage {
+    padding: .75rem 1.6rem;
+    border-radius: 8px;
+    background: url(../img/coin.png) no-repeat;
+    background-size: auto 47%;
+    background-position: 95% center;
+    background-color: #2b3247;
+    width: 100%;
+    height: 100%;
+}
+
+.slidepage p:first-child {
+    color: rgba(255, 255, 255, .5);
+    font-size: .8rem;
+}
+
+.slidepage p:first-child i {
+    color: #f8c154;
+    margin-left: .6rem;
+    font-size: .85rem;
+}
+
+.slidepage .coinBox {
+    color: #f8c154;
+    font-size: 1.6rem;
+    margin: .5rem 0;
+    margin-bottom: 0;
+    font-family: fantasy;
+}
+
+.slidepage p:last-child {
+    color: rgba(255, 255, 255, .7);
+    font-size: .8rem;
+}
+
+.recordTitle .aui-tab {
+    background: transparent;
+    border: 1px solid #f6c053;
+    border-radius: 5px;
+    margin-top: .4rem;
+}
+
+.recordTitle .aui-tab-item {
+    color: #f6c053;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    margin-left: 0;
+}
+
+.recordTitle .aui-tab-item.aui-active {
+    color: #955606;
+    border: 0;
+    background-color: #f6c053;
+}
+
+.recordBox {
+    margin-top: 1px;
+    position: fixed;
+    width: 100%;
+    overflow: scroll;
+    height: calc(100% - 2.3rem);
+    padding-bottom: 2rem;
+}
+
+.recordBoxList .aui-tab {
+    background: #2e3237;
+}
+
+.recordBoxList .aui-tab-item {
+    color: rgba(255, 255, 255, .5);
+}
+
+.recordBoxList .aui-tab-item.aui-active {
+    color: #f6c053;
+    border-color: #f6c053;
+}
+
+.RecordList {
+    padding: .75rem;
+    color: rgba(255, 255, 255, .5);
+    overflow: hidden;
+}
+
+.RecordList span {
+    width: 33.3%;
+    display: block;
+    float: left;
+    text-align: center;
+    line-height: 2rem;
+}
+
+.capitalRecord ul li {
+    overflow: hidden;
+    border-bottom: 1px solid rgba(255, 255, 255, .2);
+    padding: .4rem .75rem;
+}
+
+.capitalRecord ul .activeLi p {
+    color: #fff;
+}
+
+.capitalRecord ul li p {
+    line-height: 1.3rem;
+    color: rgba(255, 255, 255, .5);
+    width: 93%;
+    font-size: .6rem;
+    float: left;
+}
+
+.capitalRecord ul li p .rightFont {
+    float: right;
+}
+
+.capitalRecord ul li p span .greenColor {
+    color: #2ec36c;
+}
+
+.capitalRecord ul li p span .redColor {
+    color: #fd554f;
+}
+
+.capitalRecord ul li i {
+    float: right;
+    color: rgba(255, 255, 255, .5);
+    transform: rotate(180deg);
+    margin-top: .2rem;
+}
+
+.capitalRecord ul .activeLi i {
+    transform: rotate(0deg);
+}
+
+.capitalRecord ul li .shrinkDiv {
+    display: none;
+}
+
+.capitalRecord ul .activeLi .shrinkDiv {
+    display: block;
+}
+
+.capitalRecord ul li p .orenge-color {
+    color: #eeaf2c;
+}
+
+.capitalRecord ul li p .redColor {
+    color: #fd554f;
+}
+
+.capitalRecord ul li p .greenColor {
+    color: #2ec36c;
+}
+
+.capitalRecord ul li p .garycolor {
+    color: rgba(255, 255, 255, .5);
+}
+
+.capitalRecordb ul li {
+    overflow: hidden;
+    border-bottom: 1px solid rgba(255, 255, 255, .2);
+    padding: .4rem .75rem;
+}
+
+.capitalRecordb ul .activeLi p {
+    color: #fff;
+}
+
+.capitalRecordb ul li p {
+    line-height: 1.3rem;
+    color: rgba(255, 255, 255, .5);
+    width: 93%;
+    font-size: .6rem;
+    float: left;
+}
+
+.capitalRecordb ul li p .rightFont {
+    float: right;
+}
+
+.capitalRecordb ul li p span .greenColor {
+    color: #2ec36c;
+}
+
+.capitalRecordb ul li p span .redColor {
+    color: #fd554f;
+}
+
+.capitalRecordb ul li i {
+    float: right;
+    color: rgba(255, 255, 255, .5);
+    transform: rotate(180deg);
+    margin-top: .2rem;
+}
+
+.capitalRecordb ul .activeLi i {
+    transform: rotate(0deg);
+}
+
+.capitalRecordb ul li .shrinkDiv {
+    display: none;
+}
+
+.capitalRecordb ul .activeLi .shrinkDiv {
+    display: block;
+}
+
+.capitalRecordb ul li p .orenge-color {
+    color: #eeaf2c;
+}
+
+.capitalRecordb ul li p .redColor {
+    color: #fd554f;
+}
+
+.capitalRecordb ul li p .greenColor {
+    color: #2ec36c;
+}
+
+.capitalRecordb ul li p .garycolor {
+    color: rgba(255, 255, 255, .5);
+}
+
+
+.capitalRecordr ul li {
+    overflow: hidden;
+    border-bottom: 1px solid rgba(255, 255, 255, .2);
+    padding: .4rem .75rem;
+}
+
+.capitalRecordr ul .activeLi p {
+    color: #fff;
+}
+
+.capitalRecordr ul li p {
+    line-height: 1.3rem;
+    color: rgba(255, 255, 255, .5);
+    width: 93%;
+    font-size: .6rem;
+    float: left;
+}
+
+.capitalRecordr ul li p .rightFont {
+    float: right;
+}
+
+.capitalRecordr ul li p span .greenColor {
+    color: #2ec36c;
+}
+
+.capitalRecordr ul li p span .redColor {
+    color: #fd554f;
+}
+
+.capitalRecordr ul li i {
+    float: right;
+    color: rgba(255, 255, 255, .5);
+    transform: rotate(180deg);
+    margin-top: .2rem;
+}
+
+.capitalRecordr ul .activeLi i {
+    transform: rotate(0deg);
+}
+
+.capitalRecordr ul li .shrinkDiv {
+    display: none;
+}
+
+.capitalRecordr ul .activeLi .shrinkDiv {
+    display: block;
+}
+
+.capitalRecordr ul li p .orenge-color {
+    color: #eeaf2c;
+}
+
+.capitalRecordr ul li p .redColor {
+    color: #fd554f;
+}
+
+.capitalRecordr ul li p .greenColor {
+    color: #2ec36c;
+}
+
+.capitalRecordr ul li p .garycolor {
+    color: rgba(255, 255, 255, .5);
+}
+
+
+.recordlistBox {
+    position: fixed;
+    height: calc(100% - 4.8rem);
+    width: 100%;
+    overflow: scroll;
+}
+
+.pushMonehBox {
+    width: 75%;
+    margin: 1rem auto;
+}
+
+.pushMonehBox .selectCoin {
+    width: 7rem;
+    margin: 0 auto;
+    color: #fff;
+}
+
+.pushMonehBox .selectCoin img {
+    width: 1.5rem;
+    float: left;
+    margin-right: .4rem;
+    margin-top: -.1rem;
+}
+
+.pushMonehBox .selectCoin a {
+    color: #fff;
+}
+
+.pushMonehBox .selectCoin a i {
+    color: #eeaf2c;
+}
+
+.pushMonehBox .codeBox {
+    text-align: center;
+    margin: 1.6rem 0;
+}
+
+.pushMonehBox .codeBox img {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.pushMonehBox input {
+    width: 100%;
+    background-color: #2d313a;
+    line-height: 2.2rem;
+    text-align: center;
+    color: rgba(255, 255, 255, .5);
+    border: 1px solid rgba(255, 255, 255, .2);
+}
+
+.copyAdress {
+    text-align: center;
+    color: #f6c053;
+    margin-top: 1rem;
+}
+
+.warnBox {
+    margin-top: 2rem;
+    color: #b4b4b7;
+}
+
+.warnBox h4 {
+    font-weight: 600;
+}
+
+.warnBox p {
+    color: #b4b4b7;
+    line-height: 1.4rem;
+    font-size: .6rem;
+}
+
+.newsTitle .aui-tab {
+    background: transparent;
+    width: 80%;
+}
+
+.mypagesTitle .aui-tab {
+    width: 100%;
+    background-color: #2e3237;
+}
+
+.newsTitle .aui-tab-item {
+    color: #fff;
+}
+
+.newsTitle .aui-tab-item.aui-active {
+    color: #f6c053;
+    border-color: #f6c053;
+    border: 0;
+}
+
+.aui-tab-item span {
+    display: block;
+    width: 50%;
+    height: 2px;
+    background-color: rgb(46, 50, 55);
+    margin: 0 auto;
+}
+
+.aui-tab-item.aui-active span {
+    background-color: #f6c053;
+}
+
+.weibostyle ul li {
+    overflow: hidden;
+    padding: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, .1);
+    margin-left: 1rem;
+    padding-left: 0;
+}
+
+.weibostyle ul li img {
+    width: 20%;
+    float: left;
+}
+
+.weibostyle ul li div {
+    width: 80%;
+    margin-top: -.2rem;
+    float: right;
+    padding-left: .75rem;
+    overflow: hidden;
+}
+
+.weibostyle ul li div p {
+    color: #fff;
+}
+
+.weibostyle ul li div p img {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    margin-top: .3rem;
+    margin-right: .5rem;
+}
+
+.weibostyle ul li div p span {
+    color: rgba(255, 255, 255, .5);
+    font-size: .6rem;
+    margin-top: .4rem;
+    display: block;
+    float: left;
+}
+
+.weiboBoxDetail {
+    padding: .75rem;
+    color: #fff;
+    margin-top: 2rem;
+}
+
+.weiboBoxDetail h3 {
+    font-size: 1.3rem;
+}
+
+.weiboBoxDetail .writerBox {
+    overflow: hidden;
+    margin: 1rem 0;
+}
+
+.weiboBoxDetail .writerBox .leftBox {
+    float: left;
+    overflow: hidden;
+    font-size: .7rem;
+    color: #fff;
+}
+
+.weiboBoxDetail .writerBox .leftBox img {
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 50%;
+    float: left;
+}
+
+.weiboBoxDetail .writerBox span {
+    float: right;
+    color: rgba(255, 255, 255, .5);
+    font-size: .65rem;
+}
+
+.weiboBoxDetail .writerBox .leftBox span {
+    color: #fff;
+    font-size: .7rem;
+    margin-left: .4rem;
+}
+
+.vewsMian p {
+    font-size: .8rem;
+    text-indent: 1.6rem;
+    line-height: 1.6rem;
+}
+
+.vewsMian img {
+    width: 100%;
+}
+
+.vewsMian {
+    margin-bottom: 3rem;
+}
+
+.noticeBox ul li {
+    padding: .75rem .5rem;
+    padding-left: 0;
+    margin-left: .5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, .1);
+}
+
+.noticeBox ul li h3 {
+    color: #fff;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-bottom: .6rem;
+}
+
+.noticeBox ul li p {
+    font-size: .5rem;
+    color: rgba(255, 255, 255, .5);
+}
+
+.noticeDetail h2 {
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+.noticeDetail {
+    padding: .75rem;
+}
+
+.noticeDetail p {
+    color: rgba(255, 255, 255, .5);
+    margin: 1rem 0;
+}
+
+.noticeDetail span {
+    color: #fff;
+    font-size: .8rem;
+    text-indent: 1.6rem;
+    line-height: 1.6rem;
+}
+
+.h24Box ul li {
+    overflow: hidden;
+}
+
+.indexslide {
+    margin: 0 auto;
+    width: 100%;
+}
+
+.indexslide .aui-slide-page-wrap {
+    width: 5rem;
+    position: absolute;
+    padding: 0;
+    left: auto;
+    right: .75rem;
+    bottom: 17px;
+    z-index: 9999;
+    text-align: center;
+}
+
+.indexslide .aui-slide-page-active {
+    background: #fff;
+    opacity: 1;
+}
+
+.indexslide .aui-slide-page-line {
+    width: .5rem;
+    margin-left: .2rem;
+    background: rgba(255, 255, 255, .5);
+
+}
+
+.slideBOx .aui-slide-page-line {
+    width: .8rem;
+    margin-left: .4rem;
+    background: rgba(255, 255, 255, .5);
+    height: 3.4px !important;
+}
+
+.slideBOx .aui-slide-page-active {
+    background: #f6c053;
+}
+
+.slideBOx .aui-slide-page-wrap {
+    bottom: -.3rem;
+}
+
+.slideBOx .slideSpan {
+    height: 140px;
+    display: block;
+    width: 4%;
+    background-color: #577ab5;
+}
+
+.slideBOx .leftSilde {
+    float: left;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.slideBOx .rightSilde {
+    float: right;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+#aui-slide2 {
+    width: 100%;
+    float: left;
+}
+
+.noticeBox {
+    overflow: hidden;
+    width: 100%;
+    height: 2rem;
+    line-height: 2rem;
+    color: #fff;
+    padding: 0 .75rem;
+}
+
+.noticeBox i {
+    float: left;
+}
+
+.noticeBox p {
+    float: left;
+    padding-left: .5rem;
+    color: #fff;
+    width: 65%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.tradeBox {
+    padding: .75rem;
+    width: 100%;
+    background-color: #272930;
+    padding-bottom: 0;
+}
+
+.tradeBox .tabBorder {
+    border-bottom: 1px solid rgba(255, 255, 255, .1);
+}
+
+.tradeBox .aui-tab {
+    background: transparent;
+    width: 80%;
+}
+
+.tradeBox .aui-tab-item {
+    color: rgba(255, 255, 255, .5);
+}
+
+.tradeBox .aui-tab-item.aui-active {
+    color: #f8c154;
+    border-color: #f8c154;
+}
+
+.tradeBox .tabBox {
+    margin: .5rem 0;
+    margin-bottom: 0;
+}
+
+.tradeBox .tabBox ul .rightFont {
+    text-align: right;
+}
+
+.tradeBox .tabBox ul .imgFont img {
+    width: 1.7rem;
+    height: 1.7rem;
+    float: left;
+    margin-right: .5rem;
+}
+
+.tradeBox .tabBox ul .imgFont {
+    text-align: left;
+    line-height: 1.7rem;
+    font-size: .9rem;
+}
+
+.tradeBox .tabBox ul li {
+    overflow: hidden;
+    width: 100%;
+    padding: .57rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, .1);
+}
+
+.tradeBox .tabBox ul li:first-child {
+    border: 0
+}
+
+.tradeBox .tabBox ul li:last-child {
+    border: 0;
+}
+
+.tradeBox .tabBox ul li div {
+    width: 33.3%;
+    float: left;
+    text-align: center;
+}
+
+.tradeBox .tabBox ul li:first-child div:first-child {
+    text-align: left;
+}
+
+.tradeBox .tabBox ul li p {
+    font-size: .9rem;
+}
+
+.tradeBox .tabBox ul li span {
+    font-size: .56rem;
+    display: block;
+}
+
+.tradeBox .tabBox ul li .rangebtnBox {
+    width: 4.5rem;
+    height: 1.7rem;
+    line-height: 1.7rem;
+    overflow: hidden;
+    display: block;
+    border-radius: 3px;
+    color: #fff;
+    float: right;
+    margin-top: .2rem;
+}
+
+.tradeBox .tabBox ul li .greanBack {
+    background-color: #00a075;
+}
+
+.tradeBox .tabBox ul li .redBack {
+    background-color: #e34a55;
+}
+
+.tradedynamic {
+    margin-top: .5rem;
+}
+
+.indextitle {
+    background-color: #272930;
+    padding: .75rem;
+    padding-left: 0;
+}
+
+.indextitle i:first-child {
+    display: block;
+    width: .3rem;
+    height: 1.2rem;
+    float: left;
+    background-color: #f8c154;
+}
+
+.indextitle i:last-child {
+    color: rgba(255, 255, 255, .5);
+    float: right;
+}
+
+.indextitle span {
+    color: rgba(255, 255, 255, .5);
+    padding-left: .72rem;
+}
+
+.tradedynamic ul li {
+    overflow: hidden;
+    padding: .75rem;
+    margin-bottom: .3rem;
+    padding-right: 0;
+    background-color: #272930;
+}
+
+.tradedynamic ul li .topB {
+    border-bottom: 1px solid rgba(255, 255, 255, .1);
+    overflow: hidden;
+}
+
+.tradedynamic ul li .topB .leftb {
+    float: left;
+    padding-bottom: .75rem;
+    line-height: 1.5rem;
+    color: #fff;
+}
+
+.tradedynamic ul li .topB .leftb img {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    float: left;
+}
+
+.tradedynamic ul li .topB .leftb div {
+    float: left;
+    margin: 0 .8rem;
+}
+
+.tradedynamic ul li .topB .leftb span {
+    color: #f8c154;
+    font-size: .3rem;
+}
+
+.tradedynamic ul li .topB .leftb span i {
+    font-size: .9rem;
+}
+
+.tradedynamic ul li .topB .rightB {
+    float: right;
+    color: rgba(255, 255, 255, .5);
+    font-size: .6rem;
+    line-height: 1.5rem;
+    padding-right: .75rem;
+}
+
+.tradedynamic ul li .bottomB {
+    overflow: hidden;
+    padding: 1.4rem 0;
+    padding-left: 0;
+    padding-bottom: .5rem;
+}
+
+.tradedynamic ul li .bottomB .leftBox {
+    float: left;
+    width: 18%;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, .5);
+    height: 2rem;
+    line-height: 2rem;
+    border-right: 1px solid rgba(255, 255, 255, .1);
+    margin-right: 2%;
+    margin-top: .2rem;
+}
+
+.tradedynamic ul li .bottomB .rihgtBox {
+    float: left;
+    width: 80%;
+    overflow: hidden;
+    margin-top: -.3rem;
+}
+
+.tradedynamic ul li .bottomB .rihgtBox div {
+    width: 33.3%;
+    float: left;
+    text-align: center;
+}
+
+.tradedynamic ul li .bottomB .rihgtBox div p {
+    color: #fff;
+
+}
+
+.tradedynamic ul li .bottomB .rihgtBox div p:first-child {
+    margin-bottom: 1.2rem;
+}
+
+.tradedynamic ul li .bottomB .rihgtBox div span {
+    color: rgba(255, 255, 255, .5);
+    padding-right: .2rem;
+}
+
+.tradedynamic ul li .bottomB .rihgtBox div .greenColor {
+    color: #2ec36c;
+}
+
+.tradedynamic ul li .bottomB .rihgtBox div .redColor {
+    color: #fd554f;
+}
+
+.tradedynamic ul li .bottomB .rihgtBox div .greenColor .orenge-color {
+    color: #f8c154;
+}
+
+.tradeNewsBOX ul li {
+    overflow: hidden;
+    padding: .75rem;
+    margin-left: .75rem;
+    border-bottom: 1 p solid rgba(255, 255, 255, .1);
+    padding-left: 0px;
+}
+
+.tradeNewsBOX .aui-tab {
+    background: transparent;
+}
+
+.tradeNewsBOX .aui-tab-item {
+    color: rgba(255, 255, 255, .5);
+    font-size: .8rem;
+}
+
+.tradeNewsBOX .aui-tab-item.aui-active {
+    color: #f8c154;
+    border: 0;
+}
+
+.tradeNewsBOX ul li img {
+    width: 20%;
+    float: left;
+}
+
+.tradeNewsBOX ul li div {
+    width: 70%;
+    float: left;
+    padding-left: 1rem;
+    color: #fff;
+    font-size: .7rem;
+    height: 3rem;
+    overflow: hidden;
+    line-height: 1.5rem;
+}
+
+.tradeNewsBOX ul li i {
+    float: right;
+    color: rgba(255, 255, 255, .5);
+    margin-top: 1rem;
+}
+
+.tradeNewsBOX ul li span {
+    width: 20%;
+    float: left;
+    display: block;
+}
+
+.tradeNewsBOX ul li span p {
+    color: #fff;
+    margin-top: .2rem;
+}
+
+.tradeNewsBOX ul li span i {
+    width: 100%;
+    color: rgba(255, 255, 255, .5);
+    font-size: .5rem;
+    margin-top: .5rem;
+}
+
+.tradeNews {
+    margin-top: 0.5rem;
+    padding-bottom: 3rem;
+}
+
+.aui-bar-nav .buyselliconr {
+    font-size: .8rem;
+    margin-left: .3rem;
+}
+
+.tradeIndextitle .aui-tab {
+    background: transparent;
+}
+
+.tradeIndextitle .aui-tab-item {
+    color: #fff;
+}
+
+.tradeIndextitle .aui-tab-item.aui-active {
+    color: #f8c154;
+    border-color: #f8c154;
+}
+
+.tradeIndexBox ul li {
+    overflow: hidden;
+    background-color: #272930;
+    margin-top: .15rem;
+}
+
+.tradeIndexBox ul li .topli {
+    border-bottom: 1px solid rgba(255, 255, 255, .1);
+    line-height: 1.7rem;
+    padding-bottom: .3rem;
+    padding: .55rem;
+    padding-left: 0;
+    margin-left: .75rem;
+}
+
+.tradeIndexBox ul li .topli .numBox {
+    color: #fff;
+    display: block;
+    float: left;
+    background-color: #f8c154;
+    line-height: .9rem;
+    padding: 0 .3rem;
+    border-radius: 4px;
+    font-size: .5rem;
+    margin-left: .3rem;
+    margin-right: .2rem;
+}
+
+.tradeIndexBox ul li .topli img {
+    float: left;
+    width: 1.57rem;
+
+}
+
+.tradeIndexBox ul li .topli .headerImg {
+    height: 1.5rem;
+    border-radius: 50%;
+    margin: 0 .5rem;
+}
+
+.tradeIndexBox ul li .topli span {
+    float: left;
+    color: #fff;
+    font-size: .7rem;
+}
+
+.tradeIndexBox ul li .topli .iconSpan {
+    color: #f8c154;
+    font-size: .3rem;
+    margin-left: .4rem;
+}
+
+.tradeIndexBox ul li .topli .iconSpan i {
+    font-size: .9rem;
+}
+
+.tradeIndexBox ul li .topli a {
+    float: right;
+    color: #f8c154;
+    font-size: .7rem;
+    margin-left: .5rem;
+}
+
+.tradeIndexBox ul li .topli {
+    overflow: hidden;
+}
+
+.bottomLis {
+    overflow: hidden;
+}
+
+.bottomLis div {
+    width: 25%;
+    float: left;
+    text-align: center;
+}
+
+.bottomLis .KLine {
+    width: 80px;
+    height: 50px;
+}
+
+.followe div {
+    width: 20%;
+}
+
+.bottomLis div:first-child {
+    text-align: left;
+}
+
+.bottomLis .rightLi {
+    text-align: right;
+}
+
+.bottomLis div span {
+    color: rgba(255, 255, 255, .5);
+    font-size: .65rem;
+    margin-bottom: .5rem;
+    display: block;
+}
+
+.followe div p span {
+    display: inline-table;
+    font-size: .4rem;
+    color: #fff;
+}
+
+.followe div .orenge-color span {
+    color: #f8c154;
+}
+
+.followe div .wieColor {
+    color: #fff;
+}
+
+.bottomLis {
+    padding: .75rem;
+}
+
+.tradeIndexBox {
+    padding-bottom: 3rem;
+    margin-top: 58px;
+    width: 100%;
+    overflow: scroll;
+}
+
+.h24Box ul li {
+    overflow: hidden;
+    margin-top: .2rem;
+    background-color: rgb(46, 50, 55);
+    color: #fff;
+    padding: .75rem;
+}
+
+.h24Box ul li .leftBox {
+    width: 15%;
+    float: left;
+}
+
+.h24Box ul li .leftBox span {
+    display: block;
+    width: 1.8rem;
+    height: 1.8rem;
+    margin: 0 auto;
+    border-radius: 50%;
+    background-color: #999;
+    text-align: center;
+    line-height: 1.8rem;
+}
+
+.h24Box ul li .leftBox span i {
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+.h24Box ul li .rightBox {
+    width: 85%;
+    float: left;
+    padding-left: .6rem;
+}
+
+.h24Box ul li .rightBox p {
+    color: #fff;
+    margin-top: -.1rem;
+    font-size: .6rem;
+    margin-bottom: .6rem;
+}
+
+.h24Box ul li .rightBox span {
+    font-size: .78rem;
+}
+
+.accounList ul li {
+    overflow: hidden;
+    margin-top: .4rem;
+    padding: .75rem;
+    background-color: #2e3237;
+}
+
+.accounList ul li h4 {
+    width: 100%;
+    color: #fff;
+    overflow: hidden;
+    margin-bottom: .8rem;
+}
+
+.accounList ul li h4 img {
+    width: 1rem;
+    float: left;
+    margin-right: .3rem;
+}
+
+.accounList ul li div {
+    width: 33.3%;
+    float: left;
+    text-align: center;
+}
+
+.accounList ul li div p {
+    color: rgba(255, 255, 255, .5);
+    font-size: .6rem;
+    margin-bottom: .5rem;
+}
+
+.accounList ul li div a {
+    color: #f8c154;
+    font-size: .67rem;
+}
+
+.accounList ul li div .greenColor {
+    color: #2ec36c;
+}
+
+.accounList ul li div .redColor {
+    color: #fd554f;
+}
+
+
+.currencyMoneyBox {
+    width: 100%;
+    padding: 1rem;
+    position: fixed;
+    height: calc(100% - 4rem);
+    top: 2rem;
+    overflow: scroll;
+}
+
+.choseCoin {
+    color: #fff;
+    width: 7rem;
+    margin: 0 auto;
+}
+
+.choseCoin img {
+    width: 1.3rem;
+    float: left;
+    margin: 0 auto;
+    margin-right: .3rem;
+}
+
+.choseCoin i {
+    color: #f8c154;
+    margin-left: .3rem;
+}
+
+.currencyForm {
+    padding: 2rem .6rem;
+}
+
+.currencyForm input {
+    width: 100%;
+    background-color: #272a31;
+    border: 1px solid #595959;
+    line-height: 1.7rem;
+    color: rgba(255, 255, 255, .5);
+}
+
+.currencyForm .yzmCode {
+    width: 100%;
+    background-color: #272a31;
+    height: 1.7rem;
+    overflow: hidden;
+    border: 1px solid #595959;
+    line-height: 1.9rem;
+    color: rgba(255, 255, 255, .5);
+}
+
+.currencyForm .yzmCode input {
+    width: 70%;
+    float: left;
+    background: transparent;
+    border: 0;
+}
+
+.currencyForm .yzmCode a {
+    float: right;
+    color: #f6c053;
+    font-size: .6rem;
+    padding-right: .75rem;
+    margin-top: -.1rem;
+}
+
+.currencyForm p {
+    color: rgba(255, 255, 255, .5);
+}
+
+.currencyForm .redColor {
+    color: red;
+    font-size: .6rem;
+}
+
+.currencyForm ul li {
+    height: 4rem;
+}
+
+.fiexHeaer {
+    position: fixed;
+}
+
+.hederBox {
+    background: url(../../img/QXQ.jpg) no-repeat;
+    background-size: 100% 100%;
+}
+
+.hederBox .gary-title {
+    background: transparent;
+}
+
+.hederBox .hederInfor {
+    text-align: center;
+}
+
+.hederBox .hederInfor img {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    display: initial;
+    border: 1px solid #fff;
+}
+
+.hederBox .hederInfor div {
+    color: #fff;
+    font-size: .9rem;
+    margin: .5rem;
+}
+
+.hederBox div {
+    color: #fff;
+}
+
+.hederBox .hederInfor div span {
+    font-size: .9rem;
+    color: #f6c053;
+    display: inline-block;
+    margin-left: .4rem;
+}
+
+.hederBox .hederInfor div span i {
+    font-size-adjust: 1.2rem;
+}
+
+.hederBox .hederInfor p {
+    display: inline-block;
+    color: rgba(255, 255, 255, .7);
+    font-size: .75rem;
+    padding: 0 .7rem;
+    border-right: 1px solid #fff;
+    height: .5rem;
+    line-height: .5rem;
+    margin-bottom: .5rem;
+}
+
+.hederBox .hederInfor p:last-child {
+    border: 0;
+}
+
+.orderDetailBoxTitle .aui-tab {
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, .1);
+}
+
+.orderDetailBoxTitle .aui-tab-item {
+    height: 2rem;
+    line-height: 2rem;
+}
+
+.myAttention ul li {
+    overflow: hidden;
+    padding: .75rem;
+    background-color: #2e3237;
+    margin-top: .3rem;
+}
+
+.myAttention ul li img {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    float: left;
+}
+
+.myAttention ul li .rightBox {
+    float: right;
+    width: 80%;
+    color: #fff;
+}
+
+.myAttention ul li .rightBox div {
+    font-size: .7rem;
+}
+
+.myAttention ul li .rightBox div a {
+    float: right;
+    padding: .2rem 1rem;
+    border: 1px solid #f6c053;
+    border-radius: 4px;
+    color: #f6c053;
+    font-size: .6rem;
+}
+
+.myAttention ul li .rightBox p {
+    color: rgba(255, 255, 255, 1);
+    font-size: .53rem;
+    margin: .5rem 0;
+}
+
+.myAttention ul li .rightBox p span {
+    color: #f6c053;
+    margin-right: .5rem;
+}
+
+.myAttention ul li .rightBox i {
+    color: rgba(255, 255, 255, 1);
+    font-size: .53rem;
+}
+
+.recommendation ul li {
+    overflow: hidden;
+
+    position: relative;
+}
+
+.recommendation ul li .topBox div {
+    width: 26%;
+    float: left;
+    text-align: center;
+
+}
+
+.recommendation ul li .topBox .smailBox {
+    width: 20%;
+}
+
+.recommendation ul li .topBox {
+    width: 100%;
+    background-color: #272930;
+    padding: .75rem;
+    overflow: hidden;
+}
+
+.recommendation ul li .topBox div span {
+    display: block;
+    color: #fff;
+    font-size: .6rem;
+}
+
+.recommendation ul li .topBox div span:first-child {
+    margin-bottom: .45rem;
+}
+
+.recommendation ul li .topBox div span i {
+    font-size: .45rem;
+}
+
+.recommendation ul li .bottomBox {
+    width: 100%;
+    overflow: hidden;
+    padding: .75rem;
+    display: none;
+}
+
+.recommendation ul .activePageLi .bottomBox {
+    display: block;
+}
+
+.recommendation ul li .bottomBox p {
+    overflow: hidden;
+    width: 100%;
+}
+
+.recommendation ul li .bottomBox p a {
+    color: #f6c053;
+    font-size: .7rem;
+    float: left;
+    display: inline-block;
+    width: 35%;
+}
+
+.recommendation ul li .RightFlot {
+    color: #864d00;
+    height: .8rem;
+    width: 4.5rem;
+    position: absolute;
+    right: -1.3rem;
+    text-align: center;
+    line-height: .8rem;
+    background-color: #f6c053;
+    -moz-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    font-size: .3rem;
+    padding-left: .7rem;
+}
+
+.recommendation ul li .bottomBox span {
+    color: #fff;
+    font-size: .6rem;
+    float: left;
+    margin-top: .5rem;
+}
+
+.recommendation ul li .bottomBox span i {
+    color: #f6c053;
+    margin-left: .3rem;
+}
+
+.recommendation ul li .bottomBox .firstSpan {
+    width: 30%;
+    float: left;
+}
+
+.recommendation ul li .bottomBox span:last-child {
+    width: 20%;
+    float: right;
+    text-align: right;
+}
+
+.payManyeBox {
+    padding: 0 1rem;
+}
+
+.payManyeBox p {
+    color: #f98804;
+    font-size: .8rem;
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+.payManyeBox p:last-child {
+    margin: 0;
+}
+
+.payManyeBox p span {
+    color: #999;
+    display: block;
+    float: left;
+    text-align: right;
+    width: 60%;
+}
+
+.payManyeBox p i {
+    display: block;
+    float: left;
+    text-align: left;
+    color: #f98804;
+    width: 40%;
+    padding-left: .5rem;
+}
+
+.personHeadRTop {
+    overflow: hidden;
+    padding: .75rem;
+    background-color: #2e3237;
+    margin: .3rem 0;
+}
+
+.personHeadRTop div {
+    float: left;
+    width: 19%;
+    overflow: hidden;
+    border-right: 1px solid #848484;
+    text-align: center;
+    font-size: .5rem;
+}
+
+.personHeadRTop div:last-child {
+    border: none;
+}
+
+.personHeadRTop div:first-child {
+    padding-left: 0px;
+    border: none;
+    width: 24%;
+}
+
+.personHeadRTop div p {
+    color: #8a8989;
+    font-size: .5rem;
+    margin-bottom: .3rem;
+}
+
+.personHeadRTop div span {
+    font-size: .5rem;
+    color: #eceae8;
+    float: left;
+}
+
+.personHeadRTop div .swichSpan {
+    font-size: .3rem;
+    color: #969595;
+}
+
+.personHeadRTop div .swichBox span {
+    display: block;
+    float: left;
+    font-size: .5rem;
+    color: #b3b0b0;
+}
+
+.widget_switch_checkbox {
+    display: none;
+}
+
+.widget_switch_label {
+    background-color: grey;
+    display: inline-block;
+    position: relative;
+    height: .6rem;
+    width: 1rem;
+    border-radius: 1000px;
+}
+
+.widget_switch_checkbox:checked ~ .widget_switch_label .widget_switch_circle {
+    left: .45rem;
+    top: .1rem;
+}
+
+.widget_switch_circle {
+    position: absolute;
+    display: inline-block;
+    height: .4rem;
+    width: .4rem;
+    border-radius: 50%;
+    background-color: #f98900;
+    left: .2rem;
+    top: .1rem;
+    /*过渡效果，可考虑不加*/
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.widget_switch_checkbox:checked ~ .widget_switch_label {
+    background: #626061;
+}
+
+.infroTxt {
+    padding: .75rem;
+    background-color: #2e3237;
+    padding-top: .4rem;
+    position: relative;
+}
+
+.infroTxt div {
+    overflow: hidden;
+    padding: .3rem 0;
+}
+
+.infroTxt div span {
+    width: 23%;
+    float: left;
+    text-align: right;
+    color: #fff;
+    font-size: .6rem;
+}
+
+.infroTxt div p {
+    width: 70%;
+    float: left;
+    text-align: left;
+    color: #fff;
+    font-size: .6rem;
+}
+
+.infroTxt i {
+    color: #8a8989;
+    float: right;
+    position: absolute;
+    right: .75rem;
+    top: 0;
+}
+
+.infroTxt div .gatyFont {
+    color: #8a8989;
+}
+
+.profitBox {
+    margin: .3rem;
+    padding: .75rem;
+    background-color: #2e3237;
+    overflow: hidden;
+}
+
+.profitBox div {
+    width: 25%;
+    text-align: center;
+    float: left;
+    border-right: 1px solid rgba(255, 255, 255, .1);
+}
+
+.profitBox div:last-child {
+    border: 0;
+}
+
+.profitBox div p {
+    font-size: .6rem;
+    color: #b5b3b3;
+    margin-bottom: .4rem;
+}
+
+.profitBox div span {
+    color: #02af53;
+}
+
+.profitBox div .whitFont {
+    color: #fff;
+}
+
+.allProfit {
+    width: 100%;
+    height: 9rem;
+    background-color: #2e3237;
+    padding-top: .5rem;
+}
+
+.mypageSlide .slideBOx .slideSpan {
+    background-color: #2e3237;
+    border: 1px solid #949393;
+
+    height: 160px;
+}
+
+.mypageSlide .slideBOx .leftSilde {
+    border-left: 0;
+}
+
+.mypageSlide .slideBOx .rightSilde {
+    border-right: 0;
+}
+
+.mypageSlide .slideBOx .moneyBox {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #949393;
+    border-radius: 8px;
+    background-color: #2e3237;
+    padding: .75rem;
+}
+
+.mypageSlide .slideBOx .moneyBox p {
+    overflow: hidden;
+    color: #fff;
+    font-size: .7rem;
+    line-height: 1.3rem;
+}
+
+.mypageSlide .slideBOx .moneyBox p span {
+    width: 28%;
+    float: left;
+    text-align: right;
+}
+
+.mypageSlide .slideBOx .moneyBox p .rightSpan {
+    float: right;
+    width: 70%;
+    text-align: right;
+}
+
+.typeSetBoxMain {
+    width: 100%;
+    overflow: hidden;
+    background-color: #2e3237;
+}
+
+#typeSetBox {
+    width: 100%;
+    height: 12rem;
+    width: 60%;
+    float: left;
+}
+
+.pieType {
+    width: 30%;
+    float: right;
+    margin-top: 10%;
+}
+
+.pieType p {
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.pieType p span {
+    display: block;
+    width: 50%;
+    float: left;
+    font-size: .5rem;
+    color: #fff;
+}
+
+.pieType p span i {
+    width: .3rem;
+    height: .3rem;
+    display: block;
+    float: left;
+    margin-right: .2rem;
+    margin-top: .1rem;
+}
+
+.BTC {
+    background-color: #64b3d4;
+}
+
+.ETH {
+    background-color: #055997;
+}
+
+.EOX {
+    background-color: #015e17;
+}
+
+.XRP {
+    background-color: #fa8804;
+}
+
+.DCR {
+    background-color: #75262b;
+}
+
+.ETF {
+    background-color: #b9a1db;
+}
+
+.ZIL {
+    background-color: #449641;
+}
+
+.DCR {
+    background-color: #b35138;
+}
+
+.newsBox {
+    margin-top: 57px;
+    width: 100%;
+    top: 2.2rem;
+    overflow: scroll;
+    height: calc(100% - 2.3rem);
+    padding-bottom: 2rem;
+}
+
+.orderDetailAqu {
+    position: fixed;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    background-color: #20232a;
+}
+
+.orderDetailAqu .newsTitle .aui-tab {
+    width: 30%;
+    float: left;
+}
+
+.orderDetailAqu .aui-tab-item.aui-active span {
+    margin-top: -.1rem;
+}
+
+.orderDetailAqu .newsTitle {
+    overflow: hidden;
+    width: 100%;
+    margin: .2rem .3rem;
+    background-color: #2e3237;
+    padding: 0 .75rem;
+}
+
+.orderDetailAqu .newsTitle i {
+    color: #999;
+    float: right;
+    margin-top: .3rem;
+    font-size: 1rem;
+}
+
+.selectBox {
+    width: 100%;
+    height: 1.5rem;
+    border-bottom: rgba(255, 255, 255, .1);
+    line-height: 0.5rem;
+    color: rgba(255, 255, 255, .5);
+    overflow: hidden;
+}
+
+.selectBox span {
+    display: block;
+    width: 33.3%;
+    float: left;
+    text-align: center;
+    border-right: 1px solid rgba(255, 255, 255, .1);
+    height: 1rem;
+    line-height: 1rem;
+    font-size: .7rem;
+    margin-top: .1rem;
+}
+
+.selectBox span i {
+    margin-left: .3rem;
+}
+
+.selectBox span:last-child {
+    border: 0;
+}
+
+.tpopimeBox {
+    background-color: #1b1f23;
+    display: none;
+    height: 6rem;
+    overflow: scroll;
+}
+
+.tpopimeBox ul li {
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, .1);
+    color: rgba(255, 255, 255, .5);
+    font-size: .7rem;
+    padding-left: .75rem;
+    line-height: 1.7rem;
+}
+
+.tpopimeBox ul .activeTime {
+    color: #f8c154;
+}
+
+.capitalRecord {
+    position: fixed;
+    width: 100%;
+    height: calc(100% - 15rem);
+    overflow: scroll;
+}
+
+.capitalRecord1,  .capitalRecord2 {
+    height:  calc(100% -4.5rem);
+}
+
+.capitalRecordb {
+    position: fixed;
+    width: 100%;
+    height: calc(100% - 11rem);
+    overflow: scroll;
+}
+
+.capitalRecordr {
+    position: fixed;
+    width: 100%;
+    height: calc(100% - 3.8rem);
+    overflow: scroll;
+}
+
+/*  .capitalRecordr1, .capitalRecordr2{
+ height: calc(100% - 9rem);
+ }  */
+
+.AquCoinTitle .newsTitle {
+    height: 2.2rem;
+}
+
+.AquCoinTitle .newsTitle .aui-tab {
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, .1);
+    padding-bottom: .1rem;
+    padding-right: 50%;
+}
+
+.AquCoinTitle .newsTitle .aui-tab-item {
+    font-size: .67rem;
+}
+
+.AquCoinTitle .aui-tab-item span {
+    background-color: #20232a;
+    width: 40%;
+}
+
+.AquCoinTitle .aui-tab-item.aui-active span {
+    background-color: #f6c053;
+}
+
+.CoinlistBox .aui-list {
+    background: transparent;
+}
+
+.CoinlistBox .aui-list label {
+    color: #fff;
+    line-height: 1.5rem;
+}
+
+.CoinlistBox .aui-radio {
+    float: right;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: transparent;
+    border: 0;
+}
+
+.CoinlistBox .aui-list label img {
+    float: left;
+    width: 1.5rem;
+    margin-right: .5rem;
+}
+
+.CoinlistBox .aui-list .aui-list-item {
+    background: transparent;
+    border-bottom: 1px solid rgba(255, 255, 255, .1);
+}
+
+.CoinlistBox .aui-radio:checked::before {
+    top: 32%;
+    left: 80%;
+    border: 2px solid #f8c154;
+    border-top: none;
+    border-right: none;
+    width: 1rem;
+    height: 0.5rem;
+}
+
+.CoinlistBox .aui-radio:checked::after {
+    display: none;
+}
+
+.CoinlistBox .aui-list.aui-select-list .aui-list-item-inner {
+    padding: .7rem 0;
+}
+
+.sahreBox {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #fff;
+    display: none;
+    z-index: 9;
+}
+
+.sahreBox .shaolIST {
+    overflow: hidden;
+}
+
+.sahreBox .shaolIST div {
+    width: 20%;
+    float: left;
+    text-align: center;
+    padding-top: 2rem;
+}
+
+.sahreBox .shaolIST div img {
+    width: 1.4rem;
+    height: 1.4rem;
+    margin: .3rem auto;
+}
+
+.sahreBox .shaolIST div span {
+    display: block;
+    width: 2.2rem;
+    height: 2.2rem;
+    border: 1px solid #f1eaea;
+    border-radius: 50%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.sahreBox .shaolIST div p {
+    font-size: .67rem;
+    color: #999;
+    margin-top: .8rem;
+    display: inline-block;
+}
+
+.sahreBox a {
+    display: block;
+    width: 100%;
+    height: 2rem;
+    line-height: 2rem;
+    border-top: 1px solid #e2d8d8;
+    text-align: center;
+    color: #777373;
+    margin-top: 1rem;
+}
+
+.tradeStrategyArea {
+    padding: .75rem;
+    height: 20rem;
+    color: rgba(255, 255, 255, .5);
+    width: 100%;
+    overflow-y: scroll;
+}
+
+.editGrupBox {
+    width: 100%;
+    text-align: center;
+}
+
+.editGrupBox img {
+    width: 40%;
+    margin: 3rem auto;
+}
+
+.editGrupBox p {
+    color: rgba(255, 255, 255, .5);
+    font-size: .85rem;
+    margin-bottom: .3rem;
+}
+
+.editGrupBox input {
+    width: 80%;
+    background: transparent;
+    border-bottom: 1px solid #f8c154;
+    height: 2rem;
+    line-height: 2rem;
+    color: rgba(255, 255, 255, .5);
+    margin-left: 10%;
+}
+
+.selectBoxMisn {
+    position: relative;
+    z-index: 11;
+}
+
+.selectBoxMisn .selectBox {
+    padding-left: .75rem;
+}
+
+.gogleVerificationBox {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.gogleVerificationBox p {
+    color: #fff;
+    margin-top: -1rem;
+}
+
+.gogleVerificationBox input {
+    background-color: #2d313a;
+    width: 65%;
+    display: block;
+    margin: 1.7rem auto;
+    line-height: 2rem;
+}
+
+.gogleVerificationBox a {
+    color: #f8c154;
+    font-size: .7rem;
+    padding: 1rem;
+}
+
+.setBox ul .yzmGogle input {
+    width: 50%;
+}
+
+.setBox ul .yzmGogle a {
+    font-size: .6rem;
+    width: 25%;
+    text-align: right;
+    margin: 0 auto;
+    display: block;
+}
+
+.selectBoxMisn {
+    position: relative;
+    z-index: 11;
+}
+
+.selectBoxMisn .selectBox {
+    padding-left: .75rem;
+}
+
+.gogleVerificationBox {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.gogleVerificationBox p {
+    color: #fff;
+    margin-top: -1rem;
+}
+
+.gogleVerificationBox input {
+    background-color: #2d313a;
+    width: 65%;
+    display: block;
+    margin: 1.7rem auto;
+    line-height: 2rem;
+}
+
+.gogleVerificationBox a {
+    color: #f8c154;
+    font-size: .7rem;
+    padding: 1rem;
+}
+
+.setBox ul .yzmGogle input {
+    width: 50%;
+}
+
+.setBox ul .yzmGogle a {
+    font-size: .6rem;
+    width: 25%;
+    text-align: right;
+}
+
+.serchInput {
+    background: transparent;
+    width: 10rem;
+    color: #fff;
+}
+
+.serchInput::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color: #fff;
+}
+
+.serchInput:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #fff;
+}
+
+.serchInput::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #fff;
+}
+
+.serchInput:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #fff;
+}
+
+.showPhone {
+    width: 22%;
+    position: fixed;
+    bottom: 3rem;
+    z-index: 9;
+    left: 0.3rem;
+    border-radius: 8px;
+    display: none;
+}
+
+.loadingMore {
+    text-align: center;
+    width: 100%;
+    display: block;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+    color: #f6c053;
+}
+
+.addTop .serchBox input[type="text"] {
+    width: 10rem;
+}
+
+.showPhone {
+    width: 22%;
+    position: fixed;
+    bottom: 3rem;
+    z-index: 9;
+    left: 0.3rem;
+    border-radius: 8px;
+    display: none;
+}
+
+.payManyegronp {
+
+}
+
+.payManyegronp div {
+    font-size: 1rem;
+    color: #666;
+}
+
+.payManyegronp i {
+    color: #f98804;
+}
+
+.payManyegronp p {
+    overflow: hidden;
+    margin: .8rem 0;
+}
+
+.payManyegronp p span {
+    width: 50%;
+    text-align: center;
+    display: block;
+    float: left;
+    color: #999;
+    margin: .2rem 0;
+}
+
+.setBox textarea {
+    width: 100%;
+    height: 9rem;
+    overflow-y: scroll;
+    padding: .75rem;
+    background: rgba(56, 59, 67, .2);
+    color: #999;
+}
+
+.commonGorup {
+    background: #2e3237;
+    padding: .75rem;
+    color: #fff;
+    margin-bottom: .3rem;
+}
+
+.commonGorup h3 {
+    font-size: .7rem;
+    margin-bottom: .4rem;
+}
+
+.commonGorup h3 i {
+    float: right;
+}
+
+.groupNumber div {
+    width: 100%;
+    overflow: hidden;
+}
+
+.groupNumber div span {
+    display: block;
+    width: 20%;
+    float: left;
+    text-align: center;
+}
+
+.groupNumber div .addFrind {
+    opacity: .5;
+}
+
+.groupNumber div span img {
+    width: 2.3rem;
+    height: 2.3rem;
+    margin: .4rem auto;
+    border-radius: 50%;
+}
+
+.groupNumber div span p {
+    color: #fff;
+}
+
+.groupNumber a {
+    color: #fff;
+    font-size: .7rem;
+    display: block;
+    width: 100%;
+    text-align: center;
+    opacity: .5;
+    margin-top: 1rem;
+}
+
+.groupInfo p {
+    color: #fff;
+    opacity: .5;
+}
+
+.lastDiv {
+    margin-bottom: 4rem;
+}
+
+.paymoneyBtn {
+    background: #f8c154;
+    color: #8d4e01;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.paymoneyBtn img {
+    width: 1.2rem;
+    height: 1.2rem;
+    vertical-align: middle;
+    margin-right: .5rem;
+}
+
+.downAppBox {
+    padding: 4rem 2rem 3rem 2rem;
+    text-align: center;
+}
+
+.downAppBox .btnBox {
+    margin-top: 3rem;
+    line-height: 0;
+}
+
+.downAppBox .btnBox a {
+    display: block;
+    width: 100%;
+    background: #ffcb52;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #946531;
+    padding: .6rem 0;
+    margin: 1rem 0;
+}
+
+.downAppBox .btnBox a img {
+    width: 1.2rem;
+    height: 1.2rem;
+    margin-right: .7rem;
+}
+
+.downAppBox p {
+    color: #fff;
+    opacity: .5;
+    margin-bottom: 1rem;
+}
+
+.downAppBox div {
+    color: #fff;
+    font-size: .7rem;
+    line-height: 1.5rem;
+}
+
+.downAppBox div a {
+    color: #ffcb52;
+    font-size: .4rem;
+}
+
+.downAppBox h2 {
+    font-size: .7rem;
+    color: #fff;
+    font-weight: 600;
+    margin-top: 1rem;
+}
+
+.downAppBox span {
+    color: #fff;
+    font-size: .6rem;
+    display: block;
+    margin: .5rem;
+    line-height: 1.2rem;
+}
+
+.orderInforBox {
+    width: 100%;
+    height: 28%;
+    overflow-y: scroll;
+    position: fixed;
+}
+
+.orderInforBox .ordertittle {
+    font-size: 0.7rem;
+    background-color: #3f454c;
+    text-align: center;
+    overflow: hidden;
+}
+
+.orderInforBox span {
+    display: block;
+    width: 20%;
+    float: left;
+    color: #fff;
+    font-size: .6rem;
+    text-align: center;
+    line-height: 1.5rem;
+}
+
+.orderInforBox div {
+    width: 100%;
+    overflow: hidden;
+}
+
+.orderInforBox .ordertittle span {
+    color: #757575;
+}
+
+.orderInforBox .redColor {
+    color: #fd554f;
+}
+
+.orderInforBox .orengeColor {
+    color: #f8c154;
+}
+
+.orderInforBox .greenColor {
+    color: #2ec36c;
+}
+
+.orderInforBox .grayColor {
+    color: #757575;
+}
+
+.loginformBox input {
+    background: transparent;
+    line-height: 2rem;
+}
+
+.registerapp h2 {
+    color: #f98d1f;
+    font-size: 1.2rem;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.loginBoxapp {
+    width: 95%;
+    margin: 0px auto;
+    background-color: rgba(52, 52, 52, .72);
+    padding: 1rem;
+    border-radius: 20px;
+}
+
+.loginBoxapp .nav-tabs > li > a {
+    font-size: 24px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #fff;
+    margin-right: -2px;
+}
+
+.loginBoxapp .nav-tabs > li {
+    width: 50%;
+    text-align: center;
+
+}
+
+.loginBoxapp .accountLBox ul li p {
+    margin-top: 15px;
+    margin-bottom: 0px;
+    color: #fff;
+}
+
+.register .loginBox .nav-tabs > li > a {
+    padding-bottom: 10px;
+    border: 0;
+}
+
+.register .loginBox .yzm {
+    float: right;
+    /* width: 30%; */
+    color: #e4e2e2;
+    padding: 5px;
+    border: 1px solid #e4e2e2;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.register .loginBtn {
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 0px;
+}
+
+.accountLBox ul li input {
+    width: 100%;
+
+    border: none;
+    border-bottom: 1px solid #605a53;
+    background: transparent;
+    height: 1.2rem;
+    font-size: 10px;
+    color: #ffffff;
+}
+
+.accountLBox ul li .aui-checkbox {
+    width: 1.2rem;
+}
+
+.accountLBox .yzm {
+    float: right;
+    width: 25%;
+    color: #e4e2e2;
+    padding: .2rem;
+    border: 1px solid #e4e2e2;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 12px;
+}
+
+.accountLBox .loginBtn a {
+    display: block;
+    width: 90%;
+    margin: 1.8rem auto;
+    text-align: center;
+    color: #fff;
+    padding: 10px 90px;
+    border-radius: 5px;
+    background-color: #f98d1f;
+}
+
+.loginBoxapp .aui-tab {
+    background: transparent;
+}
+
+.loginBoxapp .aui-tab-item {
+    color: #fff;
+    border-bottom: 1px solid #999;
+}
+
+.loginBoxapp .aui-tab-item.aui-active {
+    color: #f98d1f;
+    border-bottom: 2px solid #f98d1f;
+}

@@ -1,0 +1,57 @@
+#candlestick_hide {
+    position: fixed;
+    z-index: 1000;
+    left: 30%;
+    top: 50%;
+}
+
+.zdy_select {
+    height: 1.0rem;
+    padding-left: 15%;
+    color: #FFFFFF;
+    background-color: #20232a;
+}
+
+.swiper-slide {
+
+    font-size: 14px;
+}
+
+.xuanzhong {
+    color: #EEAF2C;
+    border-bottom: 3px solid #EEAF2C;
+}
+
+.zdy_top {
+    height: 3rem;
+    line-height: 3rem;
+    font-size: 18px;
+    color: #ffffff;
+    border-bottom: 1px solid rgba(255, 255, 255, .1);
+
+}
+
+.zdy_gonggao {
+
+}
+
+.buttom_class {
+    width: auto !important;
+}
+
+.zdy_noticeBox {
+    width: 100%;
+    height: 2rem;
+    line-height: 2rem;
+    color: #fff;
+    padding: 0 .75rem;
+    margin-top: 57px;
+}
+
+.zdy_select2 {
+    height: 1.2rem;
+    color: #FFFFFF;
+    width: 60px;
+    border: 1px solid #FFFFFF;
+    border-radius: 5px;
+}

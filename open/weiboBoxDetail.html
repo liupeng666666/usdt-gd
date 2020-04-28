@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"
+    />
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>新闻详情</title>
+    <script>
+        var mobileAgent = new Array("iphone", "ipod", "ipad", "android", "mobile", "blackberry", "webos", "incognito", "webmate", "bada", "nokia", "lg", "ucweb", "skyfire");
+        var browser = navigator.userAgent.toLowerCase();
+        var isMobile = false;
+        var url = location.search;
+        for (var i = 0; i < mobileAgent.length; i++) {
+            if (browser.indexOf(mobileAgent[i]) != -1) {
+                isMobile = true;
+                //location.href = 'registerapp.html?'+url; //跳转指定链接
+                break;
+            }
+        }
+        if (isMobile == false) {
+            location.href = '../newsMessage.html' + url;
+        }
+    </script>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .weixin-tip {
+            display: none;
+            position: fixed;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            filter: alpha(opacity=80);
+            height: 100%;
+            width: 100%;
+            z-index: 100;
+        }
+
+        .weixin-tip p {
+            text-align: center;
+            margin-top: 10%;
+            padding: 0 5%;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="../css/app/aui.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/app/index.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/app/iconfont.css"/>
+    <script src="../js/app/jquery-3.1.0.js"></script>
+    <script src="../js/app/api.js"></script>
+    <script src="../js/app/aui-popup.js"></script>
+</head>
+<body>
+<div class="weixin-tip">
+    <p>
+        <img src="../img/live_weixin.png" alt="微信打开"/>
+    </p>
+</div>
+<header class="aui-bar aui-bar-nav gary-title" style="position: fixed;bottom: 0px;top:unset;background-color: #CCCCCC;">
+    <a class="aui-pull-left aui-btn" href="javascript:closeWin()">
+        <img src="../img/f_logo.jpg" width="50px" height="50px" style="border-radius: 10px;padding: 3px"/>
+    </a>
+    <div class="aui-pull-left aui-btn">
+        <div style="font-size: 10px; padding: 0px;position: absolute; top:-10px;color: #000000;">Bcurrency</div>
+        <div style="font-size: 10px; padding: 0px;position: absolute; top:10px;color: #000000;">专业数字货币交易平台</div>
+    </div>
+    <a class="aui-pull-right aui-btn" aui-popup-for="top-left">
+        <div style="background-color: #EEA236;border-radius: 10px;line-height: 1.5rem;font-size: 14px;padding: 0px 10px;color: #20232A;"
+             onclick="dakai()">打开app
+        </div>
+    </a>
+</header>
+<div class="weiboBoxDetail">
+    <h2 id="title"></h2>
+    <div class="writerBox">
+        <div class="leftBox">
+            <img src="" id="img">
+            <span id="nickname"></span>
+        </div>
+        <span id="time"></span>
+    </div>
+
+</div>
+<div class="vewsMian" id="message" style="background-color: #FFFFFF;padding: 15px;color: #000000"></div>
+</body>
+<script src="../whpjs/newsMessage.js"></script>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"
+    />
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <title>通用设置</title>
+    <link rel="stylesheet" type="text/css" href="css/app/aui.css"/>
+    <link rel="stylesheet" type="text/css" href="css/app/iconfont.css"/>
+    <link rel="stylesheet" type="text/css" href="css/app/aui-slide.css"/>
+    <link rel="stylesheet" type="text/css" href="css/app/index.css"/>
+    <script src="js/app/jquery-3.1.0.js"></script>
+    <script src="js/app/api.js"></script>
+    <script src="pcjs/shareGroupInfor.js"></script>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .weixin-tip {
+            display: none;
+            position: fixed;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            filter: alpha(opacity=80);
+            height: 100%;
+            width: 100%;
+            z-index: 100;
+        }
+
+        .weixin-tip p {
+            text-align: center;
+            margin-top: 10%;
+            padding: 0 5%;
+        }
+    </style>
+</head>
+
+<body>
+<div class="weixin-tip">
+    <p>
+        <img src="img/live_weixin.png" alt="微信打开"/>
+    </p>
+</div>
+
+<div style="padding:10px 0px 0px 7%;background-color:#2e3237;width: 100%;height: 2rem; ">
+    <img style="float:left;" src="img/login.png" width="30%">
+    <a href="login/registerapp.html" style="float:right;margin-right: .7rem;color:#eeaf2c;">注册</a>
+    <a href="javascript:jumpAppOrDown()" style="float:right;margin-right: .7rem;color:#eeaf2c;">登录</a>
+</div>
+<div class="hederBox">
+    <header class="aui-bar aui-bar-nav gary-title">
+        <!-- <a class="aui-pull-left aui-btn" href="javascript:closeWin()">
+          <span class="aui-iconfont aui-icon-left"></span>
+        </a> -->
+    </header>
+    <div class="hederInfor">
+        <img id="group_head" onerror="javascript:this.src='img/head.png';" src="../img/head.png">
+        <div><font id="group_name">群名称</font>
+            <!--<i class="aui-iconfont aui-icon-pencil"></i>-->
+        </div>
+        <p id="group_id">439579346441</p>
+    </div>
+</div>
+<div class="commonGorup groupNumber">
+    <h3 data-locale="chat.qunchengyuan">群成员</h3>
+    <div id="group_li">
+        <!-- <span>
+          <img src="../img/head.png">
+          <p>王同学</p>
+        </span>
+        <span>
+          <img src="../img/head.png">
+          <p>王同学</p>
+        </span>
+        <span>
+          <img src="../img/head.png">
+          <p>王同学</p>
+        </span>
+        <span>
+          <img src="../img/head.png">
+          <p>王同学</p>
+        </span>
+        <span>
+          <img src="../img/head.png">
+          <p>王同学</p>
+        </span> -->
+    </div>
+    <a href="javascript:getAllMember()" data-locale="chat.chakanquanbuchengyuan">查看全部成员</a>
+</div>
+<div class="commonGorup groupInfo">
+    <h3 data-locale="chat.qunjianjie">群简介</h3>
+    <p id="group_intro">凡入此群者凡入此群者凡入此群者凡入此群者凡入此群者凡 入此群者凡入此群者凡入此群者凡入此群者!
+    </p>
+</div>
+<div class="commonGorup groupInfo lastDiv">
+    <h3 data-locale="chat.fufeixuzhi">付费须知</h3>
+    <p data-locale="chat.xuzhi1">1.请登录APP/网站付费加入社群，并使用当前付款的账号登录 (Bcurrency)参与社区互动。
+    </p>
+    <p data-locale="chat.xuzhi2">2.付费后，原则上不予退还，如有争议，参照阅读社区守则。</p>
+    <p data-locale="chat.xuzhi3">3.本社群由交易员用户自行创建，加入前请确认风险，（Bcur rency）平台不提供相关保证，若发现违规社群勿加入，请投诉 平台客服。
+    </p>
+</div>
+<a href="javascript:jumpAppOrDown()" class="submitBox paymoneyBtn"><img src="img/money.png"><font id="group_money">支付365$入群</font></a>
+</body>
+
+</html>

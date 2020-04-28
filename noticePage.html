@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>公告</title>
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.js"></script>
+      <![endif]-->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/inforPage.css">
+    <link rel="stylesheet" href="css/fb/style.css">
+    <script src="js/jquery-3.1.0.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/inforPage.js"></script>
+    <script type="text/javascript" src="js/jquery.i18n.properties.js"></script>
+    <script src="js/i18n/i18n.js"></script>
+    <script src="utils/utils.js"></script>
+    <script src="../usdt-fb/whpjs/public.js"></script>
+    <style>
+    </style>
+</head>
+
+<body>
+<div class="noticeBoxMain">
+    <header>
+        <div class="row">
+            <div class="container">
+                <nav class="navbar navbar-inverse">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <a class="navbar-brand logo" href="#">
+                                <img src="img/logo.png">
+                            </a>
+                        </div>
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav navList">
+                                <li>
+                                    <a href="index.html" data-locale="daohanglan.index">首页</a>
+                                </li>
+                                <li>
+                                    <a href="coinDetails.html" data-locale="daohanglan.bihangqing">OBV交易</a>
+                                </li>
+                                <li>
+                                    <a href="../usdt-fb/FaBiJiaoYi-Wygm.html"
+                                       data-locale="daohanglan.fabijiaoyi">法币交易</a>
+                                </li>
+
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-locale="daohanglan.remenjiaoyi"
+                                       data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">热门交易
+                                        <span class="caret"></span>
+                                    </a>
+                                    <ul class="dropdown-menu hotTitle">
+                                        <li>
+                                            <a href="hotTradeCharts.html"
+                                               data-locale="daohanglan.remenjiaoyiyuan">热门交易员</a>
+                                        </li>
+                                        <li>
+                                            <a href="hotTradeCharts.html?type=1"
+                                               data-locale="daohanglan.remenjiaoyipaihang">热门交易排行</a>
+                                        </li>
+                                        <li>
+                                            <a href="followProfit.html" data-locale="daohanglan.gensuizhe">跟随者</a>
+                                        </li>
+                                        <li>
+                                            <a href="tradeEndDynamic.html"
+                                               data-locale="daohanglan.jiaoyidongtai">交易动态</a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <a href="chatRoom.html" data-locale="daohanglan.liaotianshi">聊天室</a>
+                                </li>
+                                <li class="dropdown active">
+                                    <a href="#" class="dropdown-toggle" data-locale="daohanglan.xinwenkuaixun"
+                                       data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">新闻快讯
+                                        <span class="caret"></span>
+                                    </a>
+                                    <ul class="dropdown-menu hotTitle">
+                                        <li>
+                                            <a href="newsPage.html?jumptype=0"
+                                               data-locale="daohanglan.xinwenzixun">新闻资讯</a>
+                                        </li>
+                                        <li>
+                                            <a href="newsPage.html?jumptype=1" data-locale="daohanglan.kuaixun">快讯报道</a>
+                                        </li>
+                                        <li>
+                                            <a href="noticePage.html" data-locale="daohanglan.gonggaotongzhi">公告通知</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <ul class="nav navbar-nav navbar-right" id="sub_user_info">
+                                <li class="nav-assets">
+                                    <a href="../usdt-fb/user-assets.html" class="dropdown-toggle-hover"><i
+                                            class="fas fa-wallet"></i><i data-locale="daohanglan.zichan">资产</i></a>
+                                    <div class="assets-pop">
+                                        <h3 data-locale="daohanglan.xianhuojiaoyi">现货交易账号</h3>
+                                        <table class="table-light" cellspacing="0" width="100%">
+                                            <thead>
+                                            <tr>
+                                                <th style="width: 30%;" class="text-left"
+                                                    data-locale="daohanglan.bizhong">币种
+                                                </th>
+                                                <th style="width: 30%;" data-locale="daohanglan.keyong">可用</th>
+                                                <th data-locale="daohanglan.dongjie">冻结</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody id="xhAssetInfo">
+                                            </tbody>
+                                        </table>
+                                        <h3 data-locale="daohanglan.fabijiaoyi">法币交易账号</h3>
+                                        <table class="table-light" cellspacing="0" width="100%">
+                                            <thead>
+                                            <tr>
+                                                <th style="width: 30%;" class="text-left"
+                                                    data-locale="daohanglan.bizhong">币种
+                                                </th>
+                                                <th style="width: 30%;" data-locale="daohanglan.keyong">可用</th>
+                                                <th data-locale="daohanglan.dongjie">冻结</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody id="assetInfo">
+                                            </tbody>
+                                        </table>
+                                        <div class="assets-pop-footer">
+                                            <a href="../usdt-fb/user-assets.html" data-locale="daohanglan.zichanguanli">资产管理</a>
+                                        </div>
+
+                                    </div>
+                                </li>
+                                <li class="nav-order">
+                                    <a href="../usdt-fb/order-list-OBV.html"><i class="fas fa-clipboard-list"></i><i
+                                            data-locale="daohanglan.dingdan">订单</i></a>
+                                </li>
+                                <li class="top_yc">
+                                    <a href="login/login.html" data-locale="daohanglan.denglu">登录</a>
+                                </li>
+                                <li class="top_yc">
+                                    <a href="#">|</a>
+                                </li>
+                                <li class="top_yc">
+                                    <a href="login/register.html" data-locale="daohanglan.zhuce">注册</a>
+                                </li>
+                                <li class="dropdown top_yc">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                       aria-haspopup="true" aria-expanded="false">
+                                        <spab class="circleBtn">中文
+                                            <span class="caret"></span>
+                                        </spab>
+
+                                    </a>
+                                    <ul class="dropdown-menu language">
+                                        <li>
+                                            <a href="javascript:chooselanguage(1)">中文</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:chooselanguage(2)">English</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div class="noticeBox container">
+        <ul class="noticeList" id="html_ul">
+        </ul>
+        <div class="pageBox">
+            <nav aria-label="Page navigation">
+                <ul class="pagination" id="html_fenye">
+
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+</div>
+
+</body>
+<script src="pcjs/noticePage.js"></script>
+</html>

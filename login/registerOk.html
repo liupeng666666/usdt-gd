@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>注册成功</title>
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.js"></script>
+      <![endif]-->
+    <meta name="viewport"
+          content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <script src="../js/jquery-3.1.0.js"></script>
+    <script type="text/javascript" src="../js/jquery.i18n.properties.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../utils/date.js"></script>
+    <script src="../utils/utils.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            var request = new Object();
+            request = GetRequest();
+            var username = request["username"];
+            var language = window.localStorage.getItem("language");
+            if (language != undefined && language != null & language == 2) {
+                loadPropertiesLanguge();
+                $("#reg_username").html("Account：" + username)
+            } else {
+                $("#reg_username").html("账号：" + username)
+            }
+        });
+
+        function loadPropertiesLanguge() {
+            $.i18n.properties({
+                name: 'strings',    //属性文件名     命名格式： 文件名_国家代号.properties
+                path: '../js/i18n/',   //注意这里路径是你属性文件的所在文件夹
+                mode: 'map',
+                language: "en",     //这就是国家代号 name+language刚好组成属性文件名：strings+zh -> strings_zh.properties
+                callback: function () {
+
+                    $("[data-locale]").each(function () {
+                        $(this).html($.i18n.prop($(this).data("locale")));
+
+                    });
+                }
+            })
+        }
+    </script>
+</head>
+
+<body>
+<div class="login registerSuccess">
+    <header class="container">
+        <img src="../img/logo.png">
+        <a data-locale="regok.biyuanjiaoyishequ" href="../bottomPage.html?level=p2_1&less=p2_1_1">币元交易社区</a>
+        <a data-locale="regok.guanyuwomen" href="../bottomPage.html?level=p3_1&less=p3_1_1">关于我们</a>
+    </header>
+    <div class="container registerSuccessBox">
+        <h1 data-locale="regok.xingjihuiyuanjihua">星级会员计划</h1>
+        <P data-locale="regok.meiyuanjianglijin">10USDT/美元/标准每位奖励金</P>
+        <div class="resboxmaian">
+            <img src="../img/pass.png">
+            <div data-locale="regok.zhucechenggong">注册成功</div>
+            <span id="reg_username">账号：</span>
+            <p class="loginBtn"><a data-locale="fanhuidenglu" href="login.html">返回登录</a></p>
+        </div>
+    </div>
+</div>
+<script>
+</script>
+</body>
+
+</html>

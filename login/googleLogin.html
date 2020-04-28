@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>谷歌验证</title>
+    <!--[if lt IE 9]>
+<script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.js"></script>
+<script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.js"></script>
+<![endif]-->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <script src="../js/jquery-3.1.0.js"></script>
+    <script type="text/javascript" src="../js/jquery.i18n.properties.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../utils/date.js"></script>
+    <script src="../utils/utils.js"></script>
+    <script src="../pcjs/login.js"></script>
+    <script type="text/javascript">
+        /*----------------------------本页面全局变量--------------------------------*/
+        // 用户id
+        var userid = null;
+        // token
+        var token;
+        // 语言类型
+        var language;
+
+        /*---------------------------------------------------------------------*/
+        $(function () {
+            language = window.localStorage.getItem("language");
+            if (language != undefined && language != null & language == 2) {
+                loadPropertiesLanguge();
+                $(".circleBtn").html("English<span class=\"caret\"></span>");
+            }
+        });
+
+        function googlelogin() {
+            var code = $("#google_code").val();
+            var google_secret = window.sessionStorage.getItem("google_secret");
+            var token = window.sessionStorage.getItem("token");
+            $.ajax({
+                url: "../../usdtpc/subuser/checkGoogleCodeYanZheng",
+                data: {
+                    "code": code,
+                    "secret": google_secret
+                },
+                method: "POST",
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader('Authorization', token);
+                },
+                success: function (data) {
+                    if (isString(data)) {
+                        data = JSON.parse(data);
+                    }
+                    if (data.code == 100) {
+                        window.sessionStorage.setItem("google_renzhen", 1);
+                        window.location.href = "../index.html";
+                    } else if (data.code == 401) {
+                        tokenLoseEfficacy();
+                        token = window.sessionStorage.getItem("token");
+                        googlelogin();
+                    } else {
+                        $("#google_code_text").html("谷歌验证码不正确");
+                    }
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    if (Number(XMLHttpRequest.status) != 0 && XMLHttpRequest.readyState != 0 && textStatus != "error" && errorThrown.length != 0) {
+                        //alert("网络异常，请您检查网络后刷新页面！");
+                    } else if ("timeout" == textStatus && "timeout" == errorThrown) {
+                        //alert("请求超时，请您检查网络后刷新页面！");
+                    } else {
+                        //alert("网络异常，请您检查网络后刷新页面！");
+                    }
+                }
+            });
+        }
+    </script>
+</head>
+
+<body>
+<div class="login googleLogin">
+    <header>
+        <div class="row">
+            <div class="container">
+                <nav class="navbar navbar-inverse">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <a class="navbar-brand logo" href="../index.html">
+                                <img src="../img/logo.png">
+                            </a>
+                        </div>
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav navList">
+                                <li class="active">
+                                    <a href="../index.html" data-locale="daohanglan.index">首页</a>
+                                </li>
+                                <li>
+                                    <a href="../coinDetails.html" data-locale="daohanglan.bihangqing">OBV交易</a>
+                                </li>
+                                <li>
+                                    <a href="../FaBiJiaoYi.html" data-locale="daohanglan.fabijiaoyi">法币交易</a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-locale="daohanglan.remenjiaoyi"
+                                       data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">热门交易
+                                        <span class="caret"></span>
+                                    </a>
+                                    <ul class="dropdown-menu hotTitle">
+                                        <li>
+                                            <a href="../hotTradeCharts.html" data-locale="daohanglan.remenjiaoyiyuan">热门交易员</a>
+                                        </li>
+                                        <li>
+                                            <a href="../hotTradeCharts.html"
+                                               data-locale="daohanglan.remenjiaoyipaihang">热门交易排行</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="../followProfit.html" data-locale="daohanglan.gensuizhe">跟随者</a>
+                                </li>
+                                <li>
+                                    <a href="../tradeEndDynamic.html" data-locale="daohanglan.jiaoyidongtai">交易动态</a>
+                                </li>
+                                <li>
+                                    <a href="../chatRoom.html" data-locale="daohanglan.liaotianshi">聊天室</a>
+                                </li>
+                            </ul>
+                            <ul class="nav navbar-nav navbar-right" id="sub_user_info">
+                                <li>
+                                    <a href="login.html" data-locale="daohanglan.denglu">登录</a>
+                                </li>
+                                <li>
+                                    <a href="#">|</a>
+                                </li>
+                                <li>
+                                    <a href="register.html" data-locale="daohanglan.zhuce">注册</a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                       aria-haspopup="true" aria-expanded="false">
+                                        <spab class="circleBtn">中文
+                                            <span class="caret"></span>
+                                        </spab>
+
+                                    </a>
+                                    <ul class="dropdown-menu language">
+                                        <li>
+                                            <a href="javascript:chooselanguage(1)">中文</a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:chooselanguage(2)">English</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div class="loginMain">
+        <div class="loginBox">
+            <div class="accountLBox">
+                <ul>
+                    <li>
+                        <p>请输入谷歌验证码</p>
+                        <input id="google_code" placeholder="谷歌验证码" type="text">
+                        <p class="redColor" id="google_code_text"></p>
+                    </li>
+                    <p class="loginBtn">
+                        <a href="javascript:googlelogin()">登录</a>
+                    </p>
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
